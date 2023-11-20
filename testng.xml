@@ -2,12 +2,36 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="All Test Suite">
-    <test name="signup">
-
+<suite name="All Test Suite" >
+    <test name="chrome">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="signup.SignUpTest"/>
         </classes>
     </test>
+
+<!--    <test name="firefox">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="signup.SignUpTest"/>-->
+<!--            <class name="signup.SignUpTest1"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="chrome1">-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="signup.SignUpTest"/>-->
+<!--            <class name="signup.SignUpTest1"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="firefox1">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="signup.SignUpTest"/>-->
+<!--            <class name="signup.SignUpTest1"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
 

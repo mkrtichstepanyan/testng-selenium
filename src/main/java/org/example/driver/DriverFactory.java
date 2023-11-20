@@ -3,29 +3,52 @@ package org.example.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 public class DriverFactory {
+    private ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
-    private static WebDriver driver;
 
-
-    public static void initDriver() {
-        if (driver != null) return;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
-    }
-
-    public static WebDriver getDriver() {
-        return driver;
-    }
-
-    public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
+    @BeforeClass
+    @Parameters("browser")
+    public void setupDriver(String browser) {
+        WebDriver driver;
+        System.out.println("BeforeTest");
+        switch (browser.toLowerCase()) {
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            }
+            case "firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+            }
+            case "safari" -> {
+                WebDriverManager.safaridriver().setup();
+                driver = new SafariDriver();
+            }
+            default -> throw new IllegalArgumentException("Please specify browser name");
         }
-        driver = null;
+        driver.manage().window().maximize();
+
+        driverThreadLocal.set(driver);
+    }
+
+    public WebDriver getDriver() {
+        return this.driverThreadLocal.get();
+    }
+
+    @AfterClass
+    public void quitDriver() {
+        System.out.println("AfterTest");
+        WebDriver webDriver = this.driverThreadLocal.get();
+
+        if (webDriver != null) {
+            webDriver.quit();
+        }
     }
 }
