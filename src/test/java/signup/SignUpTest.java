@@ -1,40 +1,52 @@
 package signup;
 
-import org.example.driver.DriverFactory;
-import org.example.helpers.WaitHelper;
+import base.BaseTest;
+import lombok.SneakyThrows;
+import org.example.pages.autorotation.SignInPage;
 import org.example.pages.wordpress.WelcomePage;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SignUpTest {
+public class SignUpTest extends BaseTest {
 
-    WebDriver driver;
-    WelcomePage welcomePage = new WelcomePage();
+    WelcomePage welcomePage;
+
+    SignInPage signInPage;
 
     @BeforeMethod
     public void goToUrl() {
-        DriverFactory.initDriver();
-        driver = DriverFactory.getDriver();
         driver.get("https://dev.vlume.com/");
-        WaitHelper.waitUntilElementWillBeVisible(welcomePage.signInButton);
+        welcomePage = new WelcomePage(driver);
+        signInPage = new SignInPage(driver);
     }
 
+//    @SneakyThrows
+//    @Test
+//    public void signUpTest() {
+//        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
+//        welcomePage.clickOnSignInButton();
+//    }
+//
+//    @SneakyThrows
+//    @Test
+//    public void signUpTest1() {
+//        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
+//        welcomePage.clickOnSignInButton();
+//    }
 
+    @SneakyThrows
     @Test
-    public void signUpTest() {
+    public void findFacebookButton() {
+        Thread.sleep(2000);
+        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
+        Thread.sleep(3000);
+
+//        waitHelper.waitForElementToBeClickable(signInPage.facebookButton);
+//        signInPage.clickFacebookButton();
+
+        System.out.println(driver.findElement(By.xpath("//div//div//button[@id = 'loginButton']")).getText());
     }
 
-    @Test
-    public void signUpTest1() {
-        welcomePage.clickOnSignInButton();
-    }
-
-
-    @AfterMethod
-    public void closeDriver() {
-        DriverFactory.closeDriver();
-    }
 }

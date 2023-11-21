@@ -3,29 +3,41 @@ package org.example.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.*;
 
 public class DriverFactory {
 
-    private static WebDriver driver;
+    ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
-
-    public static void initDriver() {
-        if (driver != null) return;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
-    }
-
-    public static WebDriver getDriver() {
-        return driver;
-    }
-
-    public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
+    @BeforeClass
+    @Parameters(value = "browser")
+    public void setupDriver(String browserName) {
+        WebDriver driver;
+        switch (browserName.toLowerCase()) {
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            }
+            case "firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+            }
+            default -> throw new IllegalArgumentException("There isn't such browser ");
         }
-        driver = null;
+        driver.manage().window().maximize();
+        driverThreadLocal.set(driver);
+
+    }
+
+    public WebDriver getDriver() {
+        return driverThreadLocal.get();
+    }
+
+    @AfterClass
+    public void closeDriver() {
+        if (driverThreadLocal.get() != null) {
+            driverThreadLocal.get().quit();
+        }
     }
 }
