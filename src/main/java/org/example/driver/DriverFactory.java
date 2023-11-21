@@ -4,28 +4,50 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.*;
 
 public class DriverFactory {
 
-    private static WebDriver driver;
+    ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
+    @BeforeClass
+    @Parameters(value = "browser")
+    public void setupDriver(String browserName) {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--incognito");
+//        chromeOptions.addArguments("start-maximized");
 
-    public static void initDriver() {
-        if (driver != null) return;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
-    }
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.addArguments("--incognito");
+        firefoxOptions.addArguments("start-maximized");
 
-    public static WebDriver getDriver() {
-        return driver;
-    }
-
-    public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
+        WebDriver driver;
+        switch (browserName.toLowerCase()) {
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver(chromeOptions);
+            }
+            case "firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver(firefoxOptions);
+            }
+            default -> throw new IllegalArgumentException("There isn't such browser ");
         }
-        driver = null;
+
+        driverThreadLocal.set(driver);
+
+    }
+
+    public WebDriver getDriver() {
+        return driverThreadLocal.get();
+    }
+
+    @AfterClass
+    public void closeDriver() {
+        if (driverThreadLocal.get() != null) {
+            driverThreadLocal.get().quit();
+        }
     }
 }

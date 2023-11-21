@@ -2,12 +2,34 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="tests" thread-count="4">
     <test name="signup">
-
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="signup.SignUpTest"/>
+            <class name="auto.signin.PositiveTests">
+                <parameter name="email" value="garik.garibyan.1990@gmail.com"/>
+                <parameter name="password" value="test45"/>
+
+            </class>
+
+<!--            <class name="signin.NegativeTests"></class>-->
         </classes>
     </test>
+
+<!--    <test name="signup1">-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="signup.SignUpTest"/>-->
+<!--            <class name="signup.SignUpTest1"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="signup2">-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="signup.SignUpTest"/>-->
+<!--            <class name="signup.SignUpTest1"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
 
