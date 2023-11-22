@@ -1,10 +1,10 @@
-package auto.signin;
+package autho.signin;
 
 import base.BaseTest;
 import lombok.SneakyThrows;
 import org.example.helpers.WaitHelper;
-import org.example.pages.autorotation.ForgotPassword;
-import org.example.pages.autorotation.SignInPage;
+import org.example.pages.authorization.ForgotPasswordPage;
+import org.example.pages.authorization.SignInPage;
 import org.example.pages.home.HomePage;
 import org.example.pages.wordpress.WelcomePage;
 import org.testng.Assert;
@@ -19,7 +19,7 @@ public class PositiveTests extends BaseTest {
     SignInPage signInPage;
     HomePage homePage;
 
-    ForgotPassword forgotPassword;
+    ForgotPasswordPage forgotPasswordPage;
     WaitHelper waitHelper;
     @BeforeMethod
     public void goToUrl(){
@@ -28,7 +28,7 @@ public class PositiveTests extends BaseTest {
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
         homePage = new HomePage(driver);
-        forgotPassword = new ForgotPassword(driver);
+        forgotPasswordPage = new ForgotPasswordPage(driver);
 
     }
 
@@ -63,16 +63,11 @@ public class PositiveTests extends BaseTest {
     @Test
     @Parameters({"email","password"})
     public void clickSignIn(String e,String p){
-        Thread.sleep(1000);
         waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
         driver.switchTo().window(nextWidow());
-        Thread.sleep(1000);
-
         signInPage.inputEmail.sendKeys(e);
         signInPage.inputPassword.sendKeys(p);
-        Thread.sleep(1000);
-
         signInPage.clickSignInButton();
         waitHelper.waitForElementToBeClickable(homePage.homeButton);
 
@@ -85,9 +80,9 @@ public class PositiveTests extends BaseTest {
         driver.switchTo().window(nextWidow());
         waitHelper.waitForElementToBeClickable(signInPage.signInButton);
         signInPage.clickForgotPassword();
-        waitHelper.waitForElementToBeClickable(forgotPassword.sendButton);
+        waitHelper.waitForElementToBeClickable(forgotPasswordPage.sendButton);
 
-        Assert.assertTrue(forgotPassword.sendButton.isDisplayed());
+        Assert.assertTrue(forgotPasswordPage.sendButton.isDisplayed());
     }
 
 }

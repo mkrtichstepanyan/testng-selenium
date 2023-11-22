@@ -1,4 +1,4 @@
-package auto.forgot_password;
+package autho.forgot_password;
 
 public class NegativeTests {
 }

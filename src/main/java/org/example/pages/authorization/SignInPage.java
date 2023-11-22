@@ -1,4 +1,4 @@
-package org.example.pages.autorotation;
+package org.example.pages.authorization;
 
 import org.example.pages.BasePage;
 import org.openqa.selenium.WebDriver;

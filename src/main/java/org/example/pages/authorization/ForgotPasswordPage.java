@@ -1,13 +1,13 @@
-package org.example.pages.autorotation;
+package org.example.pages.authorization;
 
 import org.example.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ForgotPassword extends BasePage {
+public class ForgotPasswordPage extends BasePage {
 
-    public ForgotPassword(WebDriver driver) {
+    public ForgotPasswordPage(WebDriver driver) {
         super(driver);
     }
 

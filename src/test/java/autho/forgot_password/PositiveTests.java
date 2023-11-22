@@ -1,18 +1,18 @@
-package auto.forgot_password;
+package autho.forgot_password;
 
 import base.BaseTest;
-import org.example.pages.autorotation.ForgotPassword;
+import org.example.pages.authorization.ForgotPasswordPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class PositiveTests extends BaseTest {
-    ForgotPassword forgotPassword;
+    ForgotPasswordPage forgotPassword;
 
     @BeforeMethod
     public void goToUrl() {
          driver.get("https://dev.vlume.com/forgot-password");
-         forgotPassword = new ForgotPassword(driver);
+         forgotPassword = new ForgotPasswordPage(driver);
     }
 
     @Test

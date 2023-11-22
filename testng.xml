@@ -3,16 +3,15 @@
 
 
 <suite name="All Test Suite" parallel="tests" thread-count="4">
-    <test name="signup">
+    <test name="authorization">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="auto.signin.PositiveTests">
+            <class name="autho.signin.PositiveTests">
                 <parameter name="email" value="garik.garibyan.1990@gmail.com"/>
                 <parameter name="password" value="test45"/>
-
             </class>
-
-<!--            <class name="signin.NegativeTests"></class>-->
+            <class name="autho.signin.NegativeTests"/>
+            <class name="autho.signup.PositiveTests"/>
         </classes>
     </test>
 
