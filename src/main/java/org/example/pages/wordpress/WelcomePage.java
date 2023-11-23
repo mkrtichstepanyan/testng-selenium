@@ -21,10 +21,6 @@ public class WelcomePage extends BasePage {
         return super.isPageOpened(signInButton);
     }
 
-    public WelcomePage(WebDriver driver) {
-        super(driver);
-    }
-
     public void clickOnSignInButton() {
         this.signInButton.click();
     }

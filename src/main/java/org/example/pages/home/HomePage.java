@@ -14,4 +14,8 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div//p[@id = 'homeButton']")
     public WebElement homeButton;
 
+    @Override
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(homeButton);
+    }
 }

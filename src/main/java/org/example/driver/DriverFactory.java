@@ -14,7 +14,7 @@ import org.testng.annotations.Parameters;
 
 public class DriverFactory {
 
-    private ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    private final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     Logger logger = LoggerFactory.getLogger("FileLogger");
 
     @BeforeClass
@@ -37,7 +37,6 @@ public class DriverFactory {
             }
             default -> throw new IllegalArgumentException("There isn't such browser ");
         }
-        driver.manage().window().maximize();
         driverThreadLocal.set(driver);
     }
 

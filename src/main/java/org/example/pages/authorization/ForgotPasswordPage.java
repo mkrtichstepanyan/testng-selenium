@@ -15,8 +15,13 @@ public class ForgotPasswordPage extends BasePage {
     public WebElement inputEmail;
 
     @FindBy(xpath = "//a[@id ='goToSignIn']")
-    public WebElement doToSignInButton;
+    public WebElement goToSignInButton;
 
     @FindBy(xpath = "//button[@id = 'send']")
     public WebElement sendButton;
+
+    @Override
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(inputEmail,goToSignInButton,sendButton);
+    }
 }

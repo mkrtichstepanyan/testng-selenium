@@ -18,10 +18,11 @@ public class SignInNegativeTests extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
+        goToURL(WELCOME_PAGE_URL);
+
         waitHelper = new WaitHelper(driver);
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
-        goToURL(WELCOME_PAGE_URL);
     }
 
     @Test
@@ -33,6 +34,7 @@ public class SignInNegativeTests extends BaseTest {
         log.info("Click on Sign in button");
         welcomePage.clickOnSignInButton();
 
+        log.info("Switch driver to next window");
         driver.switchTo().window(nextWidow());
 
         log.info("Assert Sign in page is opened");

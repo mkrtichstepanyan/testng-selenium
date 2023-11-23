@@ -40,7 +40,7 @@ public class SignInPage extends BasePage {
 
     @Override
     public boolean isPageOpened(WebElement... elements) {
-        return super.isPageOpened(facebookButton, appleButton, googleButton, signInButton, forgotPassword, inputEmail, inputPassword);
+        return super.isPageOpened(facebookButton, appleButton, googleButton, signInButton,signUpButton, forgotPassword, inputEmail, inputPassword);
     }
 
     public void clickSignInButton() {

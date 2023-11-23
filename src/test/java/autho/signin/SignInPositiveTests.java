@@ -1,36 +1,32 @@
 package autho.signin;
 
 import base.BaseTest;
-import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.example.helpers.WaitHelper;
 import org.example.pages.authorization.ForgotPasswordPage;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.home.HomePage;
 import org.example.pages.wordpress.WelcomePage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
+import java.util.Set;
+
+@Slf4j(topic = "AuthorizationLogger")
 public class SignInPositiveTests extends BaseTest {
-
-    private final String WELCOME_PAGE_URL = "https://dev.vlume.com/";
-    private final String SIGN_IN_PAGE_URL = "https://dev.vlume.com/sign-in";
-    Logger logger = LoggerFactory.getLogger("AuthorizationLogger");
     WelcomePage welcomePage;
     SignInPage signInPage;
     HomePage homePage;
-
     ForgotPasswordPage forgotPasswordPage;
     WaitHelper waitHelper;
 
     @BeforeMethod
     public void goToUrl() {
-        logger.info("driver go to url {}", WELCOME_PAGE_URL);
-        driver.get(WELCOME_PAGE_URL);
+
+        goToURL(WELCOME_PAGE_URL);
+
         waitHelper = new WaitHelper(driver);
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
@@ -40,68 +36,74 @@ public class SignInPositiveTests extends BaseTest {
     }
 
     @Test
-    public void IsPageViewsVisible() {
+    public void verifySignInPageIsOpened() {
+        Set<String> windowHandles = driver.getWindowHandles();
+        String firstWindow = windowHandles.iterator().next();
 
-        logger.info("Assert Welcome page is opened");
+        log.info("Switch to first window");
+        driver.switchTo().window(firstWindow);
+
+        log.info("Assert Welcome page is opened");
         Assert.assertTrue(welcomePage.isPageOpened());
 
-
-        logger.info("Assert Sign in page is opened");
-        Assert.assertTrue(signInPage.isPageOpened());
-
-        logger.info("validate all views on the sign in page");
+        log.info("Click sign in button");
         welcomePage.clickOnSignInButton();
 
+        log.info("Switch driver to next widow");
         driver.switchTo().window(nextWidow());
-        waitHelper.waitForElementToBeClickable(signInPage.facebookButton);
 
-        SoftAssert softAssert = new SoftAssert();
-
-        softAssert.assertEquals(driver.getCurrentUrl(), SIGN_IN_PAGE_URL);
-        softAssert.assertTrue(signInPage.facebookButton.isDisplayed());
-        softAssert.assertTrue(signInPage.appleButton.isDisplayed());
-        softAssert.assertTrue(signInPage.googleButton.isDisplayed());
-
-        softAssert.assertTrue(signInPage.inputEmail.isDisplayed());
-        softAssert.assertTrue(signInPage.inputPassword.isDisplayed());
-
-        softAssert.assertTrue(signInPage.signInButton.isDisplayed());
-        softAssert.assertTrue(signInPage.signUpButton.isDisplayed());
-        softAssert.assertTrue(signInPage.forgotPassword.isDisplayed());
-
-//        softAssert.assertFalse(signInPage.errorMessage.isDisplayed());
-
-        softAssert.assertAll();
+        log.info("Assert Sign in page is opened");
+        Assert.assertTrue(signInPage.isPageOpened());
     }
 
 
-    @SneakyThrows
     @Test
     @Parameters({"email", "password"})
-    public void clickSignIn(String e, String p) {
-        logger.info("validate sign in button when email and password are valid");
-        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
-        welcomePage.clickOnSignInButton();
-        driver.switchTo().window(nextWidow());
-        waitHelper.waitForElementToBeClickable(signInPage.inputEmail);
-        signInPage.inputEmail.sendKeys(e);
-        signInPage.inputPassword.sendKeys(p);
-        signInPage.clickSignInButton();
-        waitHelper.waitForElementToBeClickable(homePage.homeButton);
+    public void verifySignInButtonWithCorrectEmailAndPassword(String e, String p) {
+        log.info("Assert Welcome page is opened");
+        Assert.assertTrue(welcomePage.isPageOpened());
 
-        Assert.assertTrue(homePage.homeButton.isDisplayed());
+        log.info("Click sign in button");
+        welcomePage.clickOnSignInButton();
+
+        log.info("Switch driver to next window");
+        driver.switchTo().window(nextWidow());
+
+        log.info("Assert Sign in page is opened");
+        Assert.assertTrue(signInPage.isPageOpened());
+
+        log.info("Write correct email {}", e);
+        signInPage.inputEmail.sendKeys(e);
+
+        log.info("Write correct password {}", p);
+        signInPage.inputPassword.sendKeys(p);
+
+        log.info("Click sign in button");
+        signInPage.clickSignInButton();
+
+        log.info("Assert home page is openid");
+        Assert.assertTrue(homePage.isPageOpened());
     }
 
     @Test
-    public void clickForgotPassword() {
-        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
-        welcomePage.clickOnSignInButton();
-        driver.switchTo().window(nextWidow());
-        waitHelper.waitForElementToBeClickable(signInPage.signInButton);
-        signInPage.clickForgotPassword();
-        waitHelper.waitForElementToBeClickable(forgotPasswordPage.sendButton);
+    public void verifyForgotPasswordButton() {
+        log.info("Assert Welcome page is opened");
+        Assert.assertTrue(welcomePage.isPageOpened());
 
-        Assert.assertTrue(forgotPasswordPage.sendButton.isDisplayed());
+        log.info("Click sign in button");
+        welcomePage.clickOnSignInButton();
+
+        log.info("Switch driver to next window");
+        driver.switchTo().window(nextWidow());
+
+        log.info("Assert Sign in page is opened");
+        Assert.assertTrue(signInPage.isPageOpened());
+
+        log.info("Click forgot password button");
+        signInPage.clickForgotPassword();
+
+        log.info("Assert forgot page is openid");
+        Assert.assertTrue(forgotPasswordPage.isPageOpened());
     }
 
 }

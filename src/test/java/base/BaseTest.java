@@ -17,6 +17,7 @@ public class BaseTest extends DriverFactory {
     protected WaitHelper waitHelper;
 
     protected final String WELCOME_PAGE_URL = "https://dev.vlume.com/";
+    protected final String SIGN_IN_PAGE_URL = "https://dev.vlume.com/sign-in";
 
     @BeforeClass
     public void setup() {

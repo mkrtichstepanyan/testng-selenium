@@ -28,7 +28,7 @@ public class ForgotPasswordPositiveTests extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(driver.getCurrentUrl(), FORGOT_PASSWORD_PAGE_URL);
         softAssert.assertTrue(forgotPassword.inputEmail.isDisplayed());
-        softAssert.assertTrue(forgotPassword.doToSignInButton.isDisplayed());
+        softAssert.assertTrue(forgotPassword.goToSignInButton.isDisplayed());
         softAssert.assertTrue(forgotPassword.sendButton.isDisplayed());
 
         softAssert.assertAll();
