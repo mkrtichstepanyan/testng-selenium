@@ -17,7 +17,8 @@ import org.testng.asserts.SoftAssert;
 
 public class SignInPositiveTests extends BaseTest {
 
-    private final String SIGN_IN_PAGE_URL = "https://dev.vlume.com/";
+    private final String WELCOME_PAGE_URL = "https://dev.vlume.com/";
+    private final String SIGN_IN_PAGE_URL = "https://dev.vlume.com/sign-in";
     Logger logger = LoggerFactory.getLogger("AuthorizationLogger");
     WelcomePage welcomePage;
     SignInPage signInPage;
@@ -27,8 +28,8 @@ public class SignInPositiveTests extends BaseTest {
     WaitHelper waitHelper;
     @BeforeMethod
     public void goToUrl(){
-        logger.info("driver go to url {}", SIGN_IN_PAGE_URL);
-        driver.get(SIGN_IN_PAGE_URL);
+        logger.info("driver go to url {}", WELCOME_PAGE_URL);
+        driver.get(WELCOME_PAGE_URL);
         waitHelper = new WaitHelper(driver);
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
@@ -47,7 +48,7 @@ public class SignInPositiveTests extends BaseTest {
 
         SoftAssert softAssert = new SoftAssert();
 
-        softAssert.assertEquals(driver.getCurrentUrl(),"https://dev.vlume.com/sign-in");
+        softAssert.assertEquals(driver.getCurrentUrl(),SIGN_IN_PAGE_URL);
         softAssert.assertTrue(signInPage.facebookButton.isDisplayed());
         softAssert.assertTrue(signInPage.appleButton.isDisplayed());
         softAssert.assertTrue(signInPage.googleButton.isDisplayed());

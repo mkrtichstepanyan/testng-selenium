@@ -11,12 +11,13 @@ import org.testng.annotations.Test;
 
 public class SignInNegativeTests extends BaseTest {
 
+    private final String WELCOME_PAGE_URL = "https://dev.vlume.com/";
     WelcomePage welcomePage;
     SignInPage signInPage;
     WaitHelper waitHelper;
     @BeforeMethod
     public void goToUrl(){
-        driver.get("https://dev.vlume.com/");
+        driver.get(WELCOME_PAGE_URL);
         waitHelper = new WaitHelper(driver);
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);

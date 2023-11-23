@@ -9,13 +9,15 @@ import org.testng.asserts.SoftAssert;
 
 public class SignUpPositiveTests extends BaseTest {
 
+    private final String SIGN_IN_PAGE_URL = "https://dev.vlume.com/sign-up";
+
     WaitHelper waitHelper;
 
     SignUpPage signUpPage;
 
     @BeforeMethod
     public void goToUrl(){
-        driver.get("https://dev.vlume.com/sign-up");
+        driver.get(SIGN_IN_PAGE_URL);
         waitHelper = new WaitHelper(driver);
         signUpPage = new SignUpPage(driver);
     }
