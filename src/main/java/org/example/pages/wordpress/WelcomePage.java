@@ -17,7 +17,6 @@ public class WelcomePage extends BasePage {
     }
 
     public void clickOnSignInButton() {
-
         this.signInButton.click();
     }
 

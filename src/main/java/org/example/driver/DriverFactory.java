@@ -1,6 +1,7 @@
 package org.example.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,15 +10,23 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+
+@Slf4j(topic = "Driver1")
 public class DriverFactory {
     private ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
-
 
     @BeforeClass
     @Parameters("browser")
     public void setupDriver(String browser) {
         WebDriver driver;
-        System.out.println("BeforeTest");
+        log.trace("Setting up the driver for browser {}", browser);
+        log.debug("Setting up the driver for browser {}", browser);
+        log.info("Setting up the driver for browser {}", browser);
+        log.warn("Setting up the driver for browser {}", browser);
+        log.error("Setting up the driver for browser {}", browser);
+
+        System.exit(0);
+
         switch (browser.toLowerCase()) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
