@@ -6,12 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.slf4j.ILoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
 public class DriverFactory {
 
     ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
+    Logger logger = LoggerFactory.getLogger("FileLogger");
     @BeforeClass
     @Parameters(value = "browser")
     public void setupDriver(String browserName) {
@@ -24,6 +28,7 @@ public class DriverFactory {
         firefoxOptions.addArguments("start-maximized");
 
         WebDriver driver;
+        logger.info("Create driver for browser {}" , browserName);
         switch (browserName.toLowerCase()) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
@@ -41,11 +46,13 @@ public class DriverFactory {
     }
 
     public WebDriver getDriver() {
+        logger.debug("get driver {}" , driverThreadLocal.get().toString());
         return driverThreadLocal.get();
     }
 
     @AfterClass
     public void closeDriver() {
+        logger.debug("close driver {}" , driverThreadLocal.get().toString());
         if (driverThreadLocal.get() != null) {
             driverThreadLocal.get().quit();
         }

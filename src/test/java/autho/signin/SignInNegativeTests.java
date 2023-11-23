@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class NegativeTests extends BaseTest {
+public class SignInNegativeTests extends BaseTest {
 
     WelcomePage welcomePage;
     SignInPage signInPage;

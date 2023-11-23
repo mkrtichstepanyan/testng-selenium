@@ -6,12 +6,12 @@
     <test name="authorization">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="autho.signin.PositiveTests">
+            <class name="autho.signin.SignInPositiveTests">
                 <parameter name="email" value="garik.garibyan.1990@gmail.com"/>
                 <parameter name="password" value="test45"/>
             </class>
-            <class name="autho.signin.NegativeTests"/>
-            <class name="autho.signup.PositiveTests"/>
+            <class name="autho.signin.SignInNegativeTests"/>
+            <class name="autho.signup.SignUpPositiveTests"/>
         </classes>
     </test>
 

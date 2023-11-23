@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="HOME_LOG" value="logs/app.log"/>
+
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <root level="trace">
+        <appender-ref ref="RootAppender"/>
+    </root>
+
+
+    <appender name="DriverFactoryAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                 [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <logger name="DriverFactoryLogger" level="debug" additivity="false">
+        <appender-ref ref="DriverFactoryAppender"/>
+    </logger>
+
+    <appender name="AuthorizationAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <logger name="AuthorizationLogger" level="debug" additivity="false">
+        <appender-ref ref="AuthorizationAppender"/>
+    </logger>
+
+
+
+
+
+    <appender name="FileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>${HOME_LOG}</file>
+        <append>false</append>
+        <immediateFlush>true</immediateFlush>
+        <encoder>
+            <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="FileLogger" level="info" additivity="false">
+        <appender-ref ref="FileAppender"/>
+        <appender-ref ref="Console"/>
+    </logger>
+
+
+</configuration>

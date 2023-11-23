@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class PositiveTests extends BaseTest {
+public class ForgotPasswordPositiveTests extends BaseTest {
     ForgotPasswordPage forgotPassword;
 
     @BeforeMethod
