@@ -5,19 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 public class DriverFactory {
     private ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+    Logger logger = LoggerFactory.getLogger(DriverFactory.class);
 
-
-    @BeforeClass
+    @BeforeMethod
     @Parameters("browser")
     public void setupDriver(String browser) {
         WebDriver driver;
-        System.out.println("BeforeTest");
+        logger.info("Setting up the driver for {}", browser);
         switch (browser.toLowerCase()) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
@@ -31,24 +33,29 @@ public class DriverFactory {
                 WebDriverManager.safaridriver().setup();
                 driver = new SafariDriver();
             }
-            default -> throw new IllegalArgumentException("Please specify browser name");
+            default -> {
+                logger.error("Invalid browser specified: {}", browser);
+                throw new IllegalArgumentException("Please specify browser name");
+            }
         }
         driver.manage().window().maximize();
-
         driverThreadLocal.set(driver);
+
+        logger.info("{} driver setup successfully", browser);
     }
 
     public WebDriver getDriver() {
         return this.driverThreadLocal.get();
     }
 
-    @AfterClass
+    @AfterMethod
     public void quitDriver() {
-        System.out.println("AfterTest");
+        logger.info("Quitting the driver");
         WebDriver webDriver = this.driverThreadLocal.get();
 
         if (webDriver != null) {
             webDriver.quit();
+            logger.info("Driver quit successfully");
         }
     }
 }

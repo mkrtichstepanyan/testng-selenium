@@ -1,9 +1,10 @@
-package signup;
+package base;
 
 import org.example.driver.DriverFactory;
 import org.example.helpers.WaitHelper;
+import org.example.pages.wordpress.WelcomePage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends DriverFactory {
 
@@ -11,10 +12,14 @@ public class BaseTest extends DriverFactory {
 
     protected WaitHelper waitHelper;
 
-    @BeforeClass
+    protected WelcomePage welcomePage;
+
+
+    @BeforeMethod
     public void setup() {
         driver = getDriver();
         waitHelper = new WaitHelper(driver);
+        welcomePage = new WelcomePage(driver);
     }
 
 }

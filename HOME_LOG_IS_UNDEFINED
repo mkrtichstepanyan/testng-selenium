@@ -1,0 +1,341 @@
+2023-11-23 18:53:58,618 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Admin\Desktop\JavaProjects\testng-selenium\testng.xml
+
+2023-11-23 18:53:58,691 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:53:58,990 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:53:59,008 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:54:00,398 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:54:00,417 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:54:07,045 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:54:07,045 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:54:07,046 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:54:08,335 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:54:09,143 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:54:09,168 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:54:09,168 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: zara.avetyan.2004@mail.ru
+2023-11-23 18:54:14,226 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:54:14,377 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Log In button
+2023-11-23 18:54:14,513 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: By.xpath: //div[@class='menu-item-container'][1]
+2023-11-23 18:54:16,744 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:54:16,996 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:54:17,000 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:54:17,030 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:54:17,038 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:54:18,026 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:54:18,032 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:54:30,760 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:54:30,760 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:54:30,760 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:54:32,585 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:54:32,728 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:54:32,749 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:54:32,750 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: zara.avetyan.2004@mail.ru
+2023-11-23 18:54:41,795 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:54:41,980 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Log In button
+2023-11-23 18:54:42,090 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='cdk-overlay-0']//span'
+2023-11-23 18:54:43,818 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:54:44,002 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:54:44,004 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:54:44,014 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:54:44,018 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:54:44,783 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:54:44,784 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:55:03,757 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:55:03,757 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:55:03,757 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:55:04,930 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:55:05,087 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:55:05,109 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:55:05,111 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: wrongUsername
+2023-11-23 18:55:09,967 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:55:10,089 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Log In button
+2023-11-23 18:55:10,155 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: [[ChromeDriver: chrome on windows (f8bfbd44bfc86fee720bcd550a9e6b77)] -> xpath: //div[@id='cdk-overlay-0']//span]
+2023-11-23 18:55:10,230 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:55:10,409 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:55:10,411 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:55:10,427 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:55:10,443 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:55:11,288 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:55:11,290 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:55:27,298 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:55:27,300 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:55:27,300 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:55:29,040 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:55:29,187 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:55:29,207 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:55:29,207 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: wrongUsername
+2023-11-23 18:55:38,186 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:55:38,333 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Log In button
+2023-11-23 18:55:38,421 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: [[ChromeDriver: chrome on windows (eac02d0a6f7c34df5b64daa2dd53cf5b)] -> xpath: //div[@id='cdk-overlay-0']//span]
+2023-11-23 18:55:38,511 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:55:38,692 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:55:38,700 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:55:38,726 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:55:38,734 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:55:39,606 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:55:39,606 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:55:54,771 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:55:54,783 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:55:54,783 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:55:54,783 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:55:55,964 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:55:56,119 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:55:56,148 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:55:56,148 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:56:01,259 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: test@mail.ru
+2023-11-23 18:56:01,402 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:56:01,481 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:56:01,540 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:56:01,629 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:56:01,805 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:56:01,806 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:56:01,830 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:56:01,840 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:56:02,702 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:56:02,704 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:56:06,433 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:56:06,436 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:56:06,436 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:56:06,437 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:56:07,577 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:56:07,732 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:07,758 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:07,758 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:56:10,429 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: WrongFormatEmail
+2023-11-23 18:56:10,578 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:56:10,652 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:56:10,700 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:56:10,820 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:56:11,030 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:56:11,030 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:56:11,047 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:56:11,047 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:56:11,824 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:56:11,824 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:56:15,389 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:56:15,397 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:56:15,397 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:56:15,399 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:56:16,532 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:56:16,656 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:16,673 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:16,673 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:56:18,787 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: test@mail.ru
+2023-11-23 18:56:18,982 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:56:19,048 [main] INFO  o.example.pages.wordpress.SignUpPage - Entering password
+2023-11-23 18:56:19,109 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:56:21,190 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:56:21,379 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:56:21,380 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:56:21,392 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:56:21,396 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:56:22,145 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:56:22,146 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:56:23,103 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:56:23,108 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:56:23,108 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:56:23,108 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:56:26,527 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:56:26,674 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:26,698 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:26,699 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:56:28,918 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: wrongFormatEmail
+2023-11-23 18:56:29,079 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:56:29,182 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:56:29,364 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:56:29,365 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:56:29,374 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:56:29,378 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:56:30,156 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:56:30,157 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:56:33,480 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:56:33,483 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:56:33,483 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:56:33,483 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:56:34,174 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:56:34,347 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:34,363 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:56:34,363 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:56:38,588 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:56:38,836 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:56:39,092 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:56:39,094 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:56:39,111 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:56:39,119 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:56:39,900 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:56:39,902 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:57:23,082 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:57:23,087 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:57:23,087 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:57:23,087 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:57:24,836 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:57:25,043 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:57:25,069 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:57:25,069 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:57:27,944 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: test@mail.ru
+2023-11-23 18:57:28,180 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:57:28,295 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:57:28,533 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:57:28,534 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:57:28,550 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:57:28,558 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:57:29,352 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:57:29,353 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:57:32,969 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:57:32,974 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:57:32,974 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:57:32,974 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:57:34,284 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:57:34,622 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:57:34,642 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:57:34,642 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:57:36,516 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: test@mail.ru
+2023-11-23 18:57:36,624 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:57:36,681 [main] INFO  o.example.pages.wordpress.SignUpPage - Entering password
+2023-11-23 18:57:36,737 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:57:36,814 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:57:36,995 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:57:36,997 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:57:37,006 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:57:37,010 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:57:37,780 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:57:37,781 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:57:43,422 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:57:43,425 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:57:43,425 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:57:43,426 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:57:44,687 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:57:45,188 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:57:45,201 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:57:45,201 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Sign Up button
+2023-11-23 18:57:46,985 [main] INFO  o.example.pages.wordpress.SignInPage - Entering username: WrongFormatEmail
+2023-11-23 18:57:47,149 [main] INFO  o.example.pages.wordpress.SignInPage - Entering password
+2023-11-23 18:57:47,263 [main] INFO  o.example.pages.wordpress.SignUpPage - Entering password
+2023-11-23 18:57:47,416 [main] INFO  o.example.pages.wordpress.SignUpPage - Clicking on the Sign Up button
+2023-11-23 18:57:47,597 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:57:47,808 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:57:47,809 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:57:47,825 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:57:47,833 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:57:48,677 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:57:48,682 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:57:52,020 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:57:52,022 [main] INFO  org.example.pages.BasePage - SignUpPage page initialized
+2023-11-23 18:57:52,022 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:57:52,022 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:57:53,176 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:57:54,432 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:57:54,455 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:57:54,461 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:57:55,349 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:57:55,349 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:58:03,248 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:58:03,251 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:58:03,251 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:58:06,972 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:58:07,160 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:58:07,176 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:58:07,176 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Forgot Password button
+2023-11-23 18:58:08,929 [main] INFO  org.example.pages.BasePage - ForgotPasswordPage page initialized
+2023-11-23 18:58:08,929 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Clicking on the Go To Sign In Page button
+2023-11-23 18:58:09,084 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:58:09,289 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:58:09,292 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:58:09,308 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:58:09,313 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:58:10,259 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:58:10,259 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:58:46,299 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:58:46,299 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:58:46,299 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:58:47,565 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:58:47,713 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:58:47,732 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:58:47,732 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Forgot Password button
+2023-11-23 18:58:49,936 [main] INFO  org.example.pages.BasePage - ForgotPasswordPage page initialized
+2023-11-23 18:58:49,936 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Entering username: zara.avetyan.2004@mail.ru
+2023-11-23 18:58:50,157 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Clicking on the Send button
+2023-11-23 18:58:50,215 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: Proxy element for: DefaultElementLocator 'By.id: forgotPassword'
+2023-11-23 18:58:51,859 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: [[ChromeDriver: chrome on windows (21758559b4b68582aaff32df4978eb68)] -> xpath: //simple-snack-bar/span]
+2023-11-23 18:58:51,968 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:58:52,143 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:58:52,144 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:58:52,169 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:58:52,176 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:58:52,997 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:58:52,997 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:58:56,493 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:58:56,493 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:58:56,493 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:58:57,677 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:58:57,947 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:58:57,968 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:58:57,968 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Forgot Password button
+2023-11-23 18:59:00,551 [main] INFO  org.example.pages.BasePage - ForgotPasswordPage page initialized
+2023-11-23 18:59:00,551 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Clicking on the Send button
+2023-11-23 18:59:00,744 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:59:00,975 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:59:00,977 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:59:00,993 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:59:01,000 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:59:01,889 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:59:01,893 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:59:25,245 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:59:25,245 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:59:25,245 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:59:26,992 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:59:27,118 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:59:27,142 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:59:27,142 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Forgot Password button
+2023-11-23 18:59:46,045 [main] INFO  org.example.pages.BasePage - ForgotPasswordPage page initialized
+2023-11-23 18:59:46,048 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Entering username: abc@gmail.com
+2023-11-23 18:59:46,300 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Clicking on the Send button
+2023-11-23 18:59:46,414 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='cdk-overlay-0']//span'
+2023-11-23 18:59:47,072 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:59:47,311 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:59:47,311 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:59:47,327 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:59:47,336 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:59:48,142 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:59:48,144 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 18:59:51,948 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 18:59:51,949 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 18:59:51,949 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 18:59:53,054 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 18:59:53,167 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:59:53,199 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 18:59:53,199 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Forgot Password button
+2023-11-23 18:59:55,414 [main] INFO  org.example.pages.BasePage - ForgotPasswordPage page initialized
+2023-11-23 18:59:55,414 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Clicking on the Send button
+2023-11-23 18:59:55,535 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Entering username: wrongFormatEmail
+2023-11-23 18:59:55,687 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 18:59:55,888 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 18:59:55,889 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 18:59:55,898 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 18:59:55,904 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 18:59:56,720 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 18:59:56,724 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 19:00:08,499 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 19:00:08,499 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 19:00:08,499 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 19:00:09,746 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button
+2023-11-23 19:00:10,108 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 19:00:10,120 [main] INFO  o.e.pages.wordpress.WelcomePage - Switched to Sign In window
+2023-11-23 19:00:10,120 [main] INFO  o.example.pages.wordpress.SignInPage - Clicking on the Forgot Password button
+2023-11-23 19:00:12,417 [main] INFO  org.example.pages.BasePage - ForgotPasswordPage page initialized
+2023-11-23 19:00:12,417 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Entering username: abc@gmail.com
+2023-11-23 19:00:12,542 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Clicking on the Send button
+2023-11-23 19:00:12,607 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be visible: Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='cdk-overlay-0']//span'
+2023-11-23 19:00:13,247 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Clearing the Username Input field
+2023-11-23 19:00:13,295 [main] INFO  o.e.p.wordpress.ForgotPasswordPage - Entering username: wrongFormatEmail
+2023-11-23 19:00:13,452 [main] INFO  org.example.driver.DriverFactory - Quitting the driver
+2023-11-23 19:00:13,641 [main] INFO  org.example.driver.DriverFactory - Driver quit successfully
+2023-11-23 19:00:13,642 [main] INFO  org.example.driver.DriverFactory - Setting up the driver for chrome
+2023-11-23 19:00:13,658 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-23 19:00:13,666 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Admin\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-23 19:00:14,565 [main] INFO  org.example.driver.DriverFactory - chrome driver setup successfully
+2023-11-23 19:00:14,565 [main] INFO  org.example.pages.BasePage - WelcomePage page initialized
+2023-11-23 19:00:17,910 [main] INFO  org.example.pages.BasePage - SignInPage page initialized
+2023-11-23 19:00:17,910 [main] INFO  o.e.pages.wordpress.WelcomePage - Navigating to the Sign In page
+2023-11-23 19:00:17,910 [main] INFO  org.example.helpers.WaitHelper - Waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@href = 'https://dev.vlume.com/sign-in']'
+2023-11-23 19:00:19,098 [main] INFO  o.e.pages.wordpress.WelcomePage - Clicking on the Sign In button

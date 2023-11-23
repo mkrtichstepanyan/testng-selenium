@@ -6,32 +6,14 @@
     <test name="chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="signup.SignUpTest"/>
+            <class name="signin.SignInPositiveTest"/>
+            <class name="signin.SignInNegativeTest"/>
+            <class name="signup.SignUpNegativeTest"/>
+            <class name="signup.SignUpPositiveTest"/>
+            <class name="forgotpassword.ClickGoToSignInButtonTest"/>
+            <class name="forgotpassword.ForgotPasswordPositiveTest"/>
+            <class name="forgotpassword.ForgotPasswordNegativeTest"/>
         </classes>
     </test>
-
-<!--    <test name="firefox">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="signup.SignUpTest"/>-->
-<!--            <class name="signup.SignUpTest1"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="chrome1">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="signup.SignUpTest"/>-->
-<!--            <class name="signup.SignUpTest1"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="firefox1">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="signup.SignUpTest"/>-->
-<!--            <class name="signup.SignUpTest1"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
 
