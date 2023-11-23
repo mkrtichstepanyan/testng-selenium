@@ -31,7 +31,7 @@ public class SignInPage extends BasePage {
     @FindBy(xpath = "//input[@id ='password']")
     public WebElement inputPassword;
 
-    @FindBy(xpath = "//div[@id = 'cdk-overlay-11']//snack-bar-container")
+    @FindBy(xpath = "//snack-bar-container//span")
     public WebElement errorMessage;
 
     public SignInPage(WebDriver driver) {

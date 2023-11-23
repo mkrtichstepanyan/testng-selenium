@@ -1,5 +1,6 @@
 package base;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.driver.DriverFactory;
 import org.example.helpers.WaitHelper;
 import org.openqa.selenium.WebDriver;
@@ -8,11 +9,14 @@ import org.testng.annotations.BeforeClass;
 import java.util.Iterator;
 import java.util.Set;
 
+@Slf4j
 public class BaseTest extends DriverFactory {
 
     protected WebDriver driver;
 
     protected WaitHelper waitHelper;
+
+    protected final String WELCOME_PAGE_URL = "https://dev.vlume.com/";
 
     @BeforeClass
     public void setup() {
@@ -24,9 +28,14 @@ public class BaseTest extends DriverFactory {
         Set<String> setWidows = driver.getWindowHandles();
         Iterator<String> iterator = setWidows.iterator();
         String currentWindow = iterator.next();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             currentWindow = iterator.next();
         }
         return currentWindow;
+    }
+
+    public void goToURL(String url) {
+        log.info("Go to URL {} ", url);
+        driver.get(url);
     }
 }

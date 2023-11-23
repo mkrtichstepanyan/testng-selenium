@@ -40,7 +40,7 @@ public class WaitHelper {
 
 
     @SneakyThrows
-    void waitForSeconds(int seconds) {
+    public void waitForSeconds(int seconds) {
         TimeUnit.SECONDS.sleep(seconds);
     }
 }

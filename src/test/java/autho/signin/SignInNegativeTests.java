@@ -1,7 +1,7 @@
 package autho.signin;
 
 import base.BaseTest;
-import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.example.helpers.WaitHelper;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.wordpress.WelcomePage;
@@ -9,35 +9,48 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@Slf4j
 public class SignInNegativeTests extends BaseTest {
 
-    private final String WELCOME_PAGE_URL = "https://dev.vlume.com/";
     WelcomePage welcomePage;
     SignInPage signInPage;
     WaitHelper waitHelper;
+
     @BeforeMethod
-    public void goToUrl(){
-        driver.get(WELCOME_PAGE_URL);
+    public void goToUrl() {
         waitHelper = new WaitHelper(driver);
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
+        goToURL(WELCOME_PAGE_URL);
     }
 
-    @SneakyThrows
     @Test
-    public void signIn(){
-        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
+    public void signIn() {
+
+        log.info("Assert Welcome page is opened");
+        Assert.assertTrue(welcomePage.isPageOpened());
+
+        log.info("Click on Sign in button");
         welcomePage.clickOnSignInButton();
+
         driver.switchTo().window(nextWidow());
-        waitHelper.waitForElementToBeClickable(signInPage.signInButton);
+
+        log.info("Assert Sign in page is opened");
+        Assert.assertTrue(signInPage.isPageOpened());
+
+        log.info("Write incorrect Email {} ", "lklk");
         signInPage.inputEmail.sendKeys("lklk");
+
+        log.info("Write incorrect password {} ", "lklk");
         signInPage.inputPassword.sendKeys("lklk");
-        Thread.sleep(2000);
+
+        log.info("Click on Sign in button");
         signInPage.clickSignInButton();
-        Thread.sleep(500);
+
         Assert.assertTrue(signInPage.errorMessage.isDisplayed());
-        Thread.sleep(500);
+        String actualErrorMessage = signInPage.errorMessage.getText();
 
+        log.info("Assert error message is correct");
+        Assert.assertEquals(actualErrorMessage, "Wrong credentials");
     }
-
 }
