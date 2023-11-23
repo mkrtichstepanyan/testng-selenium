@@ -6,11 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SignUpPage extends BasePage {
-
-    public SignUpPage(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//div//h2[@id = 'title']")
     public WebElement title;
     @FindBy(xpath = "//div[@id = 'facebookButton']")
@@ -43,5 +38,8 @@ public class SignUpPage extends BasePage {
     @FindBy(xpath = "//a[@id = 'forgotPassword']")
     public WebElement forgotPassword;
 
+    public SignUpPage(WebDriver driver) {
+        super(driver);
+    }
 
 }

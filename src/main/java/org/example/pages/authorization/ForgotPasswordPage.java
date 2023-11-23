@@ -7,10 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class ForgotPasswordPage extends BasePage {
 
-    public ForgotPasswordPage(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//input[@id ='username']")
     public WebElement inputEmail;
 
@@ -19,6 +15,10 @@ public class ForgotPasswordPage extends BasePage {
 
     @FindBy(xpath = "//button[@id = 'send']")
     public WebElement sendButton;
+
+    public ForgotPasswordPage(WebDriver driver) {
+        super(driver);
+    }
 
     @Override
     public boolean isPageOpened(WebElement... elements) {

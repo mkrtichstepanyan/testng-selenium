@@ -7,12 +7,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
 
+    @FindBy(xpath = "//div//p[@id = 'homeButton']")
+    public WebElement homeButton;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-    @FindBy(xpath = "//div//p[@id = 'homeButton']")
-    public WebElement homeButton;
 
     @Override
     public boolean isPageOpened(WebElement... elements) {
