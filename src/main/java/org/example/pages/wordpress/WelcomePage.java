@@ -11,8 +11,13 @@ public class WelcomePage extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://dev.vlume.com/sign-in']")
     public WebElement signInButton;
 
-    public WelcomePage(WebDriver driver){
+    public WelcomePage(WebDriver driver) {
         super(driver);
+    }
+
+    @Override
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(signInButton);
     }
 
     public void clickOnSignInButton() {

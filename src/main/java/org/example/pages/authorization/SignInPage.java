@@ -7,10 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class SignInPage extends BasePage {
 
-    public SignInPage(WebDriver driver){
-        super(driver);
-    }
-
     @FindBy(xpath = "//div[@id = 'facebookButton']")
     public WebElement facebookButton;
 
@@ -38,23 +34,36 @@ public class SignInPage extends BasePage {
     @FindBy(xpath = "//div[@id = 'cdk-overlay-11']//snack-bar-container")
     public WebElement errorMessage;
 
+    public SignInPage(WebDriver driver) {
+        super(driver);
+    }
 
-    public void clickSignInButton(){
+    @Override
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(facebookButton, appleButton, googleButton, signInButton, forgotPassword, inputEmail, inputPassword);
+    }
+
+    public void clickSignInButton() {
         signInButton.click();
     }
-    public void clickAppleButton(){
+
+    public void clickAppleButton() {
         appleButton.click();
     }
-    public void clickGoogleButton(){
+
+    public void clickGoogleButton() {
         googleButton.click();
     }
-    public void clickLoginButton(){
+
+    public void clickLoginButton() {
         facebookButton.click();
     }
-    public void clickSignUpButton(){
+
+    public void clickSignUpButton() {
         facebookButton.click();
     }
-    public void clickForgotPassword(){
+
+    public void clickForgotPassword() {
         forgotPassword.click();
     }
 }

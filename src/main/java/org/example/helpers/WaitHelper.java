@@ -2,8 +2,6 @@ package org.example.helpers;
 
 
 import lombok.SneakyThrows;
-import lombok.experimental.UtilityClass;
-import org.example.driver.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +10,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WaitHelper {
@@ -33,6 +32,10 @@ public class WaitHelper {
 
     public WebElement waitForElementToBeClickable(By locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    public List<WebElement> waitForElementsToBeVisible(WebElement... elements) {
+        return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
 

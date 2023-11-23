@@ -26,8 +26,9 @@ public class SignInPositiveTests extends BaseTest {
 
     ForgotPasswordPage forgotPasswordPage;
     WaitHelper waitHelper;
+
     @BeforeMethod
-    public void goToUrl(){
+    public void goToUrl() {
         logger.info("driver go to url {}", WELCOME_PAGE_URL);
         driver.get(WELCOME_PAGE_URL);
         waitHelper = new WaitHelper(driver);
@@ -39,16 +40,24 @@ public class SignInPositiveTests extends BaseTest {
     }
 
     @Test
-    public void IsPageViewsVisible(){
+    public void IsPageViewsVisible() {
+
+        logger.info("Assert Welcome page is opened");
+        Assert.assertTrue(welcomePage.isPageOpened());
+
+
+        logger.info("Assert Sign in page is opened");
+        Assert.assertTrue(signInPage.isPageOpened());
+
         logger.info("validate all views on the sign in page");
-        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
+
         driver.switchTo().window(nextWidow());
         waitHelper.waitForElementToBeClickable(signInPage.facebookButton);
 
         SoftAssert softAssert = new SoftAssert();
 
-        softAssert.assertEquals(driver.getCurrentUrl(),SIGN_IN_PAGE_URL);
+        softAssert.assertEquals(driver.getCurrentUrl(), SIGN_IN_PAGE_URL);
         softAssert.assertTrue(signInPage.facebookButton.isDisplayed());
         softAssert.assertTrue(signInPage.appleButton.isDisplayed());
         softAssert.assertTrue(signInPage.googleButton.isDisplayed());
@@ -68,8 +77,8 @@ public class SignInPositiveTests extends BaseTest {
 
     @SneakyThrows
     @Test
-    @Parameters({"email","password"})
-    public void clickSignIn(String e,String p){
+    @Parameters({"email", "password"})
+    public void clickSignIn(String e, String p) {
         logger.info("validate sign in button when email and password are valid");
         waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
@@ -82,8 +91,9 @@ public class SignInPositiveTests extends BaseTest {
 
         Assert.assertTrue(homePage.homeButton.isDisplayed());
     }
+
     @Test
-    public void clickForgotPassword(){
+    public void clickForgotPassword() {
         waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
         driver.switchTo().window(nextWidow());
