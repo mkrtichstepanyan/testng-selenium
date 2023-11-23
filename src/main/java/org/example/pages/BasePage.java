@@ -1,6 +1,5 @@
 package org.example.pages;
 
-
 import org.example.helpers.WaitHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

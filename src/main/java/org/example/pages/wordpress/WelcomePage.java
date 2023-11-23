@@ -1,5 +1,6 @@
 package org.example.pages.wordpress;
 
+import org.example.helpers.WaitHelper;
 import org.example.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,10 @@ public class WelcomePage extends BasePage {
     @Override
     public boolean isPageOpened(WebElement... elements) {
         return super.isPageOpened(signInButton);
+    }
+
+    public WelcomePage(WebDriver driver) {
+        super(driver);
     }
 
     public void clickOnSignInButton() {

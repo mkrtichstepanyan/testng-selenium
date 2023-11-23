@@ -14,8 +14,7 @@ import org.testng.annotations.Parameters;
 
 public class DriverFactory {
 
-    ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
-
+    private ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     Logger logger = LoggerFactory.getLogger("FileLogger");
 
     @BeforeClass
