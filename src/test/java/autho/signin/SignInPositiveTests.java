@@ -20,14 +20,11 @@ public class SignInPositiveTests extends BaseTest {
     SignInPage signInPage;
     HomePage homePage;
     ForgotPasswordPage forgotPasswordPage;
-    WaitHelper waitHelper;
 
     @BeforeMethod
     public void goToUrl() {
-
         goToURL(WELCOME_PAGE_URL);
 
-        waitHelper = new WaitHelper(driver);
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
         homePage = new HomePage(driver);

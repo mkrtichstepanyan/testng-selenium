@@ -42,4 +42,8 @@ public class SignUpPage extends BasePage {
         super(driver);
     }
 
+    @Override
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(title, facebookButton, appleButton, googleButton, title2, inputEmail, inputPassword, confirmPassword, signInButton, signUpButton, forgotPassword);
+    }
 }

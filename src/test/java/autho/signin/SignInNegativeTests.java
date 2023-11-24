@@ -2,7 +2,6 @@ package autho.signin;
 
 import base.BaseTest;
 import lombok.extern.slf4j.Slf4j;
-import org.example.helpers.WaitHelper;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.wordpress.WelcomePage;
 import org.testng.Assert;
@@ -14,19 +13,17 @@ public class SignInNegativeTests extends BaseTest {
 
     WelcomePage welcomePage;
     SignInPage signInPage;
-    WaitHelper waitHelper;
 
     @BeforeMethod
     public void goToUrl() {
         goToURL(WELCOME_PAGE_URL);
 
-        waitHelper = new WaitHelper(driver);
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
     }
 
     @Test
-    public void signIn() {
+    public void verifySignInButtonWithIncorrectEmailAndPassword() {
 
         log.info("Assert Welcome page is opened");
         Assert.assertTrue(welcomePage.isPageOpened());

@@ -38,15 +38,6 @@ public class SignInPage extends BasePage {
         super(driver);
     }
 
-    @Override
-    public boolean isPageOpened(WebElement... elements) {
-        return super.isPageOpened(facebookButton, appleButton, googleButton, signInButton,signUpButton, forgotPassword, inputEmail, inputPassword);
-    }
-
-    public void clickSignInButton() {
-        signInButton.click();
-    }
-
     public void clickAppleButton() {
         appleButton.click();
     }
@@ -55,15 +46,20 @@ public class SignInPage extends BasePage {
         googleButton.click();
     }
 
-    public void clickLoginButton() {
-        facebookButton.click();
+    public void clickSignUpButton() {
+        signUpButton.click();
     }
 
-    public void clickSignUpButton() {
-        facebookButton.click();
+    public void clickSignInButton() {
+        signInButton.click();
     }
 
     public void clickForgotPassword() {
         forgotPassword.click();
+    }
+
+    @Override
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(facebookButton, appleButton, googleButton, signInButton, signUpButton, forgotPassword, inputEmail, inputPassword);
     }
 }
