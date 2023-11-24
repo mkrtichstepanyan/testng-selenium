@@ -7,6 +7,7 @@ import org.example.pages.authorization.ForgotPasswordPage;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.home.HomePage;
 import org.example.pages.wordpress.WelcomePage;
+import org.example.panel.TopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -16,38 +17,44 @@ import java.util.Set;
 
 @Slf4j(topic = "AuthorizationLogger")
 public class SignInPositiveTests extends BaseTest {
-    WelcomePage welcomePage;
     SignInPage signInPage;
     HomePage homePage;
     ForgotPasswordPage forgotPasswordPage;
+    TopPanel topPanel;
 
     @BeforeMethod
     public void goToUrl() {
-        goToURL(WELCOME_PAGE_URL);
+        goToURL(SIGN_IN_PAGE_URL);
 
-        welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
         homePage = new HomePage(driver);
         forgotPasswordPage = new ForgotPasswordPage(driver);
+        topPanel = signInPage.getTopPanel(driver);
 
     }
 
     @Test
+    public void verifyTopPanelIsVisible() {
+        log.info("Assert sign in page's top panel is visible");
+        Assert.assertTrue(topPanel.isTopPanelVisible());
+    }
+
+    @Test
     public void verifySignInPageIsOpened() {
-        Set<String> windowHandles = driver.getWindowHandles();
-        String firstWindow = windowHandles.iterator().next();
-
-        log.info("Switch to first window");
-        driver.switchTo().window(firstWindow);
-
-        log.info("Assert Welcome page is opened");
-        Assert.assertTrue(welcomePage.isPageOpened());
-
-        log.info("Click sign in button");
-        welcomePage.clickOnSignInButton();
-
-        log.info("Switch driver to next widow");
-        driver.switchTo().window(nextWidow());
+//        Set<String> windowHandles = driver.getWindowHandles();
+//        String firstWindow = windowHandles.iterator().next();
+//
+//        log.info("Switch to first window");
+//        driver.switchTo().window(firstWindow);
+//
+//        log.info("Assert Welcome page is opened");
+//        Assert.assertTrue(welcomePage.isPageOpened());
+//
+//        log.info("Click sign in button");
+//        welcomePage.clickOnSignInButton();
+//
+//        log.info("Switch driver to next widow");
+//        driver.switchTo().window(nextWidow());
 
         log.info("Assert Sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
@@ -57,14 +64,14 @@ public class SignInPositiveTests extends BaseTest {
     @Test
     @Parameters({"email", "password"})
     public void verifySignInButtonWithCorrectEmailAndPassword(String e, String p) {
-        log.info("Assert Welcome page is opened");
-        Assert.assertTrue(welcomePage.isPageOpened());
-
-        log.info("Click sign in button");
-        welcomePage.clickOnSignInButton();
-
-        log.info("Switch driver to next window");
-        driver.switchTo().window(nextWidow());
+//        log.info("Assert Welcome page is opened");
+//        Assert.assertTrue(welcomePage.isPageOpened());
+//
+//        log.info("Click sign in button");
+//        welcomePage.clickOnSignInButton();
+//
+//        log.info("Switch driver to next window");
+//        driver.switchTo().window(nextWidow());
 
         log.info("Assert Sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
@@ -84,14 +91,14 @@ public class SignInPositiveTests extends BaseTest {
 
     @Test
     public void verifyForgotPasswordButton() {
-        log.info("Assert Welcome page is opened");
-        Assert.assertTrue(welcomePage.isPageOpened());
-
-        log.info("Click sign in button");
-        welcomePage.clickOnSignInButton();
-
-        log.info("Switch driver to next window");
-        driver.switchTo().window(nextWidow());
+//        log.info("Assert Welcome page is opened");
+//        Assert.assertTrue(welcomePage.isPageOpened());
+//
+//        log.info("Click sign in button");
+//        welcomePage.clickOnSignInButton();
+//
+//        log.info("Switch driver to next window");
+//        driver.switchTo().window(nextWidow());
 
         log.info("Assert Sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());

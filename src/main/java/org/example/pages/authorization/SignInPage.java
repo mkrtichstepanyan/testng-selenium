@@ -1,6 +1,8 @@
 package org.example.pages.authorization;
 
 import org.example.pages.BasePage;
+import org.example.panel.AuthorizationTopPanel;
+import org.example.panel.TopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,5 +63,10 @@ public class SignInPage extends BasePage {
     @Override
     public boolean isPageOpened(WebElement... elements) {
         return super.isPageOpened(facebookButton, appleButton, googleButton, signInButton, signUpButton, forgotPassword, inputEmail, inputPassword);
+    }
+
+    @Override
+    public TopPanel getTopPanel(WebDriver driver) {
+        return new AuthorizationTopPanel(driver);
     }
 }

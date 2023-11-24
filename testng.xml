@@ -6,17 +6,20 @@
     <test name="authorization">
         <parameter name="browser" value="chrome"/>
         <classes>
-<!--            <class name="autho.signin.SignInNegativeTests"/>-->
-<!--            <class name="autho.signin.SignInPositiveTests">-->
-<!--                <parameter name="email" value="garik.garibyan.1990@gmail.com"/>-->
-<!--                <parameter name="password" value="test45"/>-->
-<!--            </class>-->
+            <class name="autho.signin.SignInNegativeTests"/>
+            <class name="autho.signin.SignInPositiveTests">
+                <parameter name="email" value="garik.garibyan.1990@gmail.com"/>
+                <parameter name="password" value="test45"/>
+                <methods>
+                    <include name="verifyTopPanelIsVisible"/>
+                </methods>
+            </class>
 
-<!--            <class name="autho.signup.SignUpNegativeTests"/>-->
+            <class name="autho.signup.SignUpNegativeTests"/>
             <class name="autho.signup.SignUpPositiveTests"/>
 
-<!--            <class name="autho.forgot_password.ForgotPasswordNegativeTests"/>-->
-<!--            <class name="autho.forgot_password.ForgotPasswordPositiveTests"/>-->
+            <class name="autho.forgot_password.ForgotPasswordNegativeTests"/>
+            <class name="autho.forgot_password.ForgotPasswordPositiveTests"/>
         </classes>
     </test>
 

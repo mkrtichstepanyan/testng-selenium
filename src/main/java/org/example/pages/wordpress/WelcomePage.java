@@ -2,6 +2,9 @@ package org.example.pages.wordpress;
 
 import org.example.helpers.WaitHelper;
 import org.example.pages.BasePage;
+import org.example.panel.AuthorizationTopPanel;
+import org.example.panel.TopPanel;
+import org.example.panel.WelcomeTopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,4 +27,8 @@ public class WelcomePage extends BasePage {
         this.signInButton.click();
     }
 
+    @Override
+    public TopPanel getTopPanel(WebDriver driver) {
+        return new WelcomeTopPanel(driver);
+    }
 }
