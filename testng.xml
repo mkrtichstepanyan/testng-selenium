@@ -3,10 +3,26 @@
 
 
 <suite name="All Test Suite">
-    <test name="signup">
 
+    <!--    <test name="signup">-->
+    <!--        <parameter name="browser" value="chrome"/>-->
+    <!--        <classes>-->
+    <!--            <class name="org.example.signup.SignUpTest"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+        <test name="signin">
+            <parameter name="browser" value="chrome"/>
+            <classes>
+                <class name="org.example.auth.signin.SignInPositiveTest"/>
+                <class name="org.example.auth.signin.SignInNegativeTest"/>
+            </classes>
+        </test>
+
+    <test name="forgotpassword">
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="signup.SignUpTest"/>
+            <class name="org.example.auth.forgotpassword.ForgotPasswordPositiveTest"/>
         </classes>
     </test>
 </suite>

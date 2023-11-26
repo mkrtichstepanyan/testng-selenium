@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "signIn": {
+      "Title": "Get Started",
+      "FacebookButton": "Continue with Facebook",
+      "AppleButton": "Continue with Apple",
+      "GoogleButton": "Sign in with Google",
+      "Condition": "or",
+      "Email": "EMAIL",
+      "Password": "PASSWORD",
+      "SignInButton": "Sign In",
+      "SignUpButton": "Sign Up",
+      "ForgotPasswordButton": "Forgot Password?"
+    }
+  }
+}

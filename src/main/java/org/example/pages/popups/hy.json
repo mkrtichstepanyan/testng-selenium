@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "signIn": {
+      "Title": "Սկսենք",
+      "FacebookButton": "Շարունակել Ֆեյսբուքով",
+      "AppleButton": "Շարունակել Էփլով",
+      "GoogleButton": "Շարունակել Google-ով",
+      "Condition": "ԿԱՄ",
+      "Email": "ԷԼ ՀԱՍՑԵ",
+      "Password": "ԳԱՂՏՆԱԲԱՌ",
+      "SignInButton": "Մուտք",
+      "SignUpButton": "Գրանցվել",
+      "ForgotPasswordButton": "Մոռացե՞լ եք գաղտնաբառը"
+    }
+  }
+}

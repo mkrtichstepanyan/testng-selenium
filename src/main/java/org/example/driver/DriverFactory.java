@@ -1,31 +1,51 @@
 package org.example.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.*;
 
+@Slf4j
 public class DriverFactory {
 
-    private static WebDriver driver;
+    private ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
+    @BeforeClass
+    @Parameters("browser")
+    public void setupDriver(String browser) {
+        WebDriver driver;
+        log.info("Setting up the driver for browser {}", browser);
 
-    public static void initDriver() {
-        if (driver != null) return;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
-    }
-
-    public static WebDriver getDriver() {
-        return driver;
-    }
-
-    public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
+        switch (browser.toLowerCase()) {
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            }
+            case "firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+            }
+            default -> throw new IllegalArgumentException("Please specify browser name");
         }
-        driver = null;
+        driver.manage().window().maximize();
+        driverThreadLocal.set(driver);
+    }
+
+    public WebDriver getDriver() {
+        return this.driverThreadLocal.get();
+    }
+
+    @AfterClass
+    public void quitDriver() {
+        log.info("Quite the driver");
+        System.out.println("After class");
+        WebDriver webDriver = this.driverThreadLocal.get();
+        if (webDriver != null) {
+            webDriver.quit();
+        }
     }
 }
+
+
