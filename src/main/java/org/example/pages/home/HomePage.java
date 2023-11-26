@@ -1,7 +1,6 @@
 package org.example.pages.home;
 
 import org.example.pages.BasePage;
-import org.example.panel.AuthorizationTopPanel;
 import org.example.panel.HomeTopPanel;
 import org.example.panel.TopPanel;
 import org.openqa.selenium.WebDriver;

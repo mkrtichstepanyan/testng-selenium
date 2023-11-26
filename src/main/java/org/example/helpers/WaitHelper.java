@@ -8,15 +8,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WaitHelper {
 
-    private Wait<WebDriver> wait;
+    private final Wait<WebDriver> wait;
 
-    private final int DEFAULT_TIME_OUT = 10;
+    private static final int DEFAULT_TIME_OUT = 10; //s
 
     private WebDriver driver;
 
@@ -35,6 +36,10 @@ public class WaitHelper {
 
     public List<WebElement> waitForElementsToBeVisible(WebElement... elements) {
         return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+    }
+
+    public void waitForElementToVisible(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
 

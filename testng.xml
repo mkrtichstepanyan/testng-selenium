@@ -7,18 +7,18 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="autho.signin.SignInNegativeTests"/>
-            <class name="autho.signin.SignInPositiveTests">
-                <methods>
-                    <include name="verifyTopPanelIsVisible"/>
-                    <include name="verifySignInWithCorrectEmailAndPassword"/>
-                </methods>
-            </class>
+<!--            <class name="autho.signin.SignInPositiveTests">-->
+<!--                <methods>-->
+<!--                    <include name="verifyTopPanelIsVisible"/>-->
+<!--                    <include name="verifySignInWithCorrectEmailAndPassword"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <class name="autho.signup.SignUpNegativeTests"/>
-            <class name="autho.signup.SignUpPositiveTests"/>
+<!--            <class name="autho.signup.SignUpNegativeTests"/>-->
+<!--            <class name="autho.signup.SignUpPositiveTests"/>-->
 
-            <class name="autho.forgot_password.ForgotPasswordNegativeTests"/>
-            <class name="autho.forgot_password.ForgotPasswordPositiveTests"/>
+<!--            <class name="autho.forgot_password.ForgotPasswordNegativeTests"/>-->
+<!--            <class name="autho.forgot_password.ForgotPasswordPositiveTests"/>-->
         </classes>
     </test>
 

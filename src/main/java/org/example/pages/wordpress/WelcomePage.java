@@ -1,8 +1,6 @@
 package org.example.pages.wordpress;
 
-import org.example.helpers.WaitHelper;
 import org.example.pages.BasePage;
-import org.example.panel.AuthorizationTopPanel;
 import org.example.panel.TopPanel;
 import org.example.panel.WelcomeTopPanel;
 import org.openqa.selenium.WebDriver;
