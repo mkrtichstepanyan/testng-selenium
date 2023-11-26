@@ -1,6 +1,7 @@
 package autho.signin;
 
 import base.BaseTest;
+import dataProvider.url.URL;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.wordpress.WelcomePage;
@@ -16,7 +17,7 @@ public class SignInNegativeTests extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
-        goToURL(WELCOME_PAGE_URL);
+        goToURL(URL.WELCOME_PAGE_URL);
 
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);

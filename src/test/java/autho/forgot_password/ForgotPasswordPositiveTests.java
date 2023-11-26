@@ -1,6 +1,7 @@
 package autho.forgot_password;
 
 import base.BaseTest;
+import dataProvider.url.URL;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.ForgotPasswordPage;
 import org.example.panel.TopPanel;
@@ -15,8 +16,8 @@ public class ForgotPasswordPositiveTests extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
-        log.info("driver go to url {}", FORGOT_PASSWORD_PAGE_URL);
-        goToURL(FORGOT_PASSWORD_PAGE_URL);
+        log.info("driver go to url {}", URL.FORGOT_PASSWORD_PAGE_URL);
+        goToURL(URL.FORGOT_PASSWORD_PAGE_URL);
         forgotPassword = new ForgotPasswordPage(driver);
         topPanel = forgotPassword.getTopPanel(driver);
     }
@@ -38,7 +39,7 @@ public class ForgotPasswordPositiveTests extends BaseTest {
         log.info("Assert forgot password page is opened");
         Assert.assertTrue(forgotPassword.isPageOpened());
 
-        log.info("Assert forgot password page is: {}", FORGOT_PASSWORD_PAGE_URL);
-        Assert.assertEquals(driver.getCurrentUrl(),FORGOT_PASSWORD_PAGE_URL);
+        log.info("Assert forgot password page is: {}", URL.FORGOT_PASSWORD_PAGE_URL);
+        Assert.assertEquals(driver.getCurrentUrl(), URL.FORGOT_PASSWORD_PAGE_URL);
     }
 }

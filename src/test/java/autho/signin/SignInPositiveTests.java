@@ -1,19 +1,16 @@
 package autho.signin;
 
 import base.BaseTest;
+import dataProvider.url.URL;
 import lombok.extern.slf4j.Slf4j;
-import org.example.helpers.WaitHelper;
 import org.example.pages.authorization.ForgotPasswordPage;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.home.HomePage;
-import org.example.pages.wordpress.WelcomePage;
 import org.example.panel.TopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import java.util.Set;
 
 @Slf4j(topic = "AuthorizationLogger")
 public class SignInPositiveTests extends BaseTest {
@@ -24,7 +21,7 @@ public class SignInPositiveTests extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
-        goToURL(SIGN_IN_PAGE_URL);
+        goToURL(URL.SIGN_IN_PAGE_URL);
 
         signInPage = new SignInPage(driver);
         homePage = new HomePage(driver);
