@@ -8,10 +8,9 @@
         <classes>
             <class name="autho.signin.SignInNegativeTests"/>
             <class name="autho.signin.SignInPositiveTests">
-                <parameter name="email" value="garik.garibyan.1990@gmail.com"/>
-                <parameter name="password" value="test45"/>
                 <methods>
                     <include name="verifyTopPanelIsVisible"/>
+                    <include name="verifySignInWithCorrectEmailAndPassword"/>
                 </methods>
             </class>
 
@@ -23,20 +22,5 @@
         </classes>
     </test>
 
-<!--    <test name="signup1">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="signup.SignUpTest"/>-->
-<!--            <class name="signup.SignUpTest1"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-<!--    <test name="signup2">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="signup.SignUpTest"/>-->
-<!--            <class name="signup.SignUpTest1"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
 

@@ -1,7 +1,9 @@
 package autho.signin;
 
 import base.BaseTest;
-import dataProvider.url.URL;
+import dataProvider.email.EmailsProvider;
+import dataProvider.password.PasswordsProvider;
+import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.wordpress.WelcomePage;
@@ -17,14 +19,14 @@ public class SignInNegativeTests extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
-        goToURL(URL.WELCOME_PAGE_URL);
+        goToURL(UrlsProvider.WELCOME_PAGE_URL);
 
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
     }
 
     @Test
-    public void verifySignInButtonWithIncorrectEmailAndPassword() {
+    public void verifySignInWithIncorrectEmailAndPassword() {
 
         log.info("Assert Welcome page is opened");
         Assert.assertTrue(welcomePage.isPageOpened());
@@ -38,11 +40,11 @@ public class SignInNegativeTests extends BaseTest {
         log.info("Assert Sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
 
-        log.info("Write incorrect Email {} ", "lklk");
-        signInPage.inputEmail.sendKeys("lklk");
+        log.info("Write incorrect Email {} ", EmailsProvider.inCorrectEmail);
+        signInPage.inputEmail.sendKeys(EmailsProvider.inCorrectEmail);
 
-        log.info("Write incorrect password {} ", "lklk");
-        signInPage.inputPassword.sendKeys("lklk");
+        log.info("Write incorrect password {} ", PasswordsProvider.inCorrectPassword);
+        signInPage.inputPassword.sendKeys(PasswordsProvider.inCorrectPassword);
 
         log.info("Click on Sign in button");
         signInPage.clickSignInButton();

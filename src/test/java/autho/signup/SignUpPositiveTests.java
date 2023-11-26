@@ -1,7 +1,7 @@
 package autho.signup;
 
 import base.BaseTest;
-import dataProvider.url.URL;
+import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.authorization.SignUpPage;
@@ -18,7 +18,7 @@ public class SignUpPositiveTests extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
-        goToURL(URL.SIGN_IN_PAGE_URL);
+        goToURL(UrlsProvider.SIGN_IN_PAGE_URL);
         signUpPage = new SignUpPage(driver);
         signInPage = new SignInPage(driver);
         topPanel = signInPage.getTopPanel(driver);
@@ -47,7 +47,7 @@ public class SignUpPositiveTests extends BaseTest {
         log.info("Assert sign up page is opened");
         Assert.assertTrue(signUpPage.isPageOpened());
 
-        Assert.assertEquals(driver.getCurrentUrl(), URL.SIGN_UP_PAGE_URL);
+        Assert.assertEquals(driver.getCurrentUrl(), UrlsProvider.SIGN_UP_PAGE_URL);
     }
 
     @Test

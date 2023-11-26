@@ -1,7 +1,9 @@
 package autho.signin;
 
 import base.BaseTest;
-import dataProvider.url.URL;
+import dataProvider.email.EmailsProvider;
+import dataProvider.password.PasswordsProvider;
+import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.ForgotPasswordPage;
 import org.example.pages.authorization.SignInPage;
@@ -9,7 +11,6 @@ import org.example.pages.home.HomePage;
 import org.example.panel.TopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 @Slf4j(topic = "AuthorizationLogger")
@@ -21,7 +22,7 @@ public class SignInPositiveTests extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
-        goToURL(URL.SIGN_IN_PAGE_URL);
+        goToURL(UrlsProvider.SIGN_IN_PAGE_URL);
 
         signInPage = new SignInPage(driver);
         homePage = new HomePage(driver);
@@ -59,8 +60,7 @@ public class SignInPositiveTests extends BaseTest {
 
 
     @Test
-    @Parameters({"email", "password"})
-    public void verifySignInButtonWithCorrectEmailAndPassword(String e, String p) {
+    public void verifySignInWithCorrectEmailAndPassword() {
 //        log.info("Assert Welcome page is opened");
 //        Assert.assertTrue(welcomePage.isPageOpened());
 //
@@ -73,11 +73,11 @@ public class SignInPositiveTests extends BaseTest {
         log.info("Assert Sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
 
-        log.info("Write correct email {}", e);
-        signInPage.inputEmail.sendKeys(e);
+        log.info("Write correct email {}", EmailsProvider.correctEmail);
+        signInPage.inputEmail.sendKeys(EmailsProvider.correctEmail);
 
-        log.info("Write correct password {}", p);
-        signInPage.inputPassword.sendKeys(p);
+        log.info("Write correct password {}", PasswordsProvider.correctPassword);
+        signInPage.inputPassword.sendKeys(PasswordsProvider.correctPassword);
 
         log.info("Click sign in button");
         signInPage.clickSignInButton();
