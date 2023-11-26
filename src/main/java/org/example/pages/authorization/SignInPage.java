@@ -40,23 +40,23 @@ public class SignInPage extends BasePage {
         super(driver);
     }
 
-    public void clickAppleButton() {
+    public void clickOnAppleButton() {
         appleButton.click();
     }
 
-    public void clickGoogleButton() {
+    public void clickOnGoogleButton() {
         googleButton.click();
     }
 
-    public void clickSignUpButton() {
+    public void clickOnSignUpButton() {
         signUpButton.click();
     }
 
-    public void clickSignInButton() {
+    public void clickOnSignInButton() {
         signInButton.click();
     }
 
-    public void clickForgotPassword() {
+    public void clickOnForgotPassword() {
         forgotPassword.click();
     }
 

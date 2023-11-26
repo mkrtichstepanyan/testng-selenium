@@ -80,7 +80,7 @@ public class SignInPositiveTests extends BaseTest {
         signInPage.inputPassword.sendKeys(PasswordsProvider.correctPassword);
 
         log.info("Click sign in button");
-        signInPage.clickSignInButton();
+        signInPage.clickOnSignInButton();
 
         log.info("Assert home page is openid");
         Assert.assertTrue(homePage.isPageOpened());
@@ -101,7 +101,7 @@ public class SignInPositiveTests extends BaseTest {
         Assert.assertTrue(signInPage.isPageOpened());
 
         log.info("Click forgot password button");
-        signInPage.clickForgotPassword();
+        signInPage.clickOnForgotPassword();
 
         log.info("Assert forgot page is openid");
         Assert.assertTrue(forgotPasswordPage.isPageOpened());

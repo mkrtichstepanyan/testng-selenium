@@ -42,7 +42,7 @@ public class SignUpPositiveTests extends BaseTest {
         signInPage.inputPassword.sendKeys("dsd");
 
         log.info("Click sign uo button");
-        signInPage.clickSignUpButton();
+        signInPage.clickOnSignUpButton();
 
         log.info("Assert sign up page is opened");
         Assert.assertTrue(signUpPage.isPageOpened());
@@ -62,7 +62,7 @@ public class SignUpPositiveTests extends BaseTest {
         signInPage.inputPassword.sendKeys("dsd");
 
         log.info("Click sign uo button");
-        signInPage.clickSignUpButton();
+        signInPage.clickOnSignUpButton();
 
         log.info("Assert sign up page is opened");
         Assert.assertTrue(signUpPage.isPageOpened());

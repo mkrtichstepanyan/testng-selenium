@@ -3,6 +3,7 @@ package dataProvider.url;
 public interface UrlsProvider {
 
     String WELCOME_PAGE_URL = "https://dev.vlume.com/";
+    String HOME_PAGE_URL = "https://dev.vlume.com/";
 
     String FORGOT_PASSWORD_PAGE_URL = "https://dev.vlume.com/forgot-password";
 

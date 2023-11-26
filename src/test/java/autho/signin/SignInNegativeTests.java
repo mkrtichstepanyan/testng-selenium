@@ -48,7 +48,7 @@ public class SignInNegativeTests extends BaseTest {
         signInPage.inputPassword.sendKeys(PasswordsProvider.inCorrectPassword);
 
         log.info("Click on Sign in button");
-        signInPage.clickSignInButton();
+        signInPage.clickOnSignInButton();
 
         Assert.assertTrue(signInPage.errorMessage.isDisplayed());
         String actualErrorMessage = signInPage.errorMessage.getText();
@@ -79,7 +79,7 @@ public class SignInNegativeTests extends BaseTest {
         signInPage.inputPassword.sendKeys(PasswordsProvider.correctPassword);
 
         log.info("Click on Sign in button");
-        signInPage.clickSignInButton();
+        signInPage.clickOnSignInButton();
 
         log.info("Wait for error message is visible");
         waitHelper.waitForElementToVisible(By.xpath("//snack-bar-container//span"));
@@ -113,7 +113,7 @@ public class SignInNegativeTests extends BaseTest {
         signInPage.inputPassword.sendKeys(PasswordsProvider.correctPassword);
 
         log.info("Click on Sign in button");
-        signInPage.clickSignInButton();
+        signInPage.clickOnSignInButton();
 
         log.info("Wait for error message is visible");
         waitHelper.waitForElementToVisible(By.xpath("//snack-bar-container//span"));
@@ -147,7 +147,7 @@ public class SignInNegativeTests extends BaseTest {
         signInPage.inputPassword.sendKeys(PasswordsProvider.correctPassword);
 
         log.info("Click on Sign in button");
-        signInPage.clickSignInButton();
+        signInPage.clickOnSignInButton();
 
         log.info("Wait for error message is visible");
         waitHelper.waitForElementToVisible(By.xpath("//snack-bar-container//span"));

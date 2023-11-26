@@ -12,9 +12,8 @@ public class AuthorizationTopPanel extends TopPanel {
     @FindBy(xpath = "//div//app-language-selector")
     public WebElement language;
 
-    @FindBy(xpath = "//div[@class = 'right-menu-container']//a[@class = 'sign-in-button ng-star-inserted']")
-    public WebElement signIn;
-
+    @FindBy(xpath = "//div//div[@class = 'mat-menu-trigger user-menu-button-container']")
+    public WebElement userProfile;
 
     public AuthorizationTopPanel(WebDriver driver) {
         super(driver);
@@ -22,6 +21,6 @@ public class AuthorizationTopPanel extends TopPanel {
 
     @Override
     public boolean isTopPanelVisible(WebElement... elements) {
-        return super.isTopPanelVisible(vlume, language, signIn);
+        return super.isTopPanelVisible(vlume, language, userProfile);
     }
 }
