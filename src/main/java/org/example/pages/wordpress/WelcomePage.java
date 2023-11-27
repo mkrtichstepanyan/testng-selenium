@@ -17,7 +17,7 @@ public class WelcomePage extends BasePage {
         welcomeTopPanel = new WelcomeTopPanel(driver);
     }
 
-    public WelcomeTopPanel geTopPanel() {
+    public WelcomeTopPanel getTopPanel() {
         return welcomeTopPanel;
     }
 

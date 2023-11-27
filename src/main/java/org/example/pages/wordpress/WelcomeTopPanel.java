@@ -16,6 +16,17 @@ public class WelcomeTopPanel extends BaseTopPanel {
     @FindBy(xpath = "//div//a[@href = 'https://dev.vlume.com/w/blog/']")
     public WebElement news;
 
+    @FindBy(xpath = "//li//a[@href = 'https://dev.vlume.com/w/hyw/home-page-new-ea/']")
+    public WebElement arevelahayeren;
+
+    @FindBy(xpath = "//li//a[@href = 'https://dev.vlume.com/w/hye/home-page-new-wa/']")
+    public WebElement arevmtahayeren;
+
+    @FindBy(xpath = "//ul[@class = 'sub-menu']//span[text() = 'English']")
+    public WebElement english;
+
+
+
     public WelcomeTopPanel(WebDriver driver) {
         super(driver);
     }
