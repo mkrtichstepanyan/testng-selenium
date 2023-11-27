@@ -4,25 +4,41 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.slf4j.ILoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.annotations.*;
 
 public class DriverFactory {
+    private ThreadLocal<WebDriver> threadLocal = new ThreadLocal<>();
+    Logger logger = LoggerFactory.getLogger(DriverFactory.class);
 
-    private static WebDriver driver;
-
-
-    public static void initDriver() {
-        if (driver != null) return;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
+    //    @Parameters("browser")
+    public void setUpDriver(String browser) {
+        logger.error("printed");
+        WebDriver driver;
+        switch (browser.toLowerCase()) {
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            }
+            case "firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+            }
+            default -> throw new IllegalArgumentException("Please specify browser name");
+        }
+        driver.manage().window().maximize();
+        threadLocal.set(driver);
     }
 
-    public static WebDriver getDriver() {
-        return driver;
+    public WebDriver getDriver() {
+        return this.threadLocal.get();
     }
 
-    public static void closeDriver() {
+    public void closeDriver() {
+        WebDriver driver = this.threadLocal.get();
         if (driver != null) {
             driver.quit();
         }

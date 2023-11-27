@@ -4,10 +4,26 @@
 
 <suite name="All Test Suite">
     <test name="signup">
-
+<!--        <parameter name="browser" value="chrome"/>-->
         <classes>
-            <class name="signup.SignUpTest"/>
+            <class name="org.example.vlumetests.positivetests.WelcomePageTests"/>
+<!--            <class name="org.example.vlumetests.positivetests.auth.SignInPageTests"/>-->
+<!--            <class name="org.example.vlumetests.positivetests.auth.SignUpPageTests"/>-->
+<!--            <class name="org.example.vlumetests.positivetests.auth.ForgotPasswordPageTests"/>-->
+<!--            <class name="org.example.vlumetests.positivetests.TopPanelTests"/>-->
         </classes>
     </test>
+<!--    <test name="second">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="org.example.vlumetests.negativetests.WelcomePageTests"/>-->
+<!--&lt;!&ndash;            <class name="org.example.vlumetests.negativetests.SignInPageTests"/>&ndash;&gt;-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
 
+
+
+
+
+<!--        https://mkyong.com/logging/slf4j-logback-tutorial/-->
