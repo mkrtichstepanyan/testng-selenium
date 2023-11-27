@@ -20,11 +20,11 @@
 <!--            <class name="autho.forgot_password.ForgotPasswordNegativeTests"/>-->
 <!--            <class name="autho.forgot_password.ForgotPasswordPositiveTests"/>-->
 
-<!--            <class name="home.HomeNegativeTests"/>-->
-<!--            <class name="home.HomePositiveTest"/>-->
+            <class name="home.HomeNegativeTests"/>
+            <class name="home.HomePositiveTest"/>
 
-            <class name="welcome.WelcomeNegativeTests"/>
-            <class name="welcome.WelcomePositiveTests"/>
+<!--            <class name="welcome.WelcomeNegativeTests"/>-->
+<!--            <class name="welcome.WelcomePositiveTests"/>-->
         </classes>
     </test>
 
