@@ -1,7 +1,6 @@
 package org.example.pages.home;
 
 import org.example.pages.BasePage;
-import org.example.pages.BaseTopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

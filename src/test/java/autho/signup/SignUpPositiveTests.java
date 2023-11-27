@@ -5,7 +5,6 @@ import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.authorization.SignUpPage;
-import org.example.pages.BaseTopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

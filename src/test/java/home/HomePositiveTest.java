@@ -9,7 +9,6 @@ import org.example.pages.authorization.SignInPage;
 import org.example.pages.home.HomeLeftPage;
 import org.example.pages.home.HomePage;
 import org.example.pages.wordpress.WelcomePage;
-import org.example.pages.BaseTopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
