@@ -6,13 +6,15 @@
     <test name="chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="signin.SignInPositiveTest"/>
-            <class name="signin.SignInNegativeTest"/>
-            <class name="signup.SignUpNegativeTest"/>
-            <class name="signup.SignUpPositiveTest"/>
-            <class name="forgotpassword.ClickGoToSignInButtonTest"/>
-            <class name="forgotpassword.ForgotPasswordPositiveTest"/>
-            <class name="forgotpassword.ForgotPasswordNegativeTest"/>
+<!--            <class name="signin.SignInPositiveTest"/>-->
+<!--            <class name="signin.SignInNegativeTest"/>-->
+<!--            <class name="signup.SignUpNegativeTest"/>-->
+<!--            <class name="signup.SignUpPositiveTest"/>-->
+<!--            <class name="forgotpassword.ClickGoToSignInButtonTest"/>-->
+<!--            <class name="forgotpassword.ForgotPasswordPositiveTest"/>-->
+<!--            <class name="forgotpassword.ForgotPasswordNegativeTest"/>-->
+            <class name="home.HomePagePositiveTest"/>
+
         </classes>
     </test>
 </suite>

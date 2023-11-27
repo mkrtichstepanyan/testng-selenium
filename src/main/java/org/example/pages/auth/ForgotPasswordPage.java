@@ -10,6 +10,16 @@ import org.slf4j.LoggerFactory;
 public class ForgotPasswordPage extends BasePage {
     private Logger logger = LoggerFactory.getLogger(ForgotPasswordPage.class);
 
+
+    @FindBy(tagName = "h2")
+    public WebElement forgotPasswordText;
+
+    @FindBy(className = "with-email")
+    public WebElement enterYourEmailText;
+
+    @FindBy(xpath = "//label[@for='username']")
+    public WebElement emailText;
+
     @FindBy(xpath = "//div[@id='cdk-overlay-0']//span")
     public WebElement errorMassage;
 
@@ -18,7 +28,7 @@ public class ForgotPasswordPage extends BasePage {
 
 
     @FindBy(id = "username")
-    public WebElement username;
+    public WebElement email;
 
     @FindBy(id = "emailIsRequired")
     public WebElement emailIsRequired;
@@ -32,6 +42,10 @@ public class ForgotPasswordPage extends BasePage {
     @FindBy(id = "send")
     public WebElement sendButton;
 
+    public WebElement[] webElements = {
+            forgotPasswordText, emailText, enterYourEmailText,
+            email, goToSignInButton, sendButton
+    };
 
     public ForgotPasswordPage(WebDriver driver) {
         super(driver);
@@ -47,16 +61,19 @@ public class ForgotPasswordPage extends BasePage {
         this.goToSignInButton.click();
     }
 
-    public void sendKeysOnUsernameInput(String username) {
-        logger.info("Entering username: {}", username);
-        this.username.sendKeys(username);
+    public void enterTheEmail(String email) {
+        logger.info("Entering email: {}", email);
+        this.email.sendKeys(email);
     }
 
-    public void clearUsernameInput() {
-        logger.info("Clearing the Username Input field");
-        this.username.clear();
+    public void clearEmailInput() {
+        logger.info("Clearing the Email Input field");
+        this.email.clear();
 
     }
 
+    public void isPageOpened() {
+        isPageOpened(forgotPasswordText, emailText, enterYourEmailText, email, goToSignInButton, sendButton);
+    }
 
 }

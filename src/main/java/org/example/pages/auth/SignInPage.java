@@ -11,8 +11,6 @@ import org.slf4j.LoggerFactory;
 public class SignInPage extends BasePage {
     private Logger logger = LoggerFactory.getLogger(SignInPage.class);
 
-    WaitHelper waitHelper;
-
     @FindBy(xpath = "//div[@id='cdk-overlay-0']//span")
     public WebElement errorMassage;
 
@@ -28,14 +26,17 @@ public class SignInPage extends BasePage {
     @FindBy(id = "googleButtonText")
     public WebElement googleButton;
 
+    @FindBy(className = "or")
+    public WebElement orText;
+
     @FindBy(id = "username")
-    public WebElement username;
+    public WebElement email;
 
     @FindBy(id = "password")
     public WebElement password;
 
     @FindBy(id = "loginButton")
-    public WebElement loginButton;
+    public WebElement signInButton;
 
     @FindBy(xpath = "//button[@tabindex='0']")
     public WebElement signUpButton;
@@ -63,9 +64,9 @@ public class SignInPage extends BasePage {
         this.googleButton.click();
     }
 
-    public void clickOnLogInButton() {
-        logger.info("Clicking on the Log In button");
-        this.loginButton.click();
+    public void clickOnSignInButton() {
+        logger.info("Clicking on the Sign In button");
+        this.signInButton.click();
     }
 
     public void clickOnSignUpButton() {
@@ -78,15 +79,18 @@ public class SignInPage extends BasePage {
         this.forgotPasswordButton.click();
     }
 
-    public void sendKeysOnPasswordInput(String password) {
+    public void enterThePassword(String password) {
         logger.info("Entering password");
         this.password.sendKeys(password);
     }
 
-    public void sendKeysOnUsernameInput(String username) {
-        logger.info("Entering username: {}", username);
-        this.username.sendKeys(username);
+    public void enterTheEmail(String email) {
+        logger.info("Entering email: {}", email);
+        this.email.sendKeys(email);
     }
 
 
+    public void isPageOpened() {
+        isPageOpened(getStarted, facebookButton, appleButton, googleButton, orText, email, password, signInButton, signUpButton, forgotPasswordButton);
+    }
 }

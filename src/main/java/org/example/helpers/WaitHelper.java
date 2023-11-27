@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
+import java.util.List;
 
 public class WaitHelper {
     private final Logger logger = LoggerFactory.getLogger(WaitHelper.class);
@@ -35,14 +36,24 @@ public class WaitHelper {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public WebElement waitForElementToBeVisibility(WebElement webElement) {
+    public WebElement waitForElementToBeVisible(WebElement webElement) {
         logger.info("Waiting for element to be visible: {}", webElement);
         return wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public WebElement waitForElementToBeVisibility(By locator) {
+    public WebElement waitForElementToBeVisible(By locator) {
         logger.info("Waiting for element to be visible: {}", locator);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public void waitForElementsToBeVisible(WebElement... webElements) {
+        logger.info("Waiting for element to be visible: {}", webElements);
+        for (WebElement element :
+                webElements) {
+            waitForElementToBeVisible(element);
+
+        }
+//         wait.until(ExpectedConditions.visibilityOfAllElements(webElements));
     }
 
 

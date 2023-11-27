@@ -8,12 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.Set;
 
 public class WelcomePage extends BasePage {
     private Logger logger = LoggerFactory.getLogger(WelcomePage.class);
 
-    WaitHelper waitHelper;
 
     @FindBy(xpath = "//a[@href = 'https://dev.vlume.com/sign-in']")
     public WebElement signInButton;
@@ -49,5 +49,7 @@ public class WelcomePage extends BasePage {
         }
     }
 
-
+    public void isPageOpened() {
+        super.isPageOpened(signInButton);
+    }
 }

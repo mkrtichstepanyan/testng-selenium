@@ -9,6 +9,18 @@ import org.slf4j.LoggerFactory;
 public class SignUpPage extends SignInPage {
     private Logger logger = LoggerFactory.getLogger(SignUpPage.class);
 
+    @FindBy(className = "with-email")
+    public WebElement signUpWithYourEmailText;
+
+    @FindBy(xpath = "//label[@for='username']")
+    public WebElement emailText;
+
+    @FindBy(xpath = "//label[@for='password']")
+    public WebElement passwordText;
+
+    @FindBy(xpath = "//label[@for='confirmPassword']")
+    public WebElement confirmPasswordText;
+
     @FindBy(id = "emailIsRequired")
     public WebElement emailIsRequired;
 
@@ -31,6 +43,9 @@ public class SignUpPage extends SignInPage {
     @FindBy(id = "signUp")
     public WebElement signUpButton;
 
+    @FindBy(id = "signIn")
+    public WebElement signInButton;
+
     public SignUpPage(WebDriver driver) {
         super(driver);
     }
@@ -41,10 +56,12 @@ public class SignUpPage extends SignInPage {
         this.signUpButton.click();
     }
 
-    public void sendKeysOnConfirmPasswordInput(String password) {
+    public void enterTheConfirmPassword(String password) {
         logger.info("Entering password");
         this.confirmPassword.sendKeys(password);
     }
 
-
+    public void isPageOpened() {
+        isPageOpened(getStarted, facebookButton, appleButton, googleButton, orText, emailText, signUpWithYourEmailText, email, passwordText, password, confirmPasswordText, confirmPassword, signInButton, signUpButton, forgotPasswordButton);
+    }
 }

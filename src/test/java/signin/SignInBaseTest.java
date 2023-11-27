@@ -9,14 +9,16 @@ public class SignInBaseTest extends BaseTest {
 
     @BeforeMethod
     public void goToUrl() {
-        driver.get("https://dev.vlume.com/");
         signInPage = new SignInPage(driver);
+        driver.get("https://dev.vlume.com/");
+        welcomePage.isPageOpened();
         welcomePage.goToSignInPage();
+        signInPage.isPageOpened();
     }
 
     protected void setUsernameAndPasswordAndClickLogInButton(String username, String password) {
-        signInPage.sendKeysOnUsernameInput(username);
-        signInPage.sendKeysOnPasswordInput(password);
-        signInPage.clickOnLogInButton();
+        signInPage.enterTheEmail(username);
+        signInPage.enterThePassword(password);
+        signInPage.clickOnSignInButton();
     }
 }

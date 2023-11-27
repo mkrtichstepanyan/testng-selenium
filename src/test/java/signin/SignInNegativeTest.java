@@ -7,8 +7,7 @@ public class SignInNegativeTest extends SignInBaseTest {
 
     private void negativeSignInTest(String username, String password) {
         setUsernameAndPasswordAndClickLogInButton(username, password);
-
-        waitHelper.waitForElementToBeVisibility(signInPage.errorMassage);
+        waitHelper.waitForElementToBeVisible(signInPage.errorMassage);
         Assert.assertEquals(signInPage.errorMassage.getText(), "Wrong credentials");
     }
 

@@ -19,9 +19,9 @@ public class ForgotPasswordNegativeTest extends ForgotPasswordBaseTest {
 
     @Test
     public void forgotPasswordWrongEmailNegativeTest() {
-        forgotPasswordPage.sendKeysOnUsernameInput("abc@gmail.com");
+        forgotPasswordPage.enterTheEmail("abc@gmail.com");
         forgotPasswordPage.clickOnSendButton();
-        waitHelper.waitForElementToBeVisibility(forgotPasswordPage.errorMassage);
+        waitHelper.waitForElementToBeVisible(forgotPasswordPage.errorMassage);
 
         Assert.assertEquals(forgotPasswordPage.errorMassage.getText(), "The user with specified email address not exist.");
     }
@@ -29,28 +29,28 @@ public class ForgotPasswordNegativeTest extends ForgotPasswordBaseTest {
     @Test(enabled = false)
     public void forgotPasswordWithoutUsernameNegativeTestAfterWrongEmail() {
         forgotPasswordWrongEmailNegativeTest();
-        forgotPasswordPage.clearUsernameInput();
+        forgotPasswordPage.clearEmailInput();
         forgotPasswordWithoutUsername();
     }
 
     @Test(enabled = false)
     public void forgotPasswordWithoutUsernameNegativeTestAfterWrongFormatEmail() {
         forgotPasswordWrongFormatNegativeTest();
-        forgotPasswordPage.clearUsernameInput();
+        forgotPasswordPage.clearEmailInput();
         forgotPasswordWithoutUsername();
     }
 
     @Test
     public void forgotPasswordWrongFormatNegativeTestAfterWrongEmail() {
         forgotPasswordWrongEmailNegativeTest();
-        forgotPasswordPage.clearUsernameInput();
+        forgotPasswordPage.clearEmailInput();
         forgotPasswordWrongFormat();
     }
 
     @Test
     public void forgotPasswordWrongFormatNegativeTestAfterWrongFormatEmail() {
         forgotPasswordWrongFormatNegativeTest();
-        forgotPasswordPage.clearUsernameInput();
+        forgotPasswordPage.clearEmailInput();
         forgotPasswordWrongFormat();
     }
 
@@ -59,7 +59,7 @@ public class ForgotPasswordNegativeTest extends ForgotPasswordBaseTest {
     }
 
     private void forgotPasswordWrongFormat() {
-        forgotPasswordPage.sendKeysOnUsernameInput("wrongFormatEmail");
+        forgotPasswordPage.enterTheEmail("wrongFormatEmail");
         Assert.assertEquals(forgotPasswordPage.wrongEmailFormat.getText(), "Wrong email format");
     }
 }
