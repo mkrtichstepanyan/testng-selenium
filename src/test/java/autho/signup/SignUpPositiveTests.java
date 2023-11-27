@@ -5,7 +5,7 @@ import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.authorization.SignUpPage;
-import org.example.panel.TopPanel;
+import org.example.pages.BaseTopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,20 +14,18 @@ import org.testng.annotations.Test;
 public class SignUpPositiveTests extends BaseTest {
     SignUpPage signUpPage;
     SignInPage signInPage;
-    TopPanel topPanel;
 
     @BeforeMethod
     public void goToUrl() {
         goToURL(UrlsProvider.SIGN_IN_PAGE_URL);
         signUpPage = new SignUpPage(driver);
         signInPage = new SignInPage(driver);
-        topPanel = signInPage.getTopPanel(driver);
     }
 
     @Test
     public void verifyTopPanelIsVisible() {
         log.info("Assert sign in page's top panel is visible");
-        Assert.assertTrue(topPanel.isTopPanelVisible());
+        Assert.assertTrue(signUpPage.getTopPanel().isTopPanelVisible());
     }
 
     @Test

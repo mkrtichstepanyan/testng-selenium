@@ -6,9 +6,10 @@ import dataProvider.password.PasswordsProvider;
 import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.SignInPage;
+import org.example.pages.home.HomeLeftPage;
 import org.example.pages.home.HomePage;
 import org.example.pages.wordpress.WelcomePage;
-import org.example.panel.TopPanel;
+import org.example.pages.BaseTopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,17 +20,17 @@ public class HomePositiveTest extends BaseTest {
     WelcomePage welcomePage;
     SignInPage signInPage;
     HomePage homePage;
-    TopPanel homeTopPanel;
+    HomeLeftPage homeLeftPage;
 
     @BeforeMethod
     public void createPages(){
         welcomePage = new WelcomePage(driver);
         signInPage = new SignInPage(driver);
         homePage = new HomePage(driver);
-        homeTopPanel = homePage.getTopPanel(driver);
+        homeLeftPage = new HomeLeftPage(driver);
     }
 
-    @Test
+    @Test(priority = 1)
     public void verifyHomePageIsOpened() {
         goToURL(UrlsProvider.WELCOME_PAGE_URL);
 
@@ -59,12 +60,20 @@ public class HomePositiveTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(priority = 2)
     public void verifyHomePagesTopPanelIsOpened() {
         goToURL(UrlsProvider.HOME_PAGE_URL);
 
         log.info("Assert home top panel is visible");
-        Assert.assertTrue(homeTopPanel.isTopPanelVisible());
+        Assert.assertTrue(homePage.getTopPanel().isTopPanelVisible());
+    }
+
+    @Test(priority = 3)
+    public void verifyHomeLeftPageIsOpened() {
+        goToURL(UrlsProvider.HOME_PAGE_URL);
+
+        log.info("Assert home top panel is visible");
+        Assert.assertTrue(homeLeftPage.isPageOpened());
     }
 
 }

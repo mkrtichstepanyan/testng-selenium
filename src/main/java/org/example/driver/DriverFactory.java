@@ -37,6 +37,7 @@ public class DriverFactory {
             }
             default -> throw new IllegalArgumentException("There isn't such browser ");
         }
+        driver.manage().window().maximize();
         driverThreadLocal.set(driver);
     }
 

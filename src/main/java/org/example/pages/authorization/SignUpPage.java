@@ -1,13 +1,14 @@
 package org.example.pages.authorization;
 
 import org.example.pages.BasePage;
-import org.example.panel.AuthorizationTopPanel;
-import org.example.panel.TopPanel;
+import org.example.pages.BaseTopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SignUpPage extends BasePage {
+
+    private final AuthorizationTopPanel signUnTopPanel;
     @FindBy(xpath = "//div//h2[@id = 'title']")
     public WebElement title;
     @FindBy(xpath = "//div[@id = 'facebookButton']")
@@ -42,15 +43,15 @@ public class SignUpPage extends BasePage {
 
     public SignUpPage(WebDriver driver) {
         super(driver);
+        signUnTopPanel = new AuthorizationTopPanel(driver);
+    }
+
+    public AuthorizationTopPanel getTopPanel() {
+        return signUnTopPanel;
     }
 
     @Override
     public boolean isPageOpened(WebElement... elements) {
         return super.isPageOpened(title, facebookButton, appleButton, googleButton, title2, inputEmail, inputPassword, confirmPassword, signInButton, signUpButton, forgotPassword);
-    }
-
-    @Override
-    public TopPanel getTopPanel(WebDriver driver) {
-        return new AuthorizationTopPanel(driver);
     }
 }

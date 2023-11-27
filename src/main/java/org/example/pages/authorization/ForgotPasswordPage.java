@@ -1,13 +1,13 @@
 package org.example.pages.authorization;
 
 import org.example.pages.BasePage;
-import org.example.panel.AuthorizationTopPanel;
-import org.example.panel.TopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ForgotPasswordPage extends BasePage {
+
+    private final AuthorizationTopPanel forgotPasswordTopPanel;
     @FindBy(xpath = "//input[@id ='username']")
     public WebElement inputEmail;
 
@@ -19,6 +19,11 @@ public class ForgotPasswordPage extends BasePage {
 
     public ForgotPasswordPage(WebDriver driver) {
         super(driver);
+        forgotPasswordTopPanel = new AuthorizationTopPanel(driver);
+    }
+
+    public AuthorizationTopPanel getTopPanel() {
+        return forgotPasswordTopPanel;
     }
 
     @Override
@@ -26,8 +31,4 @@ public class ForgotPasswordPage extends BasePage {
         return super.isPageOpened(inputEmail, goToSignInButton, sendButton);
     }
 
-    @Override
-    public TopPanel getTopPanel(WebDriver driver) {
-        return new AuthorizationTopPanel(driver);
-    }
 }

@@ -1,13 +1,13 @@
 package org.example.pages.authorization;
 
 import org.example.pages.BasePage;
-import org.example.panel.AuthorizationTopPanel;
-import org.example.panel.TopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SignInPage extends BasePage {
+
+    private final AuthorizationTopPanel signInTopPanel;
 
     @FindBy(xpath = "//div[@id = 'facebookButton']")
     public WebElement facebookButton;
@@ -38,6 +38,11 @@ public class SignInPage extends BasePage {
 
     public SignInPage(WebDriver driver) {
         super(driver);
+        signInTopPanel = new AuthorizationTopPanel(driver);
+    }
+
+    public AuthorizationTopPanel getTopPanel() {
+        return signInTopPanel;
     }
 
     public void clickOnAppleButton() {
@@ -63,10 +68,5 @@ public class SignInPage extends BasePage {
     @Override
     public boolean isPageOpened(WebElement... elements) {
         return super.isPageOpened(facebookButton, appleButton, googleButton, signInButton, signUpButton, forgotPassword, inputEmail, inputPassword);
-    }
-
-    @Override
-    public TopPanel getTopPanel(WebDriver driver) {
-        return new AuthorizationTopPanel(driver);
     }
 }

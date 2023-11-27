@@ -1,24 +1,25 @@
 package org.example.pages.wordpress;
 
 import org.example.pages.BasePage;
-import org.example.panel.TopPanel;
-import org.example.panel.WelcomeTopPanel;
+import org.example.pages.BaseTopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class WelcomePage extends BasePage {
 
+    WelcomeTopPanel welcomeTopPanel;
+
     @FindBy(xpath = "//a[@href = 'https://dev.vlume.com/sign-in']")
     public WebElement signInButton;
 
     public WelcomePage(WebDriver driver) {
         super(driver);
+        welcomeTopPanel = new WelcomeTopPanel(driver);
     }
 
-    @Override
-    public boolean isPageOpened(WebElement... elements) {
-        return super.isPageOpened(signInButton);
+    public WelcomeTopPanel geTopPanel() {
+        return welcomeTopPanel;
     }
 
     public void clickOnSignInButton() {
@@ -26,7 +27,8 @@ public class WelcomePage extends BasePage {
     }
 
     @Override
-    public TopPanel getTopPanel(WebDriver driver) {
-        return new WelcomeTopPanel(driver);
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(signInButton);
     }
+
 }

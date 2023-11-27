@@ -1,4 +1,4 @@
-package org.example.panel;
+package org.example.pages;
 
 import org.example.helpers.WaitHelper;
 import org.openqa.selenium.WebDriver;
@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public abstract class TopPanel {
+public abstract class BaseTopPanel {
 
     protected WebDriver driver;
     protected WaitHelper waitHelper;
-    public TopPanel(WebDriver driver) {
+    public BaseTopPanel(WebDriver driver) {
         this.driver = driver;
         waitHelper = new WaitHelper(driver);
         PageFactory.initElements(driver, this);

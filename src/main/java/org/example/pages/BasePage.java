@@ -1,7 +1,6 @@
 package org.example.pages;
 
 import org.example.helpers.WaitHelper;
-import org.example.panel.TopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +12,7 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WaitHelper waitHelper;
 
-    protected TopPanel topPanel;
+    protected BaseTopPanel topPanel;
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
@@ -25,6 +24,4 @@ public abstract class BasePage {
         List<WebElement> webElements = waitHelper.waitForElementsToBeVisible(elements);
         return webElements.size() > 0;
     }
-    public abstract TopPanel getTopPanel(WebDriver driver);
-
 }

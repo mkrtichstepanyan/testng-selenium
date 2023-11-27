@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.pages.authorization.ForgotPasswordPage;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.home.HomePage;
-import org.example.panel.TopPanel;
+import org.example.pages.BaseTopPanel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,7 +18,6 @@ public class SignInPositiveTests extends BaseTest {
     SignInPage signInPage;
     HomePage homePage;
     ForgotPasswordPage forgotPasswordPage;
-    TopPanel topPanel;
 
     @BeforeMethod
     public void goToUrl() {
@@ -27,14 +26,12 @@ public class SignInPositiveTests extends BaseTest {
         signInPage = new SignInPage(driver);
         homePage = new HomePage(driver);
         forgotPasswordPage = new ForgotPasswordPage(driver);
-        topPanel = signInPage.getTopPanel(driver);
-
     }
 
     @Test
     public void verifyTopPanelIsVisible() {
         log.info("Assert sign in page's top panel is visible");
-        Assert.assertTrue(topPanel.isTopPanelVisible());
+        Assert.assertTrue(signInPage.getTopPanel().isTopPanelVisible());
     }
 
     @Test

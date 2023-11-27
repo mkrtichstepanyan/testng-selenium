@@ -1,10 +1,11 @@
-package org.example.panel;
+package org.example.pages.authorization;
 
+import org.example.pages.BaseTopPanel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AuthorizationTopPanel extends TopPanel {
+public class AuthorizationTopPanel extends BaseTopPanel {
 
     @FindBy(xpath = "//mat-toolbar//div[@class = 'ng-star-inserted']")
     public WebElement vlume;
@@ -12,8 +13,8 @@ public class AuthorizationTopPanel extends TopPanel {
     @FindBy(xpath = "//div//app-language-selector")
     public WebElement language;
 
-    @FindBy(xpath = "//div//div[@class = 'mat-menu-trigger user-menu-button-container']")
-    public WebElement userProfile;
+    @FindBy(xpath = "//div//a[@class = 'sign-in-button ng-star-inserted']")
+    public WebElement signIn;
 
     public AuthorizationTopPanel(WebDriver driver) {
         super(driver);
@@ -21,6 +22,6 @@ public class AuthorizationTopPanel extends TopPanel {
 
     @Override
     public boolean isTopPanelVisible(WebElement... elements) {
-        return super.isTopPanelVisible(vlume, language, userProfile);
+        return super.isTopPanelVisible(vlume, language, signIn);
     }
 }
