@@ -24,8 +24,12 @@ public class WaitHelper {
         return wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    public List<WebElement> waitForElementToBeVisible(WebElement... elements) {
+    public List<WebElement> waitForElementsToBeVisible(WebElement... elements) {
         return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+    }
+
+    public WebElement waitForElementToBeVisible(WebElement element) {
+        return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     @SneakyThrows

@@ -17,7 +17,7 @@ public class BasePage {
     }
 
     public boolean isPageOpened(WebElement ... elements) {
-        List<WebElement> webElement = waitHelper.waitForElementToBeVisible(elements);
+        List<WebElement> webElement = waitHelper.waitForElementsToBeVisible(elements);
         return webElement.size() > 0;
     }
 }
