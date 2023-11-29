@@ -1,6 +1,7 @@
 package org.example.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,12 +27,14 @@ public class DriverFactory {
             case "chrome" -> {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--incognito");
+//                chromeOptions.addArguments("--kiosk");
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(chromeOptions);
             }
             case "firefox" -> {
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addArguments("--incognito");
+                firefoxOptions.addArguments("--kiosk");
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver(firefoxOptions);
             }

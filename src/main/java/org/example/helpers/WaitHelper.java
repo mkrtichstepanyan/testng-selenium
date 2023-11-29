@@ -38,10 +38,13 @@ public class WaitHelper {
         return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
+    public WebElement waitForElementToBeVisible(WebElement element) {
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
     public void waitForElementToVisible(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
 
     @SneakyThrows
     public void waitForSeconds(int seconds) {

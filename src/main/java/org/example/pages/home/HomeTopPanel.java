@@ -15,12 +15,23 @@ public class HomeTopPanel extends BaseTopPanel {
     @FindBy(xpath = "//div//div[@class = 'mat-menu-trigger user-menu-button-container']")
     public WebElement userProfile;
 
+    @FindBy(xpath = "//div[@role = 'menu']//a[@id = 'settingsPage']")
+    public WebElement settings;
+
     public HomeTopPanel(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public boolean isTopPanelVisible(WebElement... elements) {
-        return super.isTopPanelVisible(vlume,language,userProfile);
+        return super.isTopPanelVisible(vlume, language, userProfile);
+    }
+
+    public void clickOnUserProfileButton() {
+        userProfile.click();
+    }
+
+    public void clickOnSettingsButton() {
+        settings.click();
     }
 }
