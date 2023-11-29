@@ -11,7 +11,7 @@ public class ProfilePage extends BasePage {
     public WebElement profileTitle;
 
     @FindBy(xpath = "//app-user-info-card//img[@class = 'image-style']")
-    public WebElement icon;
+    public WebElement userPhoto;
 
     @FindBy(xpath = "//p[@class = 'edit-text']")
     public WebElement editText;
@@ -37,7 +37,7 @@ public class ProfilePage extends BasePage {
 
     @Override
     public boolean isPageOpened(WebElement... elements) {
-        return super.isPageOpened(profileTitle, icon, editText, fullNameTitle, userFullName, emailTitle, userEmail, editProfile);
+        return super.isPageOpened(profileTitle, userPhoto, editText, fullNameTitle, userFullName, emailTitle, userEmail, editProfile);
     }
 
     public void clickEditProfileButton() {
