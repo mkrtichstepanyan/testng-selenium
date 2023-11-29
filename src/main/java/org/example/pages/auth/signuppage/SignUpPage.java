@@ -73,6 +73,14 @@ public class SignUpPage extends BasePage {
         this.signInButton.click();
     }
 
+    @Override
+    public boolean isPageOpened(WebElement... elements) {
+        return super.isPageOpened(signUpWithFacebookButton,signUpWithAppleButton,
+                signUpWithGoogleButton, signUpWithYourEmailText,emailText, emailInput, passwordText,
+                passwordInput,confirmPasswordText, confirmPasswordInput, forgotPasswordButton,
+                signUpButton, signInButton);
+    }
+
     public SignUpPage(WebDriver driver) {
         super(driver);
     }

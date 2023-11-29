@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
@@ -18,10 +19,13 @@ public class DriverFactory {
         WebDriver driver;
         log.info("Setting up the driver for browser {}", browser);
 
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+
         switch (browser.toLowerCase()) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
             }
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();

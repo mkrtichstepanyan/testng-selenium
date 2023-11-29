@@ -32,5 +32,17 @@
         </classes>
     </test>
 
+    <test name="signup">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.example.auth.signup.SignUpPositiveTest">
+                <methods>
+                    <include name="validateVisibilityOfSignUpPage"/>
+                    <include name="validateSignUpWithEmail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite>
 
