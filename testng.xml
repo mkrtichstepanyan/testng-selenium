@@ -11,13 +11,19 @@
     <!--        </classes>-->
     <!--    </test>-->
 
-        <test name="signin">
-            <parameter name="browser" value="chrome"/>
-            <classes>
-                <class name="org.example.auth.signin.SignInPositiveTest"/>
-                <class name="org.example.auth.signin.SignInNegativeTest"/>
-            </classes>
-        </test>
+    <test name="signin">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.example.auth.signin.SignInPositiveTest">
+                <methods>
+                    <include name="validateVisibilityOfSignInPage"/>
+                    <include name="validateSignInWithFacebook"/>
+                    <include name="validateSignInWithGoogle"/>
+                </methods>
+            </class>
+            <class name="org.example.auth.signin.SignInNegativeTest"/>
+        </classes>
+    </test>
 
     <test name="forgotpassword">
         <parameter name="browser" value="chrome"/>
@@ -25,5 +31,6 @@
             <class name="org.example.auth.forgotpassword.ForgotPasswordPositiveTest"/>
         </classes>
     </test>
+
 </suite>
 

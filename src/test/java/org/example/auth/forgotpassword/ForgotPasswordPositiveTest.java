@@ -31,22 +31,22 @@ public class ForgotPasswordPositiveTest extends BaseTest {
         log.info("Assert welcome page is opened");
         Assert.assertTrue(welcomePage.isPageOpened());
 
-        waitHelper.waitForSeconds(3);
         log.info("Click on Sign in button");
+        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
 
-        driver.switchTo().window(newWindow());
+        driver.switchTo().window(theNewWindow());
         Assert.assertEquals(driver.getCurrentUrl(), SIGN_IN_PAGE_URL);
 
         log.info("Assert sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
 
-        waitHelper.waitForSeconds(3);
         log.info("Click on Forgot Password button");
+        waitHelper.waitForElementToBeClickable(signInPage.forgotPasswordButton);
         signInPage.clickOnForgotPassword();
 
-        driver.switchTo().window(newWindow());
-        Assert.assertEquals(driver.getCurrentUrl(), FORGOT_PASSWORD_PAGE_URL );
+        driver.switchTo().window(theNewWindow());
+        Assert.assertEquals(driver.getCurrentUrl(), FORGOT_PASSWORD_PAGE_URL);
 
         log.info("Assert Forgot Password page is opened");
         Assert.assertTrue(forgotPasswordPage.isPageOpened());

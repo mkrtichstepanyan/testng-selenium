@@ -32,13 +32,12 @@ public class SignInPositiveTest extends BaseTest {
         log.info("Assert welcome page is opened");
         Assert.assertTrue(welcomePage.isPageOpened());
 
-        waitHelper.waitForSeconds(3);
         log.info("Click on Sign in button");
+        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
 
-        driver.switchTo().window(newWindow());
+        driver.switchTo().window(theNewWindow());
         Assert.assertEquals(driver.getCurrentUrl(), SIGN_IN_PAGE_URL);
-
         log.info("Assert sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
     }
@@ -49,13 +48,52 @@ public class SignInPositiveTest extends BaseTest {
         log.info("Assert welcome page is opened");
         Assert.assertTrue(welcomePage.isPageOpened());
 
-        waitHelper.waitForSeconds(3);
         log.info("Clicking on Sign in button");
+        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
 
-        waitHelper.waitForSeconds(3);
+        driver.switchTo().window(theNewWindow());
+        Assert.assertEquals(driver.getCurrentUrl(), SIGN_IN_PAGE_URL);
+
+        log.info("Assert sign in page is opened");
+        Assert.assertTrue(signInPage.isPageOpened());
+
         log.info("Clicking on Sign in with Facebook button");
+        waitHelper.waitForElementToBeClickable(signInPage.signInWithFacebookButton);
         signInPage.clickOnSignInWithFacebook();
+
+        driver.switchTo().window(theNewWindow());
+        waitHelper.waitForSeconds(10);
+        log.info("Assert continue with Facebook url");
+        String actualResult = driver.getCurrentUrl();
+        Assert.assertTrue(actualResult.contains("https://www.facebook.com/"));
+    }
+
+    @Test
+    public void validateSignInWithGoogle() {
+
+        log.info("Assert welcome page is opened");
+        Assert.assertTrue(welcomePage.isPageOpened());
+
+        log.info("Clicking on Sign in button");
+        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
+        welcomePage.clickOnSignInButton();
+
+        driver.switchTo().window(theNewWindow());
+        Assert.assertEquals(driver.getCurrentUrl(), SIGN_IN_PAGE_URL);
+
+        log.info("Assert sign in page is opened");
+        Assert.assertTrue(signInPage.isPageOpened());
+
+        log.info("Clicking on Sign in with Google button");
+        waitHelper.waitForElementToBeClickable(signInPage.signInWithGoogleButton);
+        signInPage.clickOnSignInWithGoogle();
+
+        driver.switchTo().window(theNewWindow());
+        waitHelper.waitForSeconds(10);
+        log.info("Assert continue with Google url");
+        String actualResult = driver.getCurrentUrl();
+        Assert.assertTrue(actualResult.contains("https://accounts.google.com/"));
     }
 }
 

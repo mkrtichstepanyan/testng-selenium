@@ -32,9 +32,10 @@ public class SignInNegativeTest extends BaseTest {
         Assert.assertTrue(welcomePage.isPageOpened());
 
         log.info("Click on Sign in button");
+        waitHelper.waitForElementToBeClickable(welcomePage.signInButton);
         welcomePage.clickOnSignInButton();
 
-        driver.switchTo().window(newWindow());
+        driver.switchTo().window(theNewWindow());
 
         log.info("Assert sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
@@ -57,7 +58,7 @@ public class SignInNegativeTest extends BaseTest {
         Assert.assertEquals(actualErrorMessage, "Wrong credentials");
 
         log.info("Assert error message is closed");
-        Assert.assertFalse(newWindow().isEmpty());
+        Assert.assertFalse(theNewWindow().isEmpty());
     }
 
     @Test
@@ -69,7 +70,7 @@ public class SignInNegativeTest extends BaseTest {
         log.info("Click on Sign in button");
         welcomePage.clickOnSignInButton();
 
-        driver.switchTo().window(newWindow());
+        driver.switchTo().window(theNewWindow());
 
         log.info("Assert sign in page is opened");
         Assert.assertTrue(signInPage.isPageOpened());
@@ -92,7 +93,7 @@ public class SignInNegativeTest extends BaseTest {
         Assert.assertEquals(actualErrorMessage, "Wrong credentials");
 
         log.info("Assert error message is closed");
-        Assert.assertFalse(newWindow().isEmpty());
+        Assert.assertFalse(theNewWindow().isEmpty());
     }
 }
 

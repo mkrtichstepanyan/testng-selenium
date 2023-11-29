@@ -10,7 +10,7 @@ public class ForgotPasswordPage extends BasePage {
     @FindBy(xpath = "//h2[@id='title']")
     public WebElement forgotPasswordTitle;
 
-    @FindBy(xpath = "//div[@_ngcontent-mat-c114]//p['Enter your email']")
+    @FindBy(xpath = "//div[@_ngcontent-our-c114]//p['Enter your email']")
     public WebElement enterYourEmailText;
 
     @FindBy(xpath = "//form['_ngcontent-mat-c114']//div['_ngcontent-mat-c114']//label['_ngcontent-mat-c114']")
@@ -41,6 +41,6 @@ public class ForgotPasswordPage extends BasePage {
     @Override
     public boolean isPageOpened(WebElement... elements) {
         return super.isPageOpened(emailInputForForgottenPassword, goToSignInButton, sendButton);
-        //forgotPasswordTitle, enterYourEmailText, emailInputFieldTitle
+        //forgotPasswordTitle, enterYourEmailText, emailInputFieldTitle,
     }
 }

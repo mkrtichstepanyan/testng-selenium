@@ -15,6 +15,15 @@ public class TopPanel extends BasePage {
     @FindBy(xpath = " //a[@class ='sign-in-button ng-star-inserted']")
     public WebElement selectSignInButton;
 
+    @FindBy(xpath = "//a[@id='en']")
+    public WebElement dropDownEnglish;
+
+    @FindBy(xpath = "//a[@id='hy']")
+    public WebElement dropDownArmenian;
+
+    @FindBy(xpath = "//a[@id='hw']")
+    public WebElement dropDownWesternArmenian;
+
     public void clickOnVlumeButton() {
         this.vlumeButton.click();
     }
