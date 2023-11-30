@@ -2,7 +2,10 @@ package vlume.positivetests.footer.pages;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.footer.pages.Page;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
+import org.example.vlume.providers.urlproviders.footer.UrlPageProvider;
+import org.example.vlume.providers.urlproviders.home.UrlAsidePanelProvider;
+import org.example.vlume.providers.urlproviders.home.UrlHomeProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -35,8 +38,6 @@ public class PagePartPositiveTests extends BaseTest {
         log.info("-> Validate current URL Welcome page after pressed on Home link");
         String urlAfterPressedOnHomeLink = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnHomeLink, UrlProvider.WELCOME_PAGE_URL.getUrl()); //bug
-
-        log.info("-> Test succeeded");
         softAssert.assertAll();
     }
 
@@ -53,9 +54,7 @@ public class PagePartPositiveTests extends BaseTest {
 
         log.info("-> Validate current URL Audiobooks page after pressed Audiobooks link");
         String urlAfterPressedOnAudiobooksLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnAudiobooksLink, UrlProvider.AUDIOBOOKS_PAGE_URL.getUrl() );
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnAudiobooksLink, UrlAsidePanelProvider.AUDIOBOOKS_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -72,9 +71,7 @@ public class PagePartPositiveTests extends BaseTest {
 
         log.info("-> Validate current URL Ebooks page after pressed on Ebooks link");
         String urlAfterPressedOnEbooksLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnEbooksLink, UrlProvider.EBOOKS_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnEbooksLink, UrlAsidePanelProvider.EBOOKS_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -91,9 +88,7 @@ public class PagePartPositiveTests extends BaseTest {
 
         log.info("-> Validate current URL Authors page after pressed on Authors link");
         String urlAfterPressedOnAuthorsLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnAuthorsLink, UrlProvider.AUTHORS_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnAuthorsLink, UrlAsidePanelProvider.AUTHORS_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -110,9 +105,8 @@ public class PagePartPositiveTests extends BaseTest {
 
         log.info("-> Validate current URL Recently added page after pressed on Recently added link");
         String urlAfterPressedOnRecentlyAddedLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnRecentlyAddedLink, UrlProvider.RECENTLY_ADDED_PAGE_UPL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnRecentlyAddedLink,
+                UrlHomeProvider.RECENTLY_ADDED_PAGE_UPL.getUrl());
         softAssert.assertAll();
     }
 
@@ -129,9 +123,7 @@ public class PagePartPositiveTests extends BaseTest {
 
         log.info("-> Validate current URL Trending page after pressed on Trending link");
         String urlAfterPressedOnTrendingLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnTrendingLink, UrlProvider.TRENDING_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnTrendingLink, UrlHomeProvider.TRENDING_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -148,9 +140,7 @@ public class PagePartPositiveTests extends BaseTest {
 
         log.info("-> Validate current URL Categories page after pressed on Categories link");
         String urlAfterPressedOnCategoriesLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnCategoriesLink, UrlProvider.CATEGORIES_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnCategoriesLink, UrlPageProvider.CATEGORIES_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 }

@@ -3,7 +3,7 @@ package vlume.positivetests.autentiacation.signin;
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.autentication.signin.SignInPage;
 import org.example.vlume.pages.autentication.signup.SignUpPage;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -29,10 +29,10 @@ public class SignInPagePositiveTest extends BaseTest {
         waitHelper.waitForElementToBeClickable(signInPage.emailField);
 
         log.info("-> Write correct email");
-        signInPage.enterEmail("samsungansuryan@gmail.com");
+        signInPage.enterEmail("@gmail.com");
 
         log.info("-> Write correct password");
-        signInPage.enterPassword("hfjdkslc");
+        signInPage.enterPassword("0000");
 
         log.info("-> Press on <Sign in> button");
         signInPage.pressSignInButton();
@@ -53,8 +53,6 @@ public class SignInPagePositiveTest extends BaseTest {
         String urlAfterPressedOnForgotPasswordButton = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnForgotPasswordButton,
                 UrlProvider.FORGOT_PASSWORD_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
         softAssert.assertAll();
     }
 
@@ -76,8 +74,6 @@ public class SignInPagePositiveTest extends BaseTest {
         log.info("-> Verify URL after pressed on <Sign Up> button");
         String urlAfterPressedOnSignUpButton = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnSignUpButton, UrlProvider.SIGN_UP_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
         softAssert.assertAll();
     }
 

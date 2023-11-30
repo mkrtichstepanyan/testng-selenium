@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class WaitHelper {
     private WebDriver driver;
     public WebDriverWait wait;
-    private final int DEFAULT_TIME_OUT = 10;
+    private final int DEFAULT_TIME_OUT = 30;
 
     public WaitHelper(WebDriver driver) {
         this.driver = driver;

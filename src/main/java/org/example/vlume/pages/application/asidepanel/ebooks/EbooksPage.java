@@ -7,21 +7,45 @@ import org.openqa.selenium.support.FindBy;
 
 public class EbooksPage extends BasePage {
 
-    @FindBy(id = "stackContainer0")
+    @FindBy(id = "SeeMore0")
     public WebElement recentlyAddedPart;
-    @FindBy(id = "stackContainer1")
+    @FindBy(id = "SeeMore1")
     public WebElement trendingNowPart;
-    @FindBy(id = "stackContainer2")
+    @FindBy(id = "SeeMore2")
     public WebElement ourTopPicksPart;
-    @FindBy(id = "stackContainer3")
+    @FindBy(id = "SeeMore3")
     public WebElement mostReadPart;
-    @FindBy(id = "stackContainer4")
+    @FindBy(id = "SeeMore4")
     public WebElement topFictionPart;
-    @FindBy(id = "stackContainer5")
+    @FindBy(id = "SeeMore5")
     public WebElement topNonFiction;
 
-    protected EbooksPage(WebDriver driver) {
+    public EbooksPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void pressOnRecentlyAddedPart() {
+        recentlyAddedPart.click();
+    }
+
+    public void pressOnTrendingNowPart() {
+        trendingNowPart.click();
+    }
+
+    public void pressOnOurTopPicks() {
+        ourTopPicksPart.click();
+    }
+
+    public void pressOnMostReadPart() {
+        mostReadPart.click();
+    }
+
+    public void pressOnTopFictionPart() {
+        topFictionPart.click();
+    }
+
+    public void pressOnTopNonFictionPart() {
+        topNonFiction.click();
     }
 
     public boolean ebooksPageIsLoaded() {

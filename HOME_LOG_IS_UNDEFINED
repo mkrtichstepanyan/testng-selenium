@@ -1,11 +1,10 @@
-2023-11-27 18:13:05,010 INFO org.testng.internal.Utils [main] [TestNG] Running:
+2023-11-30 18:04:25,764 INFO org.testng.internal.Utils [main] [TestNG] Running:
   C:\Users\Eghia\AppData\Local\JetBrains\IdeaIC2022.3\temp-testng-customsuite.xml
 
-2023-11-27 18:13:06,477 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
-2023-11-27 18:13:06,537 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Exporting webdriver.chrome.driver as C:\Users\Eghia\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
-2023-11-27 18:13:16,862 INFO vlume.positivetests.application.asidepanel.audiobooks.AudiobookPagePositiveTests [main] -> Open sign in page
-2023-11-27 18:13:35,045 INFO vlume.positivetests.application.asidepanel.audiobooks.AudiobookPagePositiveTests [main] -> Open Home page
-2023-11-27 18:13:47,258 INFO vlume.positivetests.application.asidepanel.audiobooks.AudiobookPagePositiveTests [main] -> Validate current URL before press on Audiobooks icon
-2023-11-27 18:13:47,283 INFO vlume.positivetests.application.asidepanel.audiobooks.AudiobookPagePositiveTests [main] -> Press on Audiobooks icon from aside panel
-2023-11-27 18:13:51,059 INFO vlume.positivetests.application.asidepanel.audiobooks.AudiobookPagePositiveTests [main] -> Validate current URL after pressed on Audiobooks icon
-2023-11-27 18:13:55,085 INFO vlume.positivetests.application.asidepanel.audiobooks.AudiobookPagePositiveTests [main] -> Test succeeded
+2023-11-30 18:04:27,577 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-11-30 18:04:27,654 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Exporting webdriver.chrome.driver as C:\Users\Eghia\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-11-30 18:04:41,503 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Open sign in page
+2023-11-30 18:04:56,889 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Write email
+2023-11-30 18:04:57,210 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Write password
+2023-11-30 18:04:57,399 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on <Sign in> button
+2023-11-30 18:05:00,774 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Open Home page

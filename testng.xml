@@ -8,7 +8,7 @@
             <class name="vlume.positivetests.autentiacation.signup.SignUpPagePositiveTests"/>
             <class name="vlume.positivetests.autentiacation.signin.SignInPagePositiveTest"/>
             <class name="vlume.positivetests.autentiacation.forgotpassword.ForgotPasswordPagePositiveTests"/>
-            <class name="vlume.positivetests.toppanel.TopPanelPositiveTests"/>
+            <class name="vlume.positivetests.toppanel.panel.TopPanelPositiveTests"/>
         </classes>
     </test>
 

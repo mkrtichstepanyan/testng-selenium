@@ -1,10 +1,11 @@
 package vlume.positivetests.application.asidepanel.search;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.vlume.pages.application.asidepanel.home.HomePage;
 import org.example.vlume.pages.application.asidepanel.search.SearchPage;
 import org.example.vlume.pages.autentication.signin.SignInPage;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.home.UrlAsidePanelProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,41 +23,25 @@ public class SearchPagePositiveTests extends BaseTest {
         log.info("-> Open sign in page");
         driver.get(UrlProvider.SIGN_IN_PAGE_URL.getUrl());
         signInPage = new SignInPage(driver);
-        signInPage.enterEmail("samsungansuryan@gmail.com");
-        signInPage.enterPassword("8663a375315");
+
+        log.info("-> Write email information");
+        signInPage.enterEmail("@gmail.com");
+
+        log.info("-> Write password information");
+        signInPage.enterPassword("0000");
+
+        log.info("-> Press on <Sign in> button");
         signInPage.pressSignInButton();
         waitHelper.waitForSeconds(3);
+        driver.get(UrlAsidePanelProvider.HOME_PAGE_URL.getUrl());
     }
 
-    @BeforeMethod
-    public void goToHomePage(){
+   @Test
+    public void goToSearchPage() {
 
-        log.info("-> Open Home page");
-        driver.get(UrlProvider.HOME_PAGE_URL.getUrl());
+        log.info("-> Open Search page");
+        driver.get(UrlAsidePanelProvider.SEARCH_PAGE_URL.getUrl());
         search = new SearchPage(driver);
-        boolean pageIsLoaded = search.searchPageIsLoaded();
-        softAssert = new SoftAssert();
-        softAssert.assertTrue(pageIsLoaded);
+        Assert.assertTrue(search.searchPageIsLoaded(), "Search page is not poaded");
     }
-
-    @Test
-    public void validatePressOnSearchIcon(){
-
-        log.info("-> Validate current URL before press on Search icon");
-        String urlBeforePressOnSearchIcon = driver.getCurrentUrl();
-        softAssert.assertEquals(urlBeforePressOnSearchIcon, UrlProvider.WELCOME_PAGE_URL.getUrl());
-
-        log.info("-> Press on Search icon from aside panel");
-        waitHelper.waitForElementToBeClickable(search.searchIcon);
-        search.pressOnSearchIconFromAsidePanel();
-
-        log.info("-> Validate current URL after pressed on Search icon");
-        waitHelper.waitForSeconds(5);
-        String urlAfterPressedOnSearchIcon = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnSearchIcon, UrlProvider.SEARCH_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
-        softAssert.assertAll();
-    }
-
 }

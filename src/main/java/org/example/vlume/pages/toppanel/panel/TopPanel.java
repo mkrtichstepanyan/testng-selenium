@@ -1,4 +1,4 @@
-package org.example.vlume.pages.toppanel;
+package org.example.vlume.pages.toppanel.panel;
 
 import org.example.vlume.BasePage;
 import org.openqa.selenium.WebDriver;

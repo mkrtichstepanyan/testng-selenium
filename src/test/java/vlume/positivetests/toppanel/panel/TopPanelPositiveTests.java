@@ -1,8 +1,8 @@
-package vlume.positivetests.toppanel;
+package vlume.positivetests.toppanel.panel;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.vlume.pages.toppanel.TopPanel;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.pages.toppanel.panel.TopPanel;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -34,8 +34,6 @@ public class TopPanelPositiveTests extends BaseTest {
         log.info("-> Verify current URL Welcome page after pressed on Vlume logo");
         String urlAfterPressOnVlumeLogo = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressOnVlumeLogo, UrlProvider.WELCOME_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
         softAssert.assertAll();
     }
 

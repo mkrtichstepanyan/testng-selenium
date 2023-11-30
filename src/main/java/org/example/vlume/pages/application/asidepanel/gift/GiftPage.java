@@ -7,9 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class GiftPage extends BasePage {
 
-    @FindBy(id="giftButton")
-    public WebElement giftIcon;
-
     @FindBy(id="continue-choose")
     public WebElement giftPart;
 
@@ -17,15 +14,11 @@ public class GiftPage extends BasePage {
         super(driver);
     }
 
-    public void pressOnGiftIcon(){
-        giftIcon.click();
-    }
-
     public void pressOnChooseAGiftButton(){
         giftPart.click();
     }
 
     public boolean giftPageIsLoaded() {
-        return super.pageIsLoaded(this.giftPart, this.giftIcon);
+        return super.pageIsLoaded(this.giftPart);
     }
 }

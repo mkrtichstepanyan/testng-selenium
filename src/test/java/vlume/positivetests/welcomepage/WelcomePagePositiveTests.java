@@ -3,7 +3,7 @@ package vlume.positivetests.welcomepage;
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.autentication.signin.SignInPage;
 import org.example.vlume.pages.wordpress.WelcomePage;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -42,8 +42,6 @@ public class WelcomePagePositiveTests extends BaseTest {
         waitHelper.waitForSeconds(2);
         String urlAfterPressedOnSignInButton = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnSignInButton, UrlProvider.SIGN_IN_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
         softAssert.assertAll();
     }
 }

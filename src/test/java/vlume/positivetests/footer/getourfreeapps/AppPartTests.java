@@ -2,7 +2,8 @@ package vlume.positivetests.footer.getourfreeapps;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.footer.getourfreeapps.AppPart;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
+import org.example.vlume.providers.urlproviders.footer.UrlAppProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -34,9 +35,7 @@ public class AppPartTests extends BaseTest {
 
         log.info("-> Validate current URL after pressed on App Store logo");
         String urlAfterPressedOnAppStoreLogo = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnAppStoreLogo, UrlProvider.APP_STORE_LOGO_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnAppStoreLogo, UrlAppProvider.APP_STORE_LOGO_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -53,9 +52,7 @@ public class AppPartTests extends BaseTest {
 
         log.info("-> validate current URL after pressed on Google Play logo");
         String urlAfterPressedOnGooglePlyLogo = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnGooglePlyLogo, UrlProvider.GOOGLE_PLAY_LOGO_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnGooglePlyLogo, UrlAppProvider.GOOGLE_PLAY_LOGO_URL.getUrl());
         softAssert.assertAll();
     }
 }

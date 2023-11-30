@@ -2,7 +2,9 @@ package vlume.positivetests.footer.about;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.footer.about.About;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
+import org.example.vlume.providers.urlproviders.footer.UrlAboutProvider;
+import org.example.vlume.providers.urlproviders.home.UrlAsidePanelProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -34,9 +36,7 @@ public class AboutPartPositiveTests extends BaseTest {
 
         log.info("->  Verify current URL Support page after pressed on Support link");
         String urlAfterPressedOnSupportLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnSupportLink, UrlProvider.SUPPORT_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnSupportLink, UrlAboutProvider.SUPPORT_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -56,9 +56,7 @@ public class AboutPartPositiveTests extends BaseTest {
                 "Accounts and subscriptions link");
         String urlAfterPressedOnAccountsAndSubscriptionsLink = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnAccountsAndSubscriptionsLink,
-                UrlProvider.ACCOUNTS_SUBSCRIPTIONS_URL.getUrl());
-
-        log.info("-> Test succeeded");
+                UrlAboutProvider.ACCOUNTS_SUBSCRIPTIONS_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -77,9 +75,7 @@ public class AboutPartPositiveTests extends BaseTest {
         log.info("-> Verify current URL Vlume for institutions page after pressed on Vlume for institutions link");
         String urlAfterPressedOnVlumeForInstitutionsLink = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnVlumeForInstitutionsLink,
-                UrlProvider.VLUME_FOR_INSTITUTIONS_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+                UrlAboutProvider.VLUME_FOR_INSTITUTIONS_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -96,9 +92,8 @@ public class AboutPartPositiveTests extends BaseTest {
 
         log.info("-> Verify current URL Vlume keyboard page after pressed on Vlume keyboard link");
         String urlAfterPressedOnVlumeKeyboardLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnVlumeKeyboardLink, UrlProvider.VLUME_KEYBOARD_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnVlumeKeyboardLink,
+                UrlAboutProvider.VLUME_KEYBOARD_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -115,9 +110,7 @@ public class AboutPartPositiveTests extends BaseTest {
 
         log.info("-> Verify current URL Gift page after pressed on Gift link");
         String urlAfterPressedOnGiftLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnGiftLink, UrlProvider.GIFT_PAGE_UAR.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnGiftLink, UrlAsidePanelProvider.GIFT_PAGE_UAR.getUrl());
         softAssert.assertAll();
     }
 }

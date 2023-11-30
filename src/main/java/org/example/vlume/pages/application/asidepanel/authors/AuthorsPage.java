@@ -10,7 +10,7 @@ public class AuthorsPage extends BasePage {
     @FindBy(xpath = "//mat-card[@class='mat-card card-style']")
     public WebElement authorsList;
 
-    protected AuthorsPage(WebDriver driver) {
+    public AuthorsPage(WebDriver driver) {
         super(driver);
     }
 

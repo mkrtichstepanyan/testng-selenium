@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.helper.InputHelper;
 import org.example.vlume.pages.autentication.forgotpassword.ForgotPasswordPage;
 import org.example.vlume.pages.autentication.signin.SignInPage;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,12 +29,12 @@ public class ForgotPasswordPagePositiveTests extends BaseTest {
 
         log.info("-> Enter Registered Email");
         waitHelper.waitForElementToBeClickable(forgotPassword.email);
-        forgotPassword.enterEmail("samsungansuryan@gmail.com");
+        forgotPassword.enterEmail("@gmail.com");
         waitHelper.waitForSeconds(2);
 
         log.info("-> Validate Value has been Successfully Entered");
         softAssert.assertTrue(forgotPassword.email.getAttribute("value")
-                .equals("samsungansuryan@gmail.com"));
+                .equals("@gmail.com"));
 
         log.info("-> Validate Invisibility of Message Box Before clicking on 'Sand' Button");
         try {
@@ -51,8 +51,6 @@ public class ForgotPasswordPagePositiveTests extends BaseTest {
         waitHelper.waitUntilElementWillBeVisible(forgotPassword.messageBox);
         String messageText = forgotPassword.getMessageBoxText();
         softAssert.assertEquals(messageText, "Password reset link was sent to your email");
-
-        log.info("-> Test succeeded");
         softAssert.assertAll();
     }
 
@@ -74,8 +72,6 @@ public class ForgotPasswordPagePositiveTests extends BaseTest {
             log.info("Sign In Page is Loaded Successfully");
             boolean pageIsLoaded = signInPage.signInPageIsLoaded();
             softAssert.assertTrue(pageIsLoaded);
-
-            log.info("-> Test succeeded");
             softAssert.assertAll();
         }
 
@@ -103,8 +99,6 @@ public class ForgotPasswordPagePositiveTests extends BaseTest {
             String urlAfterPressedOnForgotPasswordButton = driver.getCurrentUrl();
             softAssert.assertEquals(urlAfterPressedOnForgotPasswordButton,
                     UrlProvider.SIGN_IN_PAGE_URL.getUrl());
-
-            log.info("-> Test succeeded");
             softAssert.assertAll();
         }
     }

@@ -2,7 +2,8 @@ package vlume.positivetests.footer.social;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.footer.social.Social;
-import org.example.vlume.providers.urlproviders.UrlProvider;
+import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
+import org.example.vlume.providers.urlproviders.footer.UrlSocialMediaProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -34,9 +35,8 @@ public class SocialPartPositiveTests extends BaseTest {
 
         log.info("-> Validate current URL Facebook after pressed on Facebook link");
         String urlAfterPressedOnFacebookLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnFacebookLink, UrlProvider.FACEBOOK_PAGE_URL.getUrl());
-
-        log.info("-> Test succeeded");
+        softAssert.assertEquals(urlAfterPressedOnFacebookLink,
+                UrlSocialMediaProvider.FACEBOOK_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -55,8 +55,6 @@ public class SocialPartPositiveTests extends BaseTest {
         String urlAfterPressedOnTwitterLink = driver.getCurrentUrl();
         waitHelper.waitForSeconds(5);
         softAssert.assertTrue(urlAfterPressedOnTwitterLink.contains("twitter.com"));
-
-        log.info("-> Test succeeded");
         softAssert.assertAll();
     }
 }
