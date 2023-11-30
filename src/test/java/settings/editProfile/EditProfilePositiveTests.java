@@ -8,8 +8,6 @@ import org.example.pages.settings.ProfilePage;
 import org.example.pages.settings.SettingsPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 @Slf4j
 public class EditProfilePositiveTests extends AuthorizedTest {
 
@@ -36,5 +34,5 @@ public class EditProfilePositiveTests extends AuthorizedTest {
         log.info("Assert edit profile page is opened");
         Assert.assertTrue(editProfilePage.isPageOpened());
     }
-    
+
 }
