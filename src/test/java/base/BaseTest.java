@@ -3,6 +3,7 @@ package base;
 import lombok.extern.slf4j.Slf4j;
 import org.example.driver.DriverFactory;
 import org.example.helpers.WaitHelper;
+import org.example.helpers.WriteHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 
@@ -14,12 +15,15 @@ public class BaseTest extends DriverFactory {
 
     protected WebDriver driver;
 
+    protected WriteHelper writeHelper;
+
     protected WaitHelper waitHelper;
 
     @BeforeClass
     public void setup() {
         driver = getDriver();
         waitHelper = new WaitHelper(driver);
+        writeHelper = new WriteHelper();
     }
 
     public String nextWidow() {

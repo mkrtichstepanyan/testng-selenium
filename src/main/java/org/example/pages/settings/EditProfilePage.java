@@ -13,10 +13,10 @@ public class EditProfilePage extends BasePage {
     public WebElement uploadANewPhoto;
 
     @FindBy(xpath = "//input[@id = 'firstName']")
-    public WebElement userFirstName;
+    public WebElement inputUserFirstName;
 
     @FindBy(xpath = "//input[@id ='lastName']")
-    public WebElement userLastName;
+    public WebElement inputUserLastName;
 
     @FindBy(xpath = "//input[@id ='userEmail']")
     public WebElement userEmail;
@@ -27,12 +27,22 @@ public class EditProfilePage extends BasePage {
     @FindBy(xpath = "//button[@id = 'cancelButtonEditProfile']")
     public WebElement cancelButton;
 
+    @FindBy(xpath = "//div[@id = 'lastNameErrorMessage']")
+    public WebElement lastNameErrorMessage;
+
+    @FindBy(xpath = "//div[@id = 'firstNameErrorMessage']")
+    public WebElement firstNameErrorMessage;
+
     protected EditProfilePage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public boolean isPageOpened(WebElement... elements) {
-        return super.isPageOpened(userPhoto, uploadANewPhoto, userFirstName, userLastName, userEmail, cancelButton, saveButton);
+        return super.isPageOpened(userPhoto, uploadANewPhoto, inputUserFirstName, inputUserLastName, userEmail, cancelButton, saveButton);
+    }
+
+    public void clickSaveButton() {
+        saveButton.click();
     }
 }

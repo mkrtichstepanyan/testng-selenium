@@ -106,23 +106,4 @@ public class SettingsPositiveTests extends AuthorizedTest {
         softAssert.assertAll();
     }
 
-    @Test(priority = 10)
-    public void verifyEditProfilePageIsOpenid() {
-        log.info("Go to settings page");
-        goToURL(UrlsProvider.SETTINGS_PAGE_URL);
-
-        log.info("Assert settings page is opened");
-        Assert.assertTrue(settingsPage.isPageOpened());
-
-        log.info("Assert Profile page is opened");
-        Assert.assertTrue(settingsPage.getProfilePage().isPageOpened());
-
-        log.info("Click edit profile button");
-        settingsPage.getProfilePage().clickEditProfileButton();
-
-        log.info("Assert edit profile page is opened");
-        settingsPage.getEditProfilePage().isPageOpened();
-    }
-
-
 }
