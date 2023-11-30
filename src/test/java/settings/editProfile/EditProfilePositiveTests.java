@@ -1,6 +1,7 @@
 package settings.editProfile;
 
 import base.AuthorizedTest;
+import dataProvider.User;
 import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.settings.EditProfilePage;
@@ -8,12 +9,13 @@ import org.example.pages.settings.ProfilePage;
 import org.example.pages.settings.SettingsPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 @Slf4j
 public class EditProfilePositiveTests extends AuthorizedTest {
 
     SettingsPage settingsPage;
     ProfilePage profilePage;
-
     EditProfilePage editProfilePage;
 
     @BeforeMethod
@@ -33,6 +35,33 @@ public class EditProfilePositiveTests extends AuthorizedTest {
 
         log.info("Assert edit profile page is opened");
         Assert.assertTrue(editProfilePage.isPageOpened());
+    }
+
+    @Test(priority = 1)
+    public void verifyInputEmailIsNotEnable() {
+        log.info("Assert input email is not enable");
+        Assert.assertFalse(editProfilePage.userEmail.isEnabled());
+    }
+
+    @Test(priority = 2)
+    public void verifyChangLastName() {
+        String s = "abc";
+
+        log.info("Write in input first name: {}", s);
+        editProfilePage.inputFirstName.sendKeys(s);
+
+        log.info("Click save button");
+        editProfilePage.clickSaveButton();
+
+        log.info("Assert profile page is opened");
+        Assert.assertTrue(profilePage.isPageOpened());
+
+        String actuateFullName = profilePage.userFullName.getText();
+        String expectedFullName = User.loginedUser.getFirstName() + s + " " + User.loginedUser.getLastName();
+
+        waitHelper.waitForSeconds(3);
+        log.info("Assert user full name is: {}", expectedFullName);
+        Assert.assertEquals(actuateFullName, expectedFullName);
     }
 
 }

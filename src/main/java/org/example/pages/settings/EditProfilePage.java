@@ -13,10 +13,10 @@ public class EditProfilePage extends BasePage {
     public WebElement uploadANewPhoto;
 
     @FindBy(xpath = "//input[@id = 'firstName']")
-    public WebElement inputUserFirstName;
+    public WebElement inputFirstName;
 
     @FindBy(xpath = "//input[@id ='lastName']")
-    public WebElement inputUserLastName;
+    public WebElement inputLastName;
 
     @FindBy(xpath = "//input[@id ='userEmail']")
     public WebElement userEmail;
@@ -39,7 +39,7 @@ public class EditProfilePage extends BasePage {
 
     @Override
     public boolean isPageOpened(WebElement... elements) {
-        return super.isPageOpened(userPhoto, uploadANewPhoto, inputUserFirstName, inputUserLastName, userEmail, cancelButton, saveButton);
+        return super.isPageOpened(userPhoto, uploadANewPhoto, inputFirstName, inputLastName, userEmail, cancelButton, saveButton);
     }
 
     public void clickSaveButton() {

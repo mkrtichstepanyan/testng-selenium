@@ -41,7 +41,7 @@ public class EditProfileNegativeTests extends AuthorizedTest {
 
     @Test
     public void verifyFirstNameErrorMessageWhenInputNameIsEmpty() {
-        WebElement inputName = editProfilePage.inputUserFirstName;
+        WebElement inputName = editProfilePage.inputFirstName;
         SoftAssert softAssert = new SoftAssert();
 
         log.info("Clear input name");
@@ -61,7 +61,7 @@ public class EditProfileNegativeTests extends AuthorizedTest {
 
     @Test
     public void verifyLastNameErrorMessageWhenInputLastNameIsEmpty() {
-        WebElement inputLastName = editProfilePage.inputUserLastName;
+        WebElement inputLastName = editProfilePage.inputLastName;
         SoftAssert softAssert = new SoftAssert();
 
         log.info("Clear input name");
