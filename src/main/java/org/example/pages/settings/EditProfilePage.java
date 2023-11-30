@@ -45,4 +45,8 @@ public class EditProfilePage extends BasePage {
     public void clickSaveButton() {
         saveButton.click();
     }
+
+    public void clickCancelButton() {
+        cancelButton.click();
+    }
 }

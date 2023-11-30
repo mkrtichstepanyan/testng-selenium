@@ -60,7 +60,6 @@ public class EditProfilePositiveTests extends AuthorizedTest {
         String actuateFullName = profilePage.userFullName.getText();
         String expectedFullName = User.loginedUser.getFirstName() + s + " " + User.loginedUser.getLastName();
 
-        waitHelper.waitForSeconds(3);
         log.info("Assert user full name is: {}", expectedFullName);
         Assert.assertEquals(actuateFullName, expectedFullName);
     }
@@ -81,7 +80,26 @@ public class EditProfilePositiveTests extends AuthorizedTest {
         String actuateFullName = profilePage.userFullName.getText();
         String expectedFullName = User.loginedUser.getFirstName() + " " + User.loginedUser.getLastName() + s;
 
-        waitHelper.waitForSeconds(3);
+        log.info("Assert user full name is: {}", expectedFullName);
+        Assert.assertEquals(actuateFullName, expectedFullName);
+    }
+
+    @Test(priority = 4)
+    public void verifyChangeNameAndCancel() {
+        String s = "abc";
+
+        log.info("Write in input first name: {}", s);
+        editProfilePage.inputFirstName.sendKeys(s);
+
+        log.info("Click cancel button");
+        editProfilePage.clickCancelButton();
+
+        log.info("Assert profile page is opened");
+        Assert.assertTrue(profilePage.isPageOpened());
+
+        String actuateFullName = profilePage.userFullName.getText();
+        String expectedFullName = User.loginedUser.getFullName();
+
         log.info("Assert user full name is: {}", expectedFullName);
         Assert.assertEquals(actuateFullName, expectedFullName);
     }

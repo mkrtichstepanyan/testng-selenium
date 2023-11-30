@@ -38,6 +38,10 @@ public class User {
         this.email = email;
     }
 
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
     public static User loginedUser = new User("Garik", "Gharibyan", EmailsProvider.correctEmail);
 
 }
