@@ -17,18 +17,17 @@ import org.testng.asserts.SoftAssert;
 public class EditProfileNegativeTests extends AuthorizedTest {
 
     SettingsPage settingsPage;
-
+    ProfilePage profilePage;
     EditProfilePage editProfilePage;
 
     @BeforeMethod
     public void goEditProfilePage() {
         settingsPage = new SettingsPage(driver);
+        profilePage = settingsPage.getProfilePage();
         editProfilePage = settingsPage.getEditProfilePage();
 
         log.info("Go settings page");
         goToURL(UrlsProvider.SETTINGS_PAGE_URL);
-
-        ProfilePage profilePage = settingsPage.getProfilePage();
 
         log.info("Assert profile page is opened");
         Assert.assertTrue(settingsPage.isPageOpened());
@@ -37,7 +36,7 @@ public class EditProfileNegativeTests extends AuthorizedTest {
         profilePage.clickEditProfileButton();
 
         log.info("Assert edit profile page is opened");
-        Assert.assertTrue(settingsPage.getEditProfilePage().isPageOpened());
+        Assert.assertTrue(editProfilePage.isPageOpened());
     }
 
     @Test
