@@ -4,7 +4,7 @@ import base.AuthorizedTest;
 import dataProvider.User;
 import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
-import org.example.pages.settings.ProfilePage;
+import org.example.pages.settings.mat_card.ProfilePage;
 import org.example.pages.settings.SettingsPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

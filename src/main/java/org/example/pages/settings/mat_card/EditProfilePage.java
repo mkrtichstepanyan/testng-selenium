@@ -1,4 +1,4 @@
-package org.example.pages.settings;
+package org.example.pages.settings.mat_card;
 
 import org.example.pages.BasePage;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +33,7 @@ public class EditProfilePage extends BasePage {
     @FindBy(xpath = "//div[@id = 'firstNameErrorMessage']")
     public WebElement firstNameErrorMessage;
 
-    protected EditProfilePage(WebDriver driver) {
+    public EditProfilePage(WebDriver driver) {
         super(driver);
     }
 

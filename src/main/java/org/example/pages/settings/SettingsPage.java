@@ -1,6 +1,8 @@
 package org.example.pages.settings;
 
 import org.example.pages.BasePage;
+import org.example.pages.settings.mat_card.EditProfilePage;
+import org.example.pages.settings.mat_card.ProfilePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

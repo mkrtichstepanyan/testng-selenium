@@ -30,7 +30,10 @@
 <!--            <class name="settings.SettingsNegativeTests"/>-->
 
 <!--            <class name="settings.editProfile.EditProfileNegativeTests"/>-->
-            <class name="settings.editProfile.EditProfilePositiveTests"/>
+<!--            <class name="settings.editProfile.EditProfilePositiveTests"/>-->
+
+            <class name="settings.readingLanguage.ReadingLanguageNegativeTests"/>
+            <class name="settings.readingLanguage.ReadingLanguagePositiveTests"/>
         </classes>
     </test>
 

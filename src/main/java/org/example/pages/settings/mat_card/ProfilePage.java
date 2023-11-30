@@ -1,4 +1,4 @@
-package org.example.pages.settings;
+package org.example.pages.settings.mat_card;
 
 import org.example.pages.BasePage;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +31,7 @@ public class ProfilePage extends BasePage {
     @FindBy(xpath = "//p[@id= 'editProfile']")
     public WebElement editProfile;
 
-    protected ProfilePage(WebDriver driver) {
+    public ProfilePage(WebDriver driver) {
         super(driver);
     }
 
