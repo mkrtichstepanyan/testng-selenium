@@ -8,6 +8,7 @@ import org.example.pages.settings.EditProfilePage;
 import org.example.pages.settings.ProfilePage;
 import org.example.pages.settings.SettingsPage;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -43,8 +44,8 @@ public class EditProfilePositiveTests extends AuthorizedTest {
         Assert.assertFalse(editProfilePage.userEmail.isEnabled());
     }
 
-    @Test(priority = 2)
-    public void verifyChangLastName() {
+    @Test(priority = 2, groups = "returnFirstNameAndLastName")
+    public void verifyChangFirstName() {
         String s = "abc";
 
         log.info("Write in input first name: {}", s);
@@ -64,4 +65,41 @@ public class EditProfilePositiveTests extends AuthorizedTest {
         Assert.assertEquals(actuateFullName, expectedFullName);
     }
 
+    @Test(priority = 3, groups = "returnFirstNameAndLastName")
+    public void verifyChangLastName() {
+        String s = "abc";
+
+        log.info("Write in input last name: {}", s);
+        editProfilePage.inputLastName.sendKeys(s);
+
+        log.info("Click save button");
+        editProfilePage.clickSaveButton();
+
+        log.info("Assert profile page is opened");
+        Assert.assertTrue(profilePage.isPageOpened());
+
+        String actuateFullName = profilePage.userFullName.getText();
+        String expectedFullName = User.loginedUser.getFirstName() + " " + User.loginedUser.getLastName() + s;
+
+        waitHelper.waitForSeconds(3);
+        log.info("Assert user full name is: {}", expectedFullName);
+        Assert.assertEquals(actuateFullName, expectedFullName);
+    }
+
+    @AfterMethod(onlyForGroups = "returnFirstNameAndLastName")
+    public void returnFirstNameAndLastName() {
+        log.info("Go edit profile page");
+        profilePage.clickEditProfileButton();
+
+        log.info("Assert edit profile page is openid");
+        Assert.assertTrue(editProfilePage.isPageOpened());
+
+        writeHelper.returnLoginedUserFirstName(editProfilePage.inputFirstName);
+        writeHelper.returnLoginedUserLastName(editProfilePage.inputLastName);
+
+        editProfilePage.clickSaveButton();
+
+        log.info("Assert profile page is opened");
+        Assert.assertTrue(profilePage.isPageOpened());
+    }
 }
