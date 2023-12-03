@@ -1,10 +1,9 @@
 package org.example.vlumetests.positivetests;
 
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
-import org.example.pages.TopPanel;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.pages.panels.toppanel.TopPanel;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.openqa.selenium.TimeoutException;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
