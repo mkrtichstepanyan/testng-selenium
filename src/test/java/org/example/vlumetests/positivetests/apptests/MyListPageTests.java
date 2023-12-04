@@ -1,12 +1,11 @@
 package org.example.vlumetests.positivetests.apptests;
 
-import com.google.errorprone.annotations.MustBeClosed;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
-import org.example.pages.app.GiftPage;
 import org.example.pages.app.MyListPage;
 import org.example.pages.autentication.SignInPage;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.home.UrlAsidePanelProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -27,7 +26,7 @@ public class MyListPageTests extends BaseTest {
     @Test
     public void validatePageLoading() {
         log.info("Open My List Page");
-        driver.get(UrlProvider.GIFT_PAGE_UAR.getUrl());
+        driver.get(UrlAsidePanelProvider.GIFT_PAGE_UAR.getUrl());
         myListPage = new MyListPage(driver);
         softAssert = new SoftAssert();
 
@@ -35,6 +34,25 @@ public class MyListPageTests extends BaseTest {
         boolean pageIsLoaded = myListPage.myListPageIsLoaded();
         softAssert.assertTrue(pageIsLoaded);
 
+        softAssert.assertAll();
+    }
+
+    @Test
+    public void validatePressOnMyList() {
+        softAssert = new SoftAssert();
+        log.info("-> Validate current URL after pressed on My list icon");
+        waitHelper.waitForSeconds(3);
+        String urlAfterPressedOnMyListIcon = driver.getCurrentUrl();
+        softAssert.assertEquals(urlAfterPressedOnMyListIcon, UrlAsidePanelProvider.MY_LIST_PAGE_URL.getUrl());
+
+        log.info("-> Press on <Plus> button");
+        waitHelper.waitForElementToBeClickable(myListPage.plusIcon);
+        myListPage.pressOnPlusIcon();
+
+        log.info("-> Validate current URL after pressed on <Plus> button");
+        waitHelper.waitForSeconds(4);
+        String urlAfterPressedOnPlusButton = driver.getCurrentUrl();
+        softAssert.assertEquals(urlAfterPressedOnPlusButton, UrlAsidePanelProvider.NEW_LIST_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 

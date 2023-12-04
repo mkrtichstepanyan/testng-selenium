@@ -3,7 +3,8 @@ package org.example.vlumetests.positivetests.panels.footer;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.footer.LegalSection;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.footer.UrlLegalProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -34,7 +35,7 @@ public class LegalSectionTests extends BaseTest {
 
         log.info("Verify current URL after pressing on Privacy policy link");
         String urlAfterPressedOnPrivacyPolicyLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnPrivacyPolicyLink, UrlProvider.PRIVACY_POLICY_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnPrivacyPolicyLink, UrlLegalProvider.PRIVACY_POLICY_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -52,7 +53,7 @@ public class LegalSectionTests extends BaseTest {
 
         log.info("Verify current URL after pressing on Terms of Service link");
         String urlAfterPressedOnTermsOfServiceLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnTermsOfServiceLink, UrlProvider.TERMS_OF_SERVICE_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnTermsOfServiceLink, UrlLegalProvider.TERMS_OF_SERVICE_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();

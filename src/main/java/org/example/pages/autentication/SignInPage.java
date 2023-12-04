@@ -1,6 +1,8 @@
 package org.example.pages.autentication;
 
+import org.example.models.User;
 import org.example.pages.BasePage;
+import org.example.providers.modelprovider.UserProvider;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +24,7 @@ public class SignInPage extends BasePage {
     public WebElement signInWithGoogle;
     @FindBy(xpath = "//snack-bar-container//span")
     public WebElement messageBox;
+    UserProvider userProvider;
 
     public SignInPage(WebDriver driver) {
         super(driver);
@@ -58,6 +61,20 @@ public class SignInPage extends BasePage {
     public void clickOnGoogleButton() {
         this.signInWithGoogle.click();
     }
+
+    public void signInWithValidData(){
+        userProvider = new UserProvider();
+        User validUser = userProvider.createValidUser();
+        String email = validUser.getEmail();
+        String password = validUser.getPassword();
+
+        waitHelper.waitForAllElementsToBeVisible(this.emailField, this.passwordField, this.signInButton);
+        inputHelper.fieldsAreEmpty(this.emailField, this.passwordField, this.signInButton);
+        this.emailField.sendKeys(email);
+        this.passwordField.sendKeys(password);
+        this.signInButton.click();
+    }
+
 
     public boolean signInPageIsLoaded() {
         return super.pageIsLoaded(

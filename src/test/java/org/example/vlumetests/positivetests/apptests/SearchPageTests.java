@@ -4,8 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.app.SearchPage;
 import org.example.pages.autentication.SignInPage;
-import org.example.providers.urlproviders.UrlProvider;
-import org.testng.annotations.BeforeMethod;
+import org.example.providers.urlproviders.home.UrlAsidePanelProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -14,7 +15,8 @@ public class SearchPageTests extends BaseTest {
 
     SearchPage searchPage;
     SignInPage signInPage;
-    @BeforeMethod
+
+    @BeforeClass
     public void signIn() {
         driver.get(UrlProvider.SIGN_IN_PAGE_URL.getUrl());
         signInPage = new SignInPage(driver);
@@ -26,7 +28,7 @@ public class SearchPageTests extends BaseTest {
     @Test
     public void validatePageLoading() {
         log.info("Open Search Page");
-        driver.get(UrlProvider.SEARCH_PAGE_URL.getUrl());
+        driver.get(UrlAsidePanelProvider.SEARCH_PAGE_URL.getUrl());
         searchPage = new SearchPage(driver);
         softAssert = new SoftAssert();
 

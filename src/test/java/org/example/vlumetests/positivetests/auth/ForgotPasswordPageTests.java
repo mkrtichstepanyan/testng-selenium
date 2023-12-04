@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.autentication.ForgotPasswordPage;
 import org.example.pages.autentication.SignInPage;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

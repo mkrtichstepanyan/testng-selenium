@@ -3,7 +3,8 @@ package org.example.vlumetests.positivetests.panels.footer;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.footer.SocialSection;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.footer.UrlSocialMediaProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -33,7 +34,7 @@ public class SocialSectionTests extends BaseTest {
 
         log.info("Validate current URL after pressing on Facebook link");
         String urlAfterPressedOnFacebookLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnFacebookLink, UrlProvider.FACEBOOK_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnFacebookLink, UrlSocialMediaProvider.FACEBOOK_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();

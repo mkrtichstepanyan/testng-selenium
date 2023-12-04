@@ -17,9 +17,44 @@ public class EbooksPage extends BasePage{
     public WebElement topFictionPart;
     @FindBy(id = "stackContainer5")
     public WebElement topNonFiction;
+    @FindBy(id="SeeMore0")
+    public WebElement recentlyAddedSeeMore;
+    @FindBy(id="SeeMore1")
+    public WebElement trendingNowSeeMore;
+    @FindBy(id="SeeMore2")
+    public WebElement ourTopPicksSeeMore;
+    @FindBy(id="SeeMore3")
+    public WebElement mostReadSeeMore;
+    @FindBy(id="SeeMore4")
+    public WebElement topFictionSeeMore;
+    @FindBy(id="SeeMore5")
+    public WebElement topNonFictionSeeMore;
 
     public EbooksPage(WebDriver driver) {
         super(driver);
+    }
+    public void pressOnRecentlyAddedPart(){
+        this.recentlyAddedSeeMore.click();
+    }
+
+    public void pressOnTrendingNowPart(){
+        this.trendingNowSeeMore.click();
+    }
+
+    public void pressOnOurTopPicks(){
+        this.ourTopPicksSeeMore.click();
+    }
+
+    public void pressOnMostReadPart(){
+        this.mostReadSeeMore.click();
+    }
+
+    public void pressOnTopFictionPart(){
+        this.topFictionSeeMore.click();
+    }
+
+    public void pressOnTopNonFictionPart(){
+        topNonFiction.click();
     }
 
     public boolean ebooksPageIsLoaded() {

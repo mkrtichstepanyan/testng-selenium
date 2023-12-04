@@ -10,9 +10,15 @@ public class MyListPage extends BasePage {
 
     @FindBy(xpath = "//mat-card[@class='mat-card boxSize card-style']")
     public WebElement myListPart;
+    @FindBy(id="Plus")
+    public WebElement plusIcon;
 
     public MyListPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void pressOnPlusIcon(){
+        plusIcon.click();
     }
 
     public boolean myListPageIsLoaded() {

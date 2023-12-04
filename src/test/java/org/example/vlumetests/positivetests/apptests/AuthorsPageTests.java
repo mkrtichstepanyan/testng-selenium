@@ -4,7 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.app.AuthorsPage;
 import org.example.pages.autentication.SignInPage;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.home.UrlAsidePanelProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -25,7 +26,7 @@ public class AuthorsPageTests extends BaseTest {
     @Test
     public void validatePageLoading() {
         log.info("Open Authors Page");
-        driver.get(UrlProvider.AUTHORS_PAGE_URL.getUrl());
+        driver.get(UrlAsidePanelProvider.AUTHORS_PAGE_URL.getUrl());
         authorsPage = new AuthorsPage(driver);
         softAssert = new SoftAssert();
 

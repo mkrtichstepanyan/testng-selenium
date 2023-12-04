@@ -31,7 +31,6 @@ public class WaitHelper {
         return wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-
     public WebElement waitUntilElementWillBeVisible(WebElement webElement, int seconds) {
         return wait.until(ExpectedConditions.visibilityOf(webElement));
     }

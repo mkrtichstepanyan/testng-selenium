@@ -1,7 +1,7 @@
-package org.example.pages.panels.top_panel;
+package org.example.pages.panels.toppanel;
 
 import org.example.pages.BasePage;
-import org.example.pages.panels.top_panel.signedIn.UserProfile;
+import org.example.pages.panels.toppanel.signedIn.UserProfile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -59,7 +59,7 @@ public class TopPanel extends BasePage {
         sectionIsLoaded(authElement, allElementsAreLoaded);
         return allElementsAreLoaded
                 .stream()
-                .anyMatch(sectionIsLoaded -> sectionIsLoaded);
+                .allMatch(sectionIsLoaded -> sectionIsLoaded);
     }
 
     private void sectionIsLoaded(BasePage authMutableObject, List<Boolean> authElementIsLoaded) {

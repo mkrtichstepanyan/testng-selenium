@@ -3,7 +3,7 @@ package org.example.vlumetests.negativetests;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.autentication.SignUpPage;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;

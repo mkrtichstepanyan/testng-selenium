@@ -3,7 +3,9 @@ package org.example.vlumetests.positivetests.panels.footer;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.footer.AboutSection;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.footer.UrlAboutProvider;
+import org.example.providers.urlproviders.home.UrlAsidePanelProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -33,7 +35,7 @@ public class AboutSectionTests extends BaseTest {
 
         log.info("Verify current URL after pressing on Support link");
         String urlAfterPressedOnSupportLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnSupportLink, UrlProvider.SUPPORT_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnSupportLink, UrlAboutProvider.SUPPORT_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -53,7 +55,7 @@ public class AboutSectionTests extends BaseTest {
         log.info("Verify current URL after pressing on Accounts and subscriptions link");
         String urlAfterPressedOnAccountsAndSubscriptionsLink = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnAccountsAndSubscriptionsLink,
-                UrlProvider.ACCOUNTS_SUBSCRIPTIONS_URL.getUrl());
+                UrlAboutProvider.ACCOUNTS_SUBSCRIPTIONS_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -73,7 +75,7 @@ public class AboutSectionTests extends BaseTest {
         log.info("Verify current URL after pressing on Vlume for institutions link");
         String urlAfterPressedOnVlumeForInstitutionsLink = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnVlumeForInstitutionsLink,
-                UrlProvider.VLUME_FOR_INSTITUTIONS_PAGE_URL.getUrl());
+                UrlAboutProvider.VLUME_FOR_INSTITUTIONS_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -91,7 +93,7 @@ public class AboutSectionTests extends BaseTest {
 
         log.info("Verify current URL after pressing on Vlume keyboard link");
         String urlAfterPressedOnVlumeKeyboardLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnVlumeKeyboardLink, UrlProvider.VLUME_KEYBOARD_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnVlumeKeyboardLink, UrlAboutProvider.VLUME_KEYBOARD_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -109,7 +111,7 @@ public class AboutSectionTests extends BaseTest {
 
         log.info("Verify current URL after pressing on Gift link");
         String urlAfterPressedOnGiftLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnGiftLink, UrlProvider.GIFT_PAGE_UAR.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnGiftLink, UrlAsidePanelProvider.GIFT_PAGE_UAR.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();

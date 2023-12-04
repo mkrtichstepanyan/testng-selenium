@@ -3,7 +3,8 @@ package org.example.vlumetests.positivetests.panels.footer;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.footer.AppsSection;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.footer.UrlAppProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.junit.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
@@ -32,7 +33,7 @@ public class AppsSectionTests extends BaseTest {
 
         log.info("Validate current URL after pressing on App Store logo");
         String urlAfterPressedOnAppStoreLogo = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnAppStoreLogo, UrlProvider.APP_STORE_LOGO_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnAppStoreLogo, UrlAppProvider.APP_STORE_LOGO_URL.getUrl());
 
         log.info("Test succeeded");
         softAssert.assertAll();
@@ -52,7 +53,7 @@ public class AppsSectionTests extends BaseTest {
 
         log.info("validate current URL after pressing on Google Play logo");
         String urlAfterPressedOnGooglePlyLogo = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnGooglePlyLogo, UrlProvider.GOOGLE_PLAY_LOGO_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnGooglePlyLogo, UrlAppProvider.GOOGLE_PLAY_LOGO_URL.getUrl());
 
         log.info("Test succeeded");
         softAssert.assertAll();

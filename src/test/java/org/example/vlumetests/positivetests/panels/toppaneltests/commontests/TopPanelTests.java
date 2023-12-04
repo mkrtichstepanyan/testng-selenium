@@ -1,7 +1,8 @@
-package org.example.vlumetests.positivetests;
+package org.example.vlumetests.positivetests.panels.toppaneltests.commontests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
+import org.example.pages.panels.toppanel.SignInElement;
 import org.example.pages.panels.toppanel.TopPanel;
 import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.openqa.selenium.TimeoutException;
@@ -17,7 +18,7 @@ public class TopPanelTests extends BaseTest {
     public void goToUrl() {
         log.info("Open Sign In Page");
         driver.get(UrlProvider.SIGN_IN_PAGE_URL.getUrl());
-        topPanel = new TopPanel(driver);
+        topPanel = new TopPanel(SignInElement.class, driver);
         softAssert = new SoftAssert();
     }
 

@@ -3,7 +3,11 @@ package org.example.vlumetests.positivetests.panels.footer;
 import lombok.extern.slf4j.Slf4j;
 import org.example.BaseTest;
 import org.example.pages.footer.PagesSection;
-import org.example.providers.urlproviders.UrlProvider;
+import org.example.providers.urlproviders.footer.UrlPageProvider;
+import org.example.providers.urlproviders.home.UrlAsidePanelProvider;
+import org.example.providers.urlproviders.home.UrlEbooksProvider;
+import org.example.providers.urlproviders.home.UrlHomeProvider;
+import org.example.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -51,7 +55,7 @@ public class PagesSectionTests extends BaseTest {
         pagesSection.pressOnAudiobooksLink();
         log.info("-> Validate current URL Audiobooks page after pressed Audiobooks link");
         String urlAfterPressedOnAudiobooksLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnAudiobooksLink, UrlProvider.AUDIOBOOKS_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnAudiobooksLink, UrlAsidePanelProvider.AUDIOBOOKS_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -70,7 +74,7 @@ public class PagesSectionTests extends BaseTest {
 
         log.info("Validate current URL after pressing on Ebooks link");
         String urlAfterPressedOnEbooksLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnEbooksLink, UrlProvider.EBOOKS_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnEbooksLink, UrlAsidePanelProvider.EBOOKS_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -89,7 +93,7 @@ public class PagesSectionTests extends BaseTest {
 
         log.info("Validate current URL Authors page after pressing on Authors link");
         String urlAfterPressedOnAuthorsLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnAuthorsLink, UrlProvider.AUTHORS_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnAuthorsLink, UrlAsidePanelProvider.AUTHORS_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -107,7 +111,7 @@ public class PagesSectionTests extends BaseTest {
 
         log.info("Validate current URL Recently added page after pressing on Recently added link");
         String urlAfterPressedOnRecentlyAddedLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnRecentlyAddedLink, UrlProvider.RECENTLY_ADDED_PAGE_UPL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnRecentlyAddedLink, UrlHomeProvider.RECENTLY_ADDED_PAGE_UPL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -125,7 +129,7 @@ public class PagesSectionTests extends BaseTest {
 
         log.info("Validate current URL after pressing on Trending link");
         String urlAfterPressedOnTrendingLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnTrendingLink, UrlProvider.TRENDING_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnTrendingLink, UrlHomeProvider.TRENDING_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();
@@ -144,7 +148,7 @@ public class PagesSectionTests extends BaseTest {
 
         log.info("Validate current URL after pressing on Categories link");
         String urlAfterPressedOnCategoriesLink = driver.getCurrentUrl();
-        softAssert.assertEquals(urlAfterPressedOnCategoriesLink, UrlProvider.CATEGORIES_PAGE_URL.getUrl());
+        softAssert.assertEquals(urlAfterPressedOnCategoriesLink, UrlPageProvider.CATEGORIES_PAGE_URL.getUrl());
 
         log.info("Test passed successfully");
         softAssert.assertAll();

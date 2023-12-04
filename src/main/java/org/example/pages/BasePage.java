@@ -25,6 +25,9 @@ public class BasePage {
         inputHelper = new InputHelper();
     }
 
+    public BasePage() {
+    }
+
     public boolean pageIsLoaded(WebElement... elements) {
         try {
             waitHelper.waitForAllElementsToBeVisible(elements);

@@ -1,5 +1,6 @@
 package org.example.helpers;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class InputHelper {
@@ -14,7 +15,8 @@ public class InputHelper {
     }
 
     public void clearField(WebElement element) {
-        element.sendKeys("");
+        element.sendKeys(Keys.chord(Keys.CONTROL), Keys.BACK_SPACE);
+//        element.sendKeys("");
 //        element.clear();
     }
 

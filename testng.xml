@@ -10,7 +10,7 @@
 <!--            <class name="org.example.vlumetests.positivetests.auth.SignInPageTests"/>-->
 <!--            <class name="org.example.vlumetests.positivetests.auth.SignUpPageTests"/>-->
 <!--            <class name="org.example.vlumetests.positivetests.auth.ForgotPasswordPageTests"/>-->
-<!--            <class name="org.example.vlumetests.positivetests.TopPanelTests"/>-->
+<!--            <class name="org.example.vlumetests.positivetests.panels.toppaneltests.commontests.TopPanelTests"/>-->
         </classes>
     </test>
 <!--    <test name="second">-->
