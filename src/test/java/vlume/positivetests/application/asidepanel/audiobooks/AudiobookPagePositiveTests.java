@@ -2,7 +2,7 @@ package vlume.positivetests.application.asidepanel.audiobooks;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.application.asidepanel.audiobooks.AudiobooksPage;
-import org.example.vlume.pages.autentication.signin.SignInPage;
+import org.example.vlume.pages.authentication.signin.SignInPage;
 import org.example.vlume.providers.urlproviders.home.UrlAsidePanelProvider;
 import org.example.vlume.providers.urlproviders.home.UrlAudiobooksProvider;
 import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
@@ -25,14 +25,9 @@ public class AudiobookPagePositiveTests extends BaseTest {
         driver.get(UrlProvider.SIGN_IN_PAGE_URL.getUrl());
         signInPage = new SignInPage(driver);
 
-        log.info("-> Write email information");
-        signInPage.enterEmail("@gmail.com");
+        log.info("-> Sign in");
+        signInPage.signIn();
 
-        log.info("-> Write password information");
-        signInPage.enterPassword("0000");
-
-        log.info("-> Press on <Sign in> button");
-        signInPage.pressSignInButton();
         waitHelper.waitForSeconds(3);
         driver.get(UrlAsidePanelProvider.HOME_PAGE_URL.getUrl());
     }

@@ -2,11 +2,10 @@ package vlume.positivetests.application.asidepanel.ebooks;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.application.asidepanel.ebooks.EbooksPage;
-import org.example.vlume.pages.autentication.signin.SignInPage;
+import org.example.vlume.pages.authentication.signin.SignInPage;
 import org.example.vlume.providers.urlproviders.home.UrlAsidePanelProvider;
 import org.example.vlume.providers.urlproviders.home.UrlEbooksProvider;
 import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -25,14 +24,10 @@ public class EbookPagePositiveTests extends BaseTest {
         log.info("-> Open sign in page");
         driver.get(UrlProvider.SIGN_IN_PAGE_URL.getUrl());
         signInPage = new SignInPage(driver);
-        log.info("-> Write email information");
-        signInPage.enterEmail("@gmail.com");
 
-        log.info("-> Write password information");
-        signInPage.enterPassword("0000");
+        log.info("-> Sign in");
+        signInPage.signIn();
 
-        log.info("-> Press on <Sign in> button");
-        signInPage.pressSignInButton();
         waitHelper.waitForSeconds(3);
         driver.get(UrlAsidePanelProvider.HOME_PAGE_URL.getUrl());
     }

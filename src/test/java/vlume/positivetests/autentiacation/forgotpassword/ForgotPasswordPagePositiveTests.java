@@ -2,8 +2,8 @@ package vlume.positivetests.autentiacation.forgotpassword;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.helper.InputHelper;
-import org.example.vlume.pages.autentication.forgotpassword.ForgotPasswordPage;
-import org.example.vlume.pages.autentication.signin.SignInPage;
+import org.example.vlume.pages.authentication.forgotpassword.ForgotPasswordPage;
+import org.example.vlume.pages.authentication.signin.SignInPage;
 import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.BeforeMethod;

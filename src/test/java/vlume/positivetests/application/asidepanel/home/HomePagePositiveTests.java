@@ -2,7 +2,7 @@ package vlume.positivetests.application.asidepanel.home;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.application.asidepanel.home.HomePage;
-import org.example.vlume.pages.autentication.signin.SignInPage;
+import org.example.vlume.pages.authentication.signin.SignInPage;
 import org.example.vlume.providers.urlproviders.home.UrlAsidePanelProvider;
 import org.example.vlume.providers.urlproviders.home.UrlHomeProvider;
 import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
@@ -19,21 +19,15 @@ public class HomePagePositiveTests extends BaseTest {
     SignInPage signInPage;
     HomePage homePage;
 
-
     @BeforeClass
     public void goToUrl() {
         log.info("-> Open sign in page");
         driver.get(UrlProvider.SIGN_IN_PAGE_URL.getUrl());
         signInPage = new SignInPage(driver);
 
-        log.info("-> Write email information");
-        signInPage.enterEmail("@gmail.com");
-
-        log.info("-> Write password information");
-        signInPage.enterPassword("0000");
-
-        log.info("-> Press on <Sign in> button");
-        signInPage.pressSignInButton();
+        log.info("-> Sign in");
+        signInPage.signIn();
+        signInPage.signInPageIsLoaded();
         waitHelper.waitForSeconds(3);
     }
 

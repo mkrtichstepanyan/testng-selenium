@@ -1,10 +1,14 @@
-2023-11-30 18:04:25,764 INFO org.testng.internal.Utils [main] [TestNG] Running:
+2023-12-04 17:52:03,215 INFO org.testng.internal.Utils [main] [TestNG] Running:
   C:\Users\Eghia\AppData\Local\JetBrains\IdeaIC2022.3\temp-testng-customsuite.xml
 
-2023-11-30 18:04:27,577 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
-2023-11-30 18:04:27,654 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Exporting webdriver.chrome.driver as C:\Users\Eghia\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
-2023-11-30 18:04:41,503 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Open sign in page
-2023-11-30 18:04:56,889 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Write email
-2023-11-30 18:04:57,210 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Write password
-2023-11-30 18:04:57,399 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on <Sign in> button
-2023-11-30 18:05:00,774 INFO vlume.positivetests.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Open Home page
+2023-12-04 17:52:04,908 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Using chromedriver 119.0.6045.105 (resolved driver for Chrome 119)
+2023-12-04 17:52:05,023 INFO io.github.bonigarcia.wdm.WebDriverManager [main] Exporting webdriver.chrome.driver as C:\Users\Eghia\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe
+2023-12-04 17:52:13,210 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Open sign in page
+2023-12-04 17:52:19,480 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Sign in
+2023-12-04 17:52:25,236 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Open Home page
+2023-12-04 17:52:32,567 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on User profile icon
+2023-12-04 17:52:33,642 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on Membership part
+2023-12-04 17:52:37,498 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on <Change payment method> button
+2023-12-04 17:52:41,044 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on <PayPal> button
+2023-12-04 17:52:54,673 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on <Debit or Card> button
+2023-12-04 17:53:07,311 INFO vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests [main] -> Press on Card number field

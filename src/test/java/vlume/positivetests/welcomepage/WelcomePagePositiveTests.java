@@ -1,7 +1,7 @@
 package vlume.positivetests.welcomepage;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.vlume.pages.autentication.signin.SignInPage;
+import org.example.vlume.pages.authentication.signin.SignInPage;
 import org.example.vlume.pages.wordpress.WelcomePage;
 import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeMethod;

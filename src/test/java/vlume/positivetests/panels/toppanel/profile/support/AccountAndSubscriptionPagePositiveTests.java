@@ -1,0 +1,6 @@
+package vlume.positivetests.panels.toppanel.profile.support;
+
+import vlume.BaseTest;
+
+public class AccountAndSubscriptionPagePositiveTests extends BaseTest {
+}

@@ -20,4 +20,4 @@ public enum UrlHomeProvider {
     public String getUrl() {
         return url;
     }
-    }
+}

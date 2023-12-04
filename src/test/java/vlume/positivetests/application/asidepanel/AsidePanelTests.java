@@ -2,7 +2,7 @@ package vlume.positivetests.application.asidepanel;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.application.asidepanel.AsidePanel;
-import org.example.vlume.pages.autentication.signin.SignInPage;
+import org.example.vlume.pages.authentication.signin.SignInPage;
 import org.example.vlume.providers.urlproviders.home.UrlAsidePanelProvider;
 import org.example.vlume.providers.urlproviders.welcome.UrlProvider;
 import org.testng.annotations.BeforeClass;
@@ -15,21 +15,18 @@ public class AsidePanelTests extends BaseTest {
 
     SignInPage signInPage;
     AsidePanel aside;
+
     @BeforeClass
     public void signIn() {
         aside = new AsidePanel(driver);
         driver.get(UrlProvider.SIGN_IN_PAGE_URL.getUrl());
         signInPage = new SignInPage(driver);
-        log.info("-> Write email information");
-        signInPage.enterEmail("@gmail.com");
 
-        log.info("-> Write password information");
-        signInPage.enterPassword("0000");
-
-        log.info("-> Press on <Sign in> button");
-        signInPage.pressSignInButton();
+        log.info("-> Sign in");
+        signInPage.signIn();
     }
-   @Test
+
+    @Test
     public void validatePressOnAudiobooksIcon() {
         softAssert = new SoftAssert();
         log.info("-> Press on Audiobooks icon from aside panel");
@@ -44,6 +41,7 @@ public class AsidePanelTests extends BaseTest {
                 UrlAsidePanelProvider.AUDIOBOOKS_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
+
     @Test
     public void validatePressOnAuthorsIcon() {
         softAssert = new SoftAssert();
@@ -53,7 +51,7 @@ public class AsidePanelTests extends BaseTest {
         log.info("-> Validate current URL after pressed on Authors icon");
         String urlAfterPressedOnAuthorsIcon = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnAuthorsIcon,
-               UrlAsidePanelProvider.AUTHORS_PAGE_URL.getUrl());
+                UrlAsidePanelProvider.AUTHORS_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
 
@@ -68,9 +66,10 @@ public class AsidePanelTests extends BaseTest {
         waitHelper.waitForSeconds(4);
         String urlAfterPressedOnEbooksIcon = driver.getCurrentUrl();
         softAssert.assertEquals(urlAfterPressedOnEbooksIcon,
-               UrlAsidePanelProvider.EBOOKS_PAGE_URL.getUrl());
+                UrlAsidePanelProvider.EBOOKS_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
+
     @Test()
     public void validatePressOnGiftButton() {
         softAssert = new SoftAssert();
@@ -86,6 +85,7 @@ public class AsidePanelTests extends BaseTest {
                 UrlAsidePanelProvider.GIFT_PAGE_UAR.getUrl());
         softAssert.assertAll();
     }
+
     @Test()
     public void validatePressOnHomeButton() {
         softAssert = new SoftAssert();
@@ -101,6 +101,7 @@ public class AsidePanelTests extends BaseTest {
                 UrlAsidePanelProvider.HOME_PAGE_URL.getUrl());
         softAssert.assertAll();
     }
+
     @Test
     public void validatePressOnMyListIcon() {
         softAssert = new SoftAssert();
@@ -114,6 +115,7 @@ public class AsidePanelTests extends BaseTest {
 
         softAssert.assertAll();
     }
+
     @Test
     public void validatePressOnSearchIcon() {
         softAssert = new SoftAssert();
