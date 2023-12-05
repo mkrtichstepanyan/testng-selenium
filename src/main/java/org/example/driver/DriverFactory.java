@@ -25,8 +25,6 @@ public class DriverFactory {
         log.warn("Setting up the driver for browser {}", browser);
         log.error("Setting up the driver for browser {}", browser);
 
-        System.exit(0);
-
         switch (browser.toLowerCase()) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();

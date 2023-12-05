@@ -7,6 +7,7 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="signup.SignUpTest"/>
+            <class name="signup.SignUpTest1"/>
         </classes>
     </test>
 
