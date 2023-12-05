@@ -35,7 +35,11 @@
 <!--            <class name="settings.readingLanguage.ReadingLanguageNegativeTests"/>-->
 <!--            <class name="settings.readingLanguage.ReadingLanguagePositiveTests"/>-->
 
-            <class name="membership.MembershipPositiveTest"/>
+<!--            <class name="membership.paymentDetails.PaymentDetailsNegativeTest"/>-->
+<!--            <class name="membership.paymentDetails.PaymentDetailsPositiveTest"/>-->
+
+            <class name="membership.paymentDetailsEdit.PaymentDetailsEditNegativeTests"/>
+            <class name="membership.paymentDetailsEdit.PaymentDetailsEditPositiveTests"/>
 
 <!--            <class name="ExamplesForAllure"/>-->
         </classes>
