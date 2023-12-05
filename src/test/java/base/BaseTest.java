@@ -1,5 +1,7 @@
 package base;
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
 import lombok.extern.slf4j.Slf4j;
 import org.example.driver.DriverFactory;
 import org.example.helpers.WaitHelper;
@@ -9,6 +11,8 @@ import org.testng.annotations.BeforeClass;
 
 import java.util.Iterator;
 import java.util.Set;
+
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 @Slf4j
 public class BaseTest extends DriverFactory {
@@ -20,6 +24,8 @@ public class BaseTest extends DriverFactory {
     protected WaitHelper waitHelper;
 
     @BeforeClass
+    @Severity(CRITICAL)
+    @Owner("Garik Gharibyan")
     public void setup() {
         driver = getDriver();
         waitHelper = new WaitHelper(driver);

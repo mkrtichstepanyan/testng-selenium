@@ -36,6 +36,8 @@ public class SettingsPositiveTests extends AuthorizedTest {
         log.info("Click on user profile");
         homePage.getTopPanel().clickOnUserProfileButton();
 
+        waitHelper.waitForElementToBeVisible(homePage.getTopPanel().settings);
+
         log.info("Assert settings button is visible");
         Assert.assertTrue(homePage.getTopPanel().settings.isDisplayed());
 

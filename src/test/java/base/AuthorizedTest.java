@@ -1,13 +1,17 @@
 package base;
 
-import base.BaseTest;
 import dataProvider.url.UrlsProvider;
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.PageAssertion;
 import org.example.pages.authorization.SignInPage;
 import org.example.pages.home.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 @Slf4j(topic = "AuthorizationLogger")
 public class AuthorizedTest extends BaseTest {
@@ -16,6 +20,9 @@ public class AuthorizedTest extends BaseTest {
 
     @BeforeClass
     @Override
+    @Description("This step test we use when we need authorization")
+    @Severity(CRITICAL)
+    @Owner("John Doe")
     public void setup() {
         super.setup();
 
