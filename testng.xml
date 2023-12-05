@@ -32,8 +32,12 @@
 <!--            <class name="settings.editProfile.EditProfileNegativeTests"/>-->
 <!--            <class name="settings.editProfile.EditProfilePositiveTests"/>-->
 
-            <class name="settings.readingLanguage.ReadingLanguageNegativeTests"/>
-            <class name="settings.readingLanguage.ReadingLanguagePositiveTests"/>
+<!--            <class name="settings.readingLanguage.ReadingLanguageNegativeTests"/>-->
+<!--            <class name="settings.readingLanguage.ReadingLanguagePositiveTests"/>-->
+
+            <class name="membership.MembershipPositiveTest"/>
+
+<!--            <class name="ExamplesForAllure"/>-->
         </classes>
     </test>
 

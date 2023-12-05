@@ -18,6 +18,9 @@ public class HomeTopPanel extends BaseTopPanel {
     @FindBy(xpath = "//div[@role = 'menu']//a[@id = 'settingsPage']")
     public WebElement settings;
 
+    @FindBy(xpath = "//div[@role = 'menu']//a[@id = 'membershipPage']")
+    public WebElement membership;
+
     public HomeTopPanel(WebDriver driver) {
         super(driver);
     }
@@ -33,5 +36,9 @@ public class HomeTopPanel extends BaseTopPanel {
 
     public void clickOnSettingsButton() {
         settings.click();
+    }
+
+    public void clickMembershipButton() {
+        membership.click();
     }
 }

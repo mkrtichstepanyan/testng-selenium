@@ -14,4 +14,7 @@ public interface UrlsProvider {
 
     String SETTINGS_PAGE_URL = "https://dev.vlume.com/settings";
 
+
+    String MEMBERSHIP_PAGE_URL = "https://dev.vlume.com/membership";
+
 }
