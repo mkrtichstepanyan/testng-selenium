@@ -89,10 +89,9 @@ public class PaymentMethodsPartPositiveTests extends BaseTest {
 
         waitHelper.waitForSeconds(5);
         log.info("-> Press on Card number field");
-        waitHelper.waitUntilElementWillBeVisible(paymentMethodsPart.cardNumber);
+        waitHelper.waitForElementToBeClickable(paymentMethodsPart.cardNumber);
         paymentMethodsPart.pressOnCardNumberField();
         paymentMethodsPart.paymentMethodsPartIsLoaded();
-
 
         log.info("-> Write Card number information");
         paymentMethodsPart.enterCardNumber("4111111111111111");

@@ -8,7 +8,33 @@
             <class name="vlume.positivetests.autentiacation.signup.SignUpPagePositiveTests"/>
             <class name="vlume.positivetests.autentiacation.signin.SignInPagePositiveTest"/>
             <class name="vlume.positivetests.autentiacation.forgotpassword.ForgotPasswordPagePositiveTests"/>
-            <class name="vlume.positivetests.toppanel.panel.TopPanelPositiveTests"/>
+<!--            <class name="vlume.positivetests.application.asidepanel.AsidePanelTests"/>-->
+<!--            <class name="vlume.positivetests.application.asidepanel.home.HomePagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.application.asidepanel.search.SearchPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.application.asidepanel.audiobooks.AudiobookPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.application.asidepanel.ebooks.EbookPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.application.asidepanel.authors.AuthorPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.application.asidepanel.mylist.MyListPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.application.asidepanel.gift.GiftPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.header.TopPanelPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.logedintests.UserInfoTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.logedintests.usermenu.MembershipPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.logedintests.usermenu.SettingPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.logedintests.usermenu.SupportPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.logedintests.usermenu.SignOutPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.membership.JoinNowPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.membership.LinkYourMembershipPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.membership.PaymentMethodsPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.settings.ProfilePartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.settings.AuthenticationProviderPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.settings.ReadingLanguagePartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.settings.ManageAccountPartPositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.support.AboutVlumePagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.support.AccountAndSubscriptionPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.support.ReadingWithVlumePagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.support.InstitutionalAccountPagePositiveTests"/>-->
+<!--            <class name="vlume.positivetests.panels.toppanel.profile.support.VlumeKeyboardPagePositiveTests"/>-->
+<!--            <class name="vlume.negativetests.autentiacation.forgotpassword.ForgotPasswordPageNegativeTests"/>-->
         </classes>
     </test>
 

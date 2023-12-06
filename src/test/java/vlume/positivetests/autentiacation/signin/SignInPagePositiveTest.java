@@ -1,5 +1,6 @@
 package vlume.positivetests.autentiacation.signin;
 
+import io.qameta.allure.*;
 import lombok.extern.slf4j.Slf4j;
 import org.example.vlume.pages.authentication.signin.SignInPage;
 import org.example.vlume.pages.authentication.signup.SignUpPage;
@@ -8,6 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import vlume.BaseTest;
+
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 @Slf4j
 public class SignInPagePositiveTest extends BaseTest {
@@ -25,6 +28,12 @@ public class SignInPagePositiveTest extends BaseTest {
     }
 
     @Test
+    @Description("This test attempts to log into the website using a login and a password. Fails if any error happens.\n\nNote that this test does not test 2-Factor Authentication.")
+    @Severity(CRITICAL)
+    @Owner("John Doe")
+    @Link(name = "Website", url = "https://dev.example.com/")
+    @Issue("AUTH-123")
+    @TmsLink("TMS-456")
     public void validateSignInProcess() {
         waitHelper.waitForElementToBeClickable(signInPage.emailField);
 

@@ -12,7 +12,10 @@ public class PaymentMethodsPart extends BasePage {
     @FindBy(id = "addPaymentMethod")
     public WebElement debitOrCreditCard;
 
-    @FindBy(id="field-description-number")
+    @FindBy(css = "iframe[title='Secure Credit Card Frame - Credit Card Number']")
+    public WebElement cardNumberIframe;
+
+    @FindBy(id="braintree-hosted-field-number")
     public WebElement cardNumber;
 
     @FindBy(id = "expirationDate")
@@ -57,6 +60,10 @@ public class PaymentMethodsPart extends BasePage {
     }
 
     public void pressOnCardNumberField() {
+        waitHelper.waitUntilElementWillBeVisible(this.cardNumberIframe);
+        driver.switchTo().frame(cardNumberIframe);
+        waitHelper.waitForElementToBeClickable(this.cardNumber);
+        waitHelper.waitForSeconds(2);
         cardNumber.click();
     }
 
@@ -107,6 +114,7 @@ public class PaymentMethodsPart extends BasePage {
     }
 
     public boolean paymentMethodsPartIsLoaded() {
-        return super.pageIsLoaded(this.cvv, this.saveButton, this.cancelButton, this.expirationData);
+        return super.pageIsLoaded(this.cvv, this.saveButton, this.cancelButton,
+                this.cardNumber, this.expirationData);
     }
 }
