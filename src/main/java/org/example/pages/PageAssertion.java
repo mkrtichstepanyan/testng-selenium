@@ -3,6 +3,7 @@ package org.example.pages;
 import dataProvider.email.EmailsProvider;
 import dataProvider.password.PasswordsProvider;
 import lombok.extern.slf4j.Slf4j;
+import org.example.membership.PaymentDetailsPage;
 import org.example.pages.authorization.SignInPage;
 import org.testng.Assert;
 

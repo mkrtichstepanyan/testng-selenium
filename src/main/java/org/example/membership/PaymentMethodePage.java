@@ -10,7 +10,7 @@ public class PaymentMethodePage extends BasePage {
     @FindBy(xpath = "//button[@id = 'addPaymentMethod']")
     public WebElement addPaymentMethod;
 
-    @FindBy(xpath = "//div[@id = 'paypal-animation-content']")
+    @FindBy(xpath = "//div[@id = 'paypal-button']")
     public WebElement payPal;
 
     public PaymentMethodePage(WebDriver driver) {

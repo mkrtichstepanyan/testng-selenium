@@ -7,13 +7,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class PaymentDetailsEditPage extends BasePage {
 
-    @FindBy(xpath = "//input[@id = 'credit-card-number']")
+    @FindBy(xpath = "//iframe[@id = 'braintree-hosted-field-number']")
     public WebElement inputCardNumber;
 
-    @FindBy(xpath = "//input[@id = 'expiration']")
+    @FindBy(xpath = "//iframe[@id = 'braintree-hosted-field-expirationDate']")
     public WebElement inputExpiration;
 
-    @FindBy(xpath = "//input[@id = 'cvv']")
+    @FindBy(xpath = "//iframe[@id = 'braintree-hosted-field-cvv']")
     public WebElement inputCvv;
 
     @FindBy(xpath = "//button[@id = 'buttonCancel']")
