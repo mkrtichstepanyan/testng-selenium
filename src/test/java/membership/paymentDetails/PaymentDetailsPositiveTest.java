@@ -3,8 +3,8 @@ package membership.paymentDetails;
 import base.AuthorizedTest;
 import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
-import org.example.membership.MembershipPage;
-import org.example.membership.PaymentDetailsPage;
+import org.example.pages.membership.MembershipPage;
+import org.example.pages.membership.PaymentDetailsPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

@@ -29,7 +29,7 @@ public class BaseTest extends DriverFactory {
     public void setup() {
         driver = getDriver();
         waitHelper = new WaitHelper(driver);
-        writeHelper = new WriteHelper();
+        writeHelper = new WriteHelper(driver);
     }
 
     public String nextWidow() {

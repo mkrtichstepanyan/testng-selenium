@@ -1,4 +1,4 @@
-package org.example.membership;
+package org.example.pages.membership;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.BasePage;

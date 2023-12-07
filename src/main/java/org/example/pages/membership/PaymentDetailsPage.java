@@ -1,4 +1,4 @@
-package org.example.membership;
+package org.example.pages.membership;
 
 import org.example.pages.BasePage;
 import org.openqa.selenium.WebDriver;

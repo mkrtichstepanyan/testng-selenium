@@ -3,10 +3,10 @@ package membership.paymentDetailsEdit;
 import base.AuthorizedTest;
 import dataProvider.url.UrlsProvider;
 import lombok.extern.slf4j.Slf4j;
-import org.example.membership.MembershipPage;
-import org.example.membership.PaymentDetailsEditPage;
-import org.example.membership.PaymentDetailsPage;
-import org.example.membership.PaymentMethodePage;
+import org.example.pages.membership.MembershipPage;
+import org.example.pages.membership.PaymentDetailsEditPage;
+import org.example.pages.membership.PaymentDetailsPage;
+import org.example.pages.membership.PaymentMethodePage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -28,8 +28,8 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
         goToURL(UrlsProvider.MEMBERSHIP_PAGE_URL);
         membershipPage = new MembershipPage(driver);
         paymentDetailsPage = membershipPage.getPaymentDetails();
-        paymentDetailsEditPage = new PaymentDetailsEditPage(driver);
-        paymentMethodePage = new PaymentMethodePage(driver);
+        paymentDetailsEditPage = membershipPage.getPaymentDetailsEditPage();
+        paymentMethodePage = membershipPage.getPaymentMethodePage();
 
         log.info("Assert membership page is opened");
         assertThat(membershipPage.isPageOpened())
@@ -51,11 +51,11 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
         assertThat(paymentDetailsPage.isPageOpened()).isTrue();
 
         String currentCartNumber = paymentDetailsPage.cardNumber.getText();
+        goPaymentDetailsEditPage();
 
         if (currentCartNumber.endsWith("1111")) {
-            goPaymentDetailsEditPage();
 
-            writeHelper.changeValidSecondCardNumber(paymentDetailsEditPage.inputCardNumber, paymentDetailsEditPage.inputExpiration, paymentDetailsEditPage.inputCvv);
+            writeHelper.changeValidSecondCardNumber(paymentDetailsEditPage);
 
             log.info("Click on save button");
             paymentDetailsEditPage.clickSaveButton();
@@ -66,10 +66,9 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
             log.info("Assert cart number is ended: {}", "4444");
             assertThat(paymentDetailsPage.cardNumber.getText()).endsWith("4444");
         } else if (currentCartNumber.endsWith("4444")) {
-            goPaymentDetailsEditPage();
 
             log.info("Chang cart number");
-            writeHelper.changeValidFirstCardNumber(paymentDetailsEditPage.inputCardNumber, paymentDetailsEditPage.inputExpiration, paymentDetailsEditPage.inputCvv);
+            writeHelper.changeValidFirstCardNumber(paymentDetailsEditPage);
 
             log.info("Click on save button");
             paymentDetailsEditPage.clickSaveButton();
@@ -100,7 +99,5 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
         assertThat(paymentDetailsEditPage.isPageOpened())
                 .withFailMessage("payment details edit page is not opened")
                 .isTrue();
-
-        waitHelper.waitForSeconds(3);
     }
 }

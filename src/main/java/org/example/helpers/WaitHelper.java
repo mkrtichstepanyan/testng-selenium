@@ -17,7 +17,7 @@ public class WaitHelper {
 
     private final Wait<WebDriver> wait;
 
-    private static final int DEFAULT_TIME_OUT = 10; //s
+    private static final int DEFAULT_TIME_OUT = 20; //s
 
     private WebDriver driver;
 

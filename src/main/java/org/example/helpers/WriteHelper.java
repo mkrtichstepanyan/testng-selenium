@@ -1,13 +1,30 @@
 package org.example.helpers;
 
 import dataProvider.User;
-import lombok.SneakyThrows;
+import dataProvider.cart.CartsProvider;
 import lombok.extern.slf4j.Slf4j;
+import org.example.pages.membership.PaymentDetailsEditPage;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 @Slf4j
 public class WriteHelper {
+    private final Wait<WebDriver> wait;
+
+    private static final int DEFAULT_TIME_OUT = 10; //s
+
+    private WebDriver driver;
+
+    public WriteHelper(WebDriver driver) {
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIME_OUT));
+    }
+
     public void clearInput(WebElement webElement) {
         webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
     }
@@ -22,40 +39,38 @@ public class WriteHelper {
         webElement.sendKeys(User.loginedUser.getLastName());
     }
 
-    public void changeValidSecondCardNumber(WebElement cartNumber, WebElement expiration, WebElement cvv) {
+    public void changeValidSecondCardNumber(PaymentDetailsEditPage paymentDetailsEditPage) {
         log.info("Change cart number");
-        cartNumber.click();
-        cartNumber.sendKeys(
-                Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5,
-                Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5,
-                Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5,
-                Keys.NUMPAD4, Keys.NUMPAD4, Keys.NUMPAD4, Keys.NUMPAD4);
+        driver.switchTo().frame(paymentDetailsEditPage.frameCardNumber);
+        paymentDetailsEditPage.inputCardNumber.sendKeys(CartsProvider.validSecondCart.getNumber());
+        driver.switchTo().defaultContent();
 
         log.info("Change cart expiration");
-        expiration.click();
-        expiration.sendKeys(Keys.NUMPAD9);
+        driver.switchTo().frame(paymentDetailsEditPage.frameExpiration);
+        paymentDetailsEditPage.inputExpiration.sendKeys(CartsProvider.validSecondCart.getExpiration());
+        driver.switchTo().defaultContent();
 
         log.info("Change cart cvv");
-        cvv.click();
-        cvv.sendKeys(Keys.NUMPAD1, Keys.NUMPAD2, Keys.NUMPAD3);
+        driver.switchTo().frame(paymentDetailsEditPage.frameCvv);
+        paymentDetailsEditPage.inputCvv.sendKeys(CartsProvider.validSecondCart.getCvv());
+        driver.switchTo().defaultContent();
     }
 
-    public void changeValidFirstCardNumber(WebElement cartNumber, WebElement expiration, WebElement cvv) {
+    public void changeValidFirstCardNumber(PaymentDetailsEditPage paymentDetailsEditPage) {
         log.info("Change cart number");
-        cartNumber.click();
-        cartNumber.sendKeys(
-                Keys.NUMPAD4, Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1,
-                Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1,
-                Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1,
-                Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1);
+        driver.switchTo().frame(paymentDetailsEditPage.frameCardNumber);
+        paymentDetailsEditPage.inputCardNumber.sendKeys(CartsProvider.validFirstCart.getNumber());
+        driver.switchTo().defaultContent();
 
         log.info("Change cart expiration");
-        expiration.click();
-        expiration.sendKeys(Keys.NUMPAD1, Keys.NUMPAD2, Keys.NUMPAD3, Keys.NUMPAD0);
+        driver.switchTo().frame(paymentDetailsEditPage.frameExpiration);
+        paymentDetailsEditPage.inputExpiration.sendKeys(CartsProvider.validFirstCart.getExpiration());
+        driver.switchTo().defaultContent();
 
         log.info("Change cart cvv");
-        cvv.click();
-        cvv.sendKeys(Keys.NUMPAD1, Keys.NUMPAD2, Keys.NUMPAD3);
+        driver.switchTo().frame(paymentDetailsEditPage.frameCvv);
+        paymentDetailsEditPage.inputCvv.sendKeys(CartsProvider.validFirstCart.getCvv());
+        driver.switchTo().defaultContent();
     }
 
 }

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 public class DriverFactory {
@@ -19,7 +20,7 @@ public class DriverFactory {
 
     @BeforeClass
     @Parameters(value = "browser")
-    public void setupDriver(String browserName) {
+    public void setupDriver(@Optional("chrome") String browserName) {
         WebDriver driver;
         logger.info("Create driver for browser {}", browserName);
         switch (browserName.toLowerCase()) {
