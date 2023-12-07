@@ -15,11 +15,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
 
-    String endCartNumber = "1111";
-
     MembershipPage membershipPage;
 
-    PaymentDetailsPage paymentDetailspage;
+    PaymentDetailsPage paymentDetailsPage;
 
     PaymentMethodePage paymentMethodePage;
 
@@ -29,7 +27,7 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
     public void goMembershipPage() {
         goToURL(UrlsProvider.MEMBERSHIP_PAGE_URL);
         membershipPage = new MembershipPage(driver);
-        paymentDetailspage = membershipPage.getPaymentDetails();
+        paymentDetailsPage = membershipPage.getPaymentDetails();
         paymentDetailsEditPage = new PaymentDetailsEditPage(driver);
         paymentMethodePage = new PaymentMethodePage(driver);
 
@@ -42,7 +40,7 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
     @Test(priority = 1)
     public void verifyPaymentDetailsEditPageIsOpened() {
         log.info("Assert payment details page is opened");
-        assertThat(paymentDetailspage.isPageOpened()).isTrue();
+        assertThat(paymentDetailsPage.isPageOpened()).isTrue();
 
         goPaymentDetailsEditPage();
     }
@@ -50,36 +48,37 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
     @Test(priority = 2)
     public void changeCartNumber() {
         log.info("Assert payment details page is opened");
-        assertThat(paymentDetailspage.isPageOpened()).isTrue();
+        assertThat(paymentDetailsPage.isPageOpened()).isTrue();
 
-        String currentCartNumber = paymentDetailspage.cardNumber.getText();
+        String currentCartNumber = paymentDetailsPage.cardNumber.getText();
+
         if (currentCartNumber.endsWith("1111")) {
             goPaymentDetailsEditPage();
 
-            writeHelper.writeValidSecondCardNumber(paymentDetailsEditPage.inputCardNumber, paymentDetailsEditPage.inputExpiration, paymentDetailsEditPage.inputCvv);
+            writeHelper.changeValidSecondCardNumber(paymentDetailsEditPage.inputCardNumber, paymentDetailsEditPage.inputExpiration, paymentDetailsEditPage.inputCvv);
 
             log.info("Click on save button");
             paymentDetailsEditPage.clickSaveButton();
 
             log.info("Assert payment details page is opened");
-            assertThat(paymentDetailspage.isPageOpened()).isTrue();
+            assertThat(paymentDetailsPage.isPageOpened()).isTrue();
 
             log.info("Assert cart number is ended: {}", "4444");
-            assertThat(paymentDetailspage.cardNumber.getText()).endsWith("4444");
+            assertThat(paymentDetailsPage.cardNumber.getText()).endsWith("4444");
         } else if (currentCartNumber.endsWith("4444")) {
             goPaymentDetailsEditPage();
 
             log.info("Chang cart number");
-            writeHelper.writeValidFirstCardNumber(paymentDetailsEditPage.inputCardNumber, paymentDetailsEditPage.inputExpiration, paymentDetailsEditPage.inputCvv);
+            writeHelper.changeValidFirstCardNumber(paymentDetailsEditPage.inputCardNumber, paymentDetailsEditPage.inputExpiration, paymentDetailsEditPage.inputCvv);
 
             log.info("Click on save button");
             paymentDetailsEditPage.clickSaveButton();
 
             log.info("Assert payment details page is opened");
-            assertThat(paymentDetailspage.isPageOpened()).isTrue();
+            assertThat(paymentDetailsPage.isPageOpened()).isTrue();
 
             log.info("Assert cart number is ended: {}", "1111");
-            assertThat(paymentDetailspage.cardNumber.getText()).endsWith("1111");
+            assertThat(paymentDetailsPage.cardNumber.getText()).endsWith("1111");
         }
 
     }
@@ -87,7 +86,7 @@ public class PaymentDetailsEditPositiveTests extends AuthorizedTest {
     private void goPaymentDetailsEditPage() {
 
         log.info("Click change payment method button");
-        paymentDetailspage.clickChangePaymentMethodButton();
+        paymentDetailsPage.clickChangePaymentMethodButton();
 
         log.info("Assert payment method page is opened");
         assertThat(paymentMethodePage.isPageOpened())

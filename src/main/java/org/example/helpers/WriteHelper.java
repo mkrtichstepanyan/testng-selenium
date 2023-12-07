@@ -22,10 +22,8 @@ public class WriteHelper {
         webElement.sendKeys(User.loginedUser.getLastName());
     }
 
-    @SneakyThrows
-    public void writeValidSecondCardNumber(WebElement cartNumber, WebElement expiration, WebElement cvv) {
+    public void changeValidSecondCardNumber(WebElement cartNumber, WebElement expiration, WebElement cvv) {
         log.info("Change cart number");
-        cartNumber.click();
         cartNumber.click();
         cartNumber.sendKeys(
                 Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5, Keys.NUMPAD5,
@@ -35,19 +33,16 @@ public class WriteHelper {
 
         log.info("Change cart expiration");
         expiration.click();
-        expiration.click();
-        expiration.click();
         expiration.sendKeys(Keys.NUMPAD9);
 
         log.info("Change cart cvv");
         cvv.click();
-        cvv.click();
-        cvv.click();
         cvv.sendKeys(Keys.NUMPAD1, Keys.NUMPAD2, Keys.NUMPAD3);
     }
 
-    public void writeValidFirstCardNumber(WebElement cartNumber, WebElement expiration, WebElement cvv) {
+    public void changeValidFirstCardNumber(WebElement cartNumber, WebElement expiration, WebElement cvv) {
         log.info("Change cart number");
+        cartNumber.click();
         cartNumber.sendKeys(
                 Keys.NUMPAD4, Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1,
                 Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1,
@@ -55,9 +50,11 @@ public class WriteHelper {
                 Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1, Keys.NUMPAD1);
 
         log.info("Change cart expiration");
+        expiration.click();
         expiration.sendKeys(Keys.NUMPAD1, Keys.NUMPAD2, Keys.NUMPAD3, Keys.NUMPAD0);
 
         log.info("Change cart cvv");
+        cvv.click();
         cvv.sendKeys(Keys.NUMPAD1, Keys.NUMPAD2, Keys.NUMPAD3);
     }
 

@@ -1,6 +1,7 @@
 import base.AuthorizedTest;
 import dataProvider.url.UrlsProvider;
 import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import lombok.extern.slf4j.Slf4j;
 import org.example.pages.settings.SettingsPage;
@@ -26,6 +27,7 @@ public class ExamplesForAllure extends AuthorizedTest {
 
     @Test
     @Description("for example allure fail")
+    @Owner("Garik")
     @Severity(MINOR)
     public void failTest() {
         assertThat(1).isGreaterThan(2);
@@ -50,5 +52,33 @@ public class ExamplesForAllure extends AuthorizedTest {
     @Severity(MINOR)
     public void skippTest4() {
         assertThat(1).isEqualTo(1);
+    }
+
+    @Test()
+    @Description("for example allure fail")
+    @Severity(MINOR)
+    public void skippTest5() {
+        assertThat(1).isEqualTo(1);
+    }
+
+    @Test()
+    @Description("for example allure fail")
+    @Severity(MINOR)
+    public void skippTest6() {
+        assertThat(1).isEqualTo(1);
+    }
+
+    @Test()
+    @Description("for example allure fail")
+    @Severity(MINOR)
+    public void skippTest7() {
+        assertThat(1).isEqualTo(1);
+    }
+
+    @Test()
+    @Description("for example allure fail")
+    @Severity(MINOR)
+    public void skippTest8() {
+        assertThat(1).isEqualTo(2);
     }
 }

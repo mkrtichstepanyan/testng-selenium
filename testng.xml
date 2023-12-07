@@ -6,42 +6,42 @@
     <test name="authorization">
         <parameter name="browser" value="chrome"/>
         <classes>
-<!--            <class name="autho.signin.SignInNegativeTests"/>-->
-<!--            <class name="autho.signin.SignInPositiveTests">-->
-<!--                <methods>-->
-<!--                    <include name="verifyTopPanelIsVisible"/>-->
-<!--                    <include name="verifySignInWithCorrectEmailAndPassword"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="autho.signin.SignInNegativeTests"/>
+            <class name="autho.signin.SignInPositiveTests">
+                <methods>
+                    <include name="verifyTopPanelIsVisible"/>
+                    <include name="verifySignInWithCorrectEmailAndPassword"/>
+                </methods>
+            </class>
 
-<!--            <class name="autho.signup.SignUpNegativeTests"/>-->
-<!--            <class name="autho.signup.SignUpPositiveTests"/>-->
+            <class name="autho.signup.SignUpNegativeTests"/>
+            <class name="autho.signup.SignUpPositiveTests"/>
 
-<!--            <class name="autho.forgot_password.ForgotPasswordNegativeTests"/>-->
-<!--            <class name="autho.forgot_password.ForgotPasswordPositiveTests"/>-->
+            <class name="autho.forgot_password.ForgotPasswordNegativeTests"/>
+            <class name="autho.forgot_password.ForgotPasswordPositiveTests"/>
 
-<!--            <class name="home.HomeNegativeTests"/>-->
-<!--            <class name="home.HomePositiveTest"/>-->
+            <class name="home.HomeNegativeTests"/>
+            <class name="home.HomePositiveTest"/>
 
-<!--            <class name="welcome.WelcomeNegativeTests"/>-->
-<!--            <class name="welcome.WelcomePositiveTests"/>-->
+            <class name="welcome.WelcomeNegativeTests"/>
+            <class name="welcome.WelcomePositiveTests"/>
 
-<!--            <class name="settings.SettingsPositiveTests"/>-->
-<!--            <class name="settings.SettingsNegativeTests"/>-->
+            <class name="settings.SettingsPositiveTests"/>
+            <class name="settings.SettingsNegativeTests"/>
 
-<!--            <class name="settings.editProfile.EditProfileNegativeTests"/>-->
-<!--            <class name="settings.editProfile.EditProfilePositiveTests"/>-->
+            <class name="settings.editProfile.EditProfileNegativeTests"/>
+            <class name="settings.editProfile.EditProfilePositiveTests"/>
 
-<!--            <class name="settings.readingLanguage.ReadingLanguageNegativeTests"/>-->
-<!--            <class name="settings.readingLanguage.ReadingLanguagePositiveTests"/>-->
+            <class name="settings.readingLanguage.ReadingLanguageNegativeTests"/>
+            <class name="settings.readingLanguage.ReadingLanguagePositiveTests"/>
 
-<!--            <class name="membership.paymentDetails.PaymentDetailsNegativeTest"/>-->
-<!--            <class name="membership.paymentDetails.PaymentDetailsPositiveTest"/>-->
+            <class name="membership.paymentDetails.PaymentDetailsNegativeTest"/>
+            <class name="membership.paymentDetails.PaymentDetailsPositiveTest"/>
 
             <class name="membership.paymentDetailsEdit.PaymentDetailsEditNegativeTests"/>
             <class name="membership.paymentDetailsEdit.PaymentDetailsEditPositiveTests"/>
 
-<!--            <class name="ExamplesForAllure"/>-->
+            <class name="ExamplesForAllure"/>
         </classes>
     </test>
 
